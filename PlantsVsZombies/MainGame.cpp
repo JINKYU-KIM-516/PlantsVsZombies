@@ -12,7 +12,7 @@ MainGame::MainGame(HWND p_hWnd)
 void MainGame::test()
 {
 	m_player->SpawnSunflower();
-	InvalidateRect(m_hWnd, NULL, TRUE);  // ≤¿ »£√‚!
+	InvalidateRect(m_hWnd, NULL, TRUE);
 }
 
 

@@ -28,7 +28,7 @@ RECT PictureBox::GetRect() const
 }
 
 
-void PictureBox::Draw(HDC hdc)
+void PictureBox::Draw_Stretch(HDC hdc)
 {
     if (!m_hBmp) {
         MessageBox(NULL, L"비트맵 로드 실패", L"오류", MB_OK);
@@ -45,6 +45,29 @@ void PictureBox::Draw(HDC hdc)
         m_location.GetX(), m_location.GetY(),
         m_size.GetWidth(), m_size.GetHeight(),
         hdcMem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+
+    SelectObject(hdcMem, oldBmp);
+    DeleteDC(hdcMem);
+}
+
+void PictureBox::Draw(HDC hdc)
+{
+    if (!m_hBmp) {
+        MessageBox(NULL, L"비트맵 로드 실패", L"오류", MB_OK);
+        return;
+    }
+
+    BITMAP bmp;
+    GetObject(m_hBmp, sizeof(BITMAP), &bmp);
+
+    HDC hdcMem = CreateCompatibleDC(hdc);
+    HGDIOBJ oldBmp = SelectObject(hdcMem, m_hBmp);
+
+    TransparentBlt(hdc,
+        m_location.GetX(), m_location.GetY(),
+        m_size.GetWidth(), m_size.GetHeight(),
+        hdcMem, 0, 0, bmp.bmWidth, bmp.bmHeight,
+        RGB(255, 50, 150));
 
     SelectObject(hdcMem, oldBmp);
     DeleteDC(hdcMem);

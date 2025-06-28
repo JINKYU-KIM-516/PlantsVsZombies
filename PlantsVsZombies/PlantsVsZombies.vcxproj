@@ -102,10 +102,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,6 +130,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="PictureBox.h" />
+    <ClInclude Include="Plant.h" />
     <ClInclude Include="PlantsVsZombies.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Point.h" />
@@ -141,6 +144,7 @@
     <ClCompile Include="Field.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="PictureBox.cpp" />
+    <ClCompile Include="Plant.cpp" />
     <ClCompile Include="PlantsVsZombies.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Point.cpp" />

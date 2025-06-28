@@ -1,5 +1,6 @@
 #pragma once
 #include <windows.h>
+#pragma comment(lib, "msimg32.lib")
 #include <string>
 #include "Point.h"
 #include "Size.h"
@@ -18,6 +19,6 @@ public:
 
 	RECT GetRect() const;
 
+	void Draw_Stretch(HDC hdc);
 	void Draw(HDC hdc);
 };
-

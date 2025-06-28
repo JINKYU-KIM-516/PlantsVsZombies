@@ -1,16 +1,12 @@
 #pragma once
-#include "PictureBox.h"
-
+#include "Plant.h"
 #include "Constants.h"
 
 
-class Sunflower : public PictureBox
+class Sunflower : public Plant
 {
 private:
 	int m_hp;
 public:
 	Sunflower(Point p_pos);
-
-	void Init();
-
 };

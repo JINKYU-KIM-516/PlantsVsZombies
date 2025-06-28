@@ -40,6 +40,12 @@
     <Filter Include="소스 파일\CoreFunction\PictureBox">
       <UniqueIdentifier>{e67299b2-c305-401c-9468-77607aa88fc7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Game\Main">
+      <UniqueIdentifier>{df77c6c2-b0f1-445d-bcd3-5d5013828f4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Plant\Sunflower">
+      <UniqueIdentifier>{4eca7184-b3d8-4b2d-810a-08392d279803}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -51,17 +57,8 @@
     <ClInclude Include="Resource.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="PlantsVsZombies.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>소스 파일\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Sunflower.h">
-      <Filter>소스 파일\Plant</Filter>
-    </ClInclude>
-    <ClInclude Include="MainGame.h">
-      <Filter>소스 파일\Game</Filter>
     </ClInclude>
     <ClInclude Include="Point.h">
       <Filter>소스 파일\CoreFunction\Point</Filter>
@@ -81,19 +78,22 @@
     <ClInclude Include="Tile.h">
       <Filter>소스 파일\Tile</Filter>
     </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>소스 파일\Game\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="PlantsVsZombies.h">
+      <Filter>소스 파일\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sunflower.h">
+      <Filter>소스 파일\Plant\Sunflower</Filter>
+    </ClInclude>
+    <ClInclude Include="Plant.h">
+      <Filter>소스 파일\Plant</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PlantsVsZombies.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>소스 파일\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Sunflower.cpp">
-      <Filter>소스 파일\Plant</Filter>
-    </ClCompile>
-    <ClCompile Include="MainGame.cpp">
-      <Filter>소스 파일\Game</Filter>
     </ClCompile>
     <ClCompile Include="Point.cpp">
       <Filter>소스 파일\CoreFunction\Point</Filter>
@@ -109,6 +109,18 @@
     </ClCompile>
     <ClCompile Include="Tile.cpp">
       <Filter>소스 파일\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>소스 파일\Game\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="PlantsVsZombies.cpp">
+      <Filter>소스 파일\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Sunflower.cpp">
+      <Filter>소스 파일\Plant\Sunflower</Filter>
+    </ClCompile>
+    <ClCompile Include="Plant.cpp">
+      <Filter>소스 파일\Plant</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
