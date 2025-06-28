@@ -46,6 +46,15 @@
     <Filter Include="소스 파일\Plant\Sunflower">
       <UniqueIdentifier>{4eca7184-b3d8-4b2d-810a-08392d279803}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Plant\Pea">
+      <UniqueIdentifier>{4b13eb0f-ef76-4903-8260-31e78705220b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Zombie">
+      <UniqueIdentifier>{09bd6a98-4706-4860-8268-f1fec28d83fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ZombieManager">
+      <UniqueIdentifier>{335e0fdc-bf8c-419d-a502-dd0749b2cd9f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -90,6 +99,15 @@
     <ClInclude Include="Plant.h">
       <Filter>소스 파일\Plant</Filter>
     </ClInclude>
+    <ClInclude Include="Pea.h">
+      <Filter>소스 파일\Plant\Pea</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombie.h">
+      <Filter>소스 파일\Zombie</Filter>
+    </ClInclude>
+    <ClInclude Include="ZombieManager.h">
+      <Filter>소스 파일\ZombieManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -121,6 +139,15 @@
     </ClCompile>
     <ClCompile Include="Plant.cpp">
       <Filter>소스 파일\Plant</Filter>
+    </ClCompile>
+    <ClCompile Include="Pea.cpp">
+      <Filter>소스 파일\Plant\Pea</Filter>
+    </ClCompile>
+    <ClCompile Include="Zombie.cpp">
+      <Filter>소스 파일\Zombie</Filter>
+    </ClCompile>
+    <ClCompile Include="ZombieManager.cpp">
+      <Filter>소스 파일\ZombieManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

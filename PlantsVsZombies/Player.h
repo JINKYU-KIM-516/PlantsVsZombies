@@ -2,15 +2,21 @@
 #include <windows.h>
 #include <vector>
 #include "Sunflower.h"
+#include "Pea.h"
+
+using namespace std;
+
 class Player
 {
 protected:
 	int m_sunlight;
-	std::vector<Sunflower*> m_sunflowers;
-
+	vector<Sunflower*> m_sunflowers;
+	vector<Plant*> m_plants;
 public:
 	Player();
 	void SpawnSunflower();
+	void SpawnPea();
 
 	vector<Sunflower*> GetSunflowers();
+	vector<Plant*> GetPlants();
 };

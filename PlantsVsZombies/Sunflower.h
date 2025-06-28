@@ -5,8 +5,8 @@
 
 class Sunflower : public Plant
 {
-private:
-	int m_hp;
+protected:
+	void SpawnSunlight();
 public:
 	Sunflower(Point p_pos);
 };
