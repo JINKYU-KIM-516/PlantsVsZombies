@@ -18,6 +18,16 @@ PictureBox::~PictureBox()
     }
 }
 
+Point PictureBox::GetLocation() const
+{
+    return m_location;
+}
+
+Size PictureBox::GetSize() const
+{
+    return m_size;
+}
+
 RECT PictureBox::GetRect() const
 {
     RECT rc;

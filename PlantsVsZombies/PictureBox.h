@@ -18,6 +18,9 @@ public:
 	PictureBox(Point p_pos, Size p_size, const wstring& p_imagePath);
 	~PictureBox();
 
+	Point GetLocation() const;
+	Size GetSize() const;
+
 	RECT GetRect() const;
 
 	void Draw_Stretch(HDC hdc);

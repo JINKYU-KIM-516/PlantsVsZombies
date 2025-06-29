@@ -26,6 +26,7 @@ void MainGame::Update()
 	for (auto* zombie : m_zombieManager->GetZombies())
 		zombie->Update();
 	m_zombieManager->Update();
+	m_bulletManager->Update();
 	InvalidateRect(m_hWnd, NULL, FALSE);
 }
 

@@ -3,7 +3,7 @@
 
 void Pea::SpawnBullet()
 {
-	BulletPea* bulletPea = new BulletPea(m_location + Point(PLANT_WIDTH / 2, PLANT_HEIGHT / 2) - Point(BULLET_WIDTH, BULLET_HEIGHT));
+	BulletPea* bulletPea = new BulletPea(m_location + Point(PLANT_WIDTH / 2 + BULLET_WIDTH, PLANT_HEIGHT / 2 - BULLET_HEIGHT));
 	bulletPea->Init(m_attackPower, MOVESPEED_BULLET_PEA);
 
 	m_mainGameLink->GetBulletManager()->AddBullets(bulletPea);
