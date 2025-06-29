@@ -2,14 +2,13 @@
 #include <vector>
 #include "Tile.h"
 
-class Field
+class GameBoard
 {
 protected:
 	vector<PictureBox*> m_tiles;
 	wstring m_imagePath;
 public:
-	Field();
+	GameBoard();
 
-	vector<PictureBox*> GetTiles();
+	const vector<PictureBox*>& GetTiles() const;
 };
-

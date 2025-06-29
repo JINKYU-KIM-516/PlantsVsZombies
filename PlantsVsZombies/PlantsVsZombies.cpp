@@ -162,6 +162,39 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         {
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
+
+            // 1. 메모리 DC 생성
+            HDC memDC = CreateCompatibleDC(hdc);
+            RECT rect;
+            GetClientRect(hWnd, &rect);
+            int width = rect.right;
+            int height = rect.bottom;
+
+            // 2. 버퍼용 비트맵 생성 및 선택
+            HBITMAP bufferBmp = CreateCompatibleBitmap(hdc, width, height);
+            HBITMAP oldBmp = (HBITMAP)SelectObject(memDC, bufferBmp);
+
+            // 3. 배경 지우기
+            FillRect(memDC, &rect, (HBRUSH)(COLOR_WINDOW + 1));
+
+            // 4. 메모리 DC에 그리기
+            if(mainGame)
+                mainGame->DrawAll(memDC);
+
+            // 5. 실제 화면에 한 번에 출력
+            BitBlt(hdc, 0, 0, width, height, memDC, 0, 0, SRCCOPY);
+
+            // 6. 자원 정리
+            SelectObject(memDC, oldBmp);
+            DeleteObject(bufferBmp);
+            DeleteDC(memDC);
+
+            EndPaint(hWnd, &ps);
+        }
+        /*
+        {
+            PAINTSTRUCT ps;
+            HDC hdc = BeginPaint(hWnd, &ps);
             
             if (mainGame)
             {
@@ -170,6 +203,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
             EndPaint(hWnd, &ps);
         }
+        */
         break;
     case WM_KEYDOWN:
         {

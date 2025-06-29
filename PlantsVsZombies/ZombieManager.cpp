@@ -1,34 +1,41 @@
 #include "ZombieManager.h"
-#include "Field.h"  // 만약 타일 참조 필요시
 
-void ZombieManager::Init() {
-    m_lastSpawnTime = std::chrono::steady_clock::now();
+ZombieManager::~ZombieManager()
+{
+    for (auto* z : m_zombies)
+        delete z;
 }
 
-void ZombieManager::Update() {
-    for (auto* z : m_zombies)
-        z->Move();
-
-    auto now = std::chrono::steady_clock::now();
-    if (std::chrono::duration_cast<std::chrono::seconds>(now - m_lastSpawnTime).count() >= 5) {
-        int row = rand() % 5;
-        int x = 800; // 예: 오른쪽 끝 위치
-        int y = 100 + row * 64; // 예: 행에 따라 y 위치 계산
-        m_zombies.push_back(new Zombie(Point(x, y)));
-        m_lastSpawnTime = now;
+void ZombieManager::Update()
+{
+    if (m_spawnTimer.HasElapsed())
+    {
+        SpawnZombieRandomRow();
+        m_spawnTimer.Tick();
     }
 }
 
-void ZombieManager::Draw(HDC hdc) {
-    for (auto* z : m_zombies)
-        z->Draw(hdc);
+void ZombieManager::SpawnZombieRandomRow()
+{
+    int row = rand() % 5;
+    int x = TILE_WIDTH * GAMEBOAORD_WIDTH; // 예: 오른쪽 끝 위치
+    int y = TILE_HEIGHT * row;
+    SpawnZombie(Point(x, y));
 }
 
-const std::vector<Zombie*>& ZombieManager::GetZombies() const {
+
+void ZombieManager::SpawnZombie(Point p_pos)
+{
+    Zombie* zombie = new Zombie(p_pos);
+    AddZobies(zombie);
+}
+
+void ZombieManager::AddZobies(Zombie* p_zombie)
+{
+    m_zombies.push_back(p_zombie);
+}
+
+const vector<Zombie*>& ZombieManager::GetZombies() const
+{
     return m_zombies;
-}
-
-ZombieManager::~ZombieManager() {
-    for (auto* z : m_zombies)
-        delete z;
 }

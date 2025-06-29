@@ -6,3 +6,13 @@ Plant::Plant(Point p_pos, Size p_size, const wstring& p_imagePath)
 {
     m_hp = 100;
 }
+
+Plant::~Plant()
+{
+
+}
+
+void Plant::Update()
+{
+
+}

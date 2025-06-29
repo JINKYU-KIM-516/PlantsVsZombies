@@ -1,6 +1,7 @@
 #pragma once
 #include "PictureBox.h"
-#include "Constants.h"
+
+using namespace std;
 
 class Zombie : public PictureBox
 {
@@ -12,6 +13,6 @@ protected:
 	
 public:
 	Zombie(Point p_pos);
+	void Update();
 	void Move();
 };
-

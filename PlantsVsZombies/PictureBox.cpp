@@ -11,7 +11,8 @@ PictureBox::PictureBox(Point p_pos, Size p_size, const wstring& p_imagePath)
 
 PictureBox::~PictureBox()
 {
-    if (m_hBmp) {
+    if (m_hBmp)
+    {
         DeleteObject(m_hBmp);
         m_hBmp = nullptr;
     }
@@ -67,7 +68,7 @@ void PictureBox::Draw(HDC hdc)
         m_location.GetX(), m_location.GetY(),
         m_size.GetWidth(), m_size.GetHeight(),
         hdcMem, 0, 0, bmp.bmWidth, bmp.bmHeight,
-        RGB(255, 50, 150));
+        TRANSPARENT_COLOR);
 
     SelectObject(hdcMem, oldBmp);
     DeleteDC(hdcMem);

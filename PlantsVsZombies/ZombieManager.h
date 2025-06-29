@@ -1,18 +1,20 @@
 #pragma once
 #include <vector>
 #include "Zombie.h"
-#include <chrono>
+#include "IntervalTimer.h"
 
 class ZombieManager
 {
 private:
+    IntervalTimer m_spawnTimer{ INTERVAL_SEC_SPAWN_ZOMBIE };
     vector<Zombie*> m_zombies;
-    chrono::steady_clock::time_point m_lastSpawnTime;
 
 public:
-    void Update();
-    void Draw(HDC hdc);
-    void Init();  // 초기화용
-    const std::vector<Zombie*>& GetZombies() const;
     ~ZombieManager();
+    void Update();
+
+    void SpawnZombieRandomRow();
+    void SpawnZombie(Point p_pos);
+    void AddZobies(Zombie* p_zombie);
+    const vector<Zombie*>& GetZombies() const;
 };

@@ -31,12 +31,6 @@
     <Filter Include="소스 파일\CoreFunction\Size">
       <UniqueIdentifier>{717f11c6-a97d-4820-b1e4-f9bac5628660}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Field">
-      <UniqueIdentifier>{598a03c3-0b2e-404c-9127-174567e57dbe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Tile">
-      <UniqueIdentifier>{15466b94-16d0-4333-b3e4-7aa94cb0c437}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\CoreFunction\PictureBox">
       <UniqueIdentifier>{e67299b2-c305-401c-9468-77607aa88fc7}</UniqueIdentifier>
     </Filter>
@@ -54,6 +48,24 @@
     </Filter>
     <Filter Include="소스 파일\ZombieManager">
       <UniqueIdentifier>{335e0fdc-bf8c-419d-a502-dd0749b2cd9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GameBoard">
+      <UniqueIdentifier>{598a03c3-0b2e-404c-9127-174567e57dbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GameBoard\Tile">
+      <UniqueIdentifier>{15466b94-16d0-4333-b3e4-7aa94cb0c437}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\CoreFunction\IntervalTimer">
+      <UniqueIdentifier>{87e1761a-51f0-4f99-a8ed-820a707566db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Plant\Bullet">
+      <UniqueIdentifier>{b584fe15-54ac-4930-aee3-07a251b11b5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Plant\Bullet\BulletPea">
+      <UniqueIdentifier>{74a03951-1309-40a2-a861-2757aeaf7bdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Plant\Bullet\BulletManager">
+      <UniqueIdentifier>{82f14f9d-3159-41e3-a547-0335b3ed8b56}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -78,14 +90,14 @@
     <ClInclude Include="Size.h">
       <Filter>소스 파일\CoreFunction\Size</Filter>
     </ClInclude>
-    <ClInclude Include="Field.h">
-      <Filter>소스 파일\Field</Filter>
+    <ClInclude Include="GameBoard.h">
+      <Filter>소스 파일\GameBoard</Filter>
     </ClInclude>
     <ClInclude Include="PictureBox.h">
       <Filter>소스 파일\CoreFunction\PictureBox</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
-      <Filter>소스 파일\Tile</Filter>
+      <Filter>소스 파일\GameBoard\Tile</Filter>
     </ClInclude>
     <ClInclude Include="MainGame.h">
       <Filter>소스 파일\Game\Main</Filter>
@@ -108,6 +120,18 @@
     <ClInclude Include="ZombieManager.h">
       <Filter>소스 파일\ZombieManager</Filter>
     </ClInclude>
+    <ClInclude Include="IntervalTimer.h">
+      <Filter>소스 파일\CoreFunction\IntervalTimer</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>소스 파일\Plant\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletPea.h">
+      <Filter>소스 파일\Plant\Bullet\BulletPea</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletManager.h">
+      <Filter>소스 파일\Plant\Bullet\BulletManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -119,14 +143,14 @@
     <ClCompile Include="Size.cpp">
       <Filter>소스 파일\CoreFunction\Size</Filter>
     </ClCompile>
-    <ClCompile Include="Field.cpp">
-      <Filter>소스 파일\Field</Filter>
+    <ClCompile Include="GameBoard.cpp">
+      <Filter>소스 파일\GameBoard</Filter>
     </ClCompile>
     <ClCompile Include="PictureBox.cpp">
       <Filter>소스 파일\CoreFunction\PictureBox</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
-      <Filter>소스 파일\Tile</Filter>
+      <Filter>소스 파일\GameBoard\Tile</Filter>
     </ClCompile>
     <ClCompile Include="MainGame.cpp">
       <Filter>소스 파일\Game\Main</Filter>
@@ -148,6 +172,18 @@
     </ClCompile>
     <ClCompile Include="ZombieManager.cpp">
       <Filter>소스 파일\ZombieManager</Filter>
+    </ClCompile>
+    <ClCompile Include="IntervalTimer.cpp">
+      <Filter>소스 파일\CoreFunction\IntervalTimer</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>소스 파일\Plant\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletPea.cpp">
+      <Filter>소스 파일\Plant\Bullet\BulletPea</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletManager.cpp">
+      <Filter>소스 파일\Plant\Bullet\BulletManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,31 +1,34 @@
 #include "Player.h"
 
-Player::Player()
+Player::Player(MainGame* p_mainGameLink)
+	:m_mainGameLink(p_mainGameLink)
 {
 	m_sunlight = 0;
 }
 
-void Player::SpawnSunflower()
+Player::~Player()
 {
-	Sunflower* sunflower = new Sunflower(Point(128, 128));
 
-	//m_sunflowers.push_back(sunflower);
-	m_plants.push_back(sunflower);
 }
 
-void Player::SpawnPea()
+void Player::SpawnSunflower(Point p_pos)
 {
-	Pea* pea = new Pea(Point(256, 256));
-	m_plants.push_back(pea);
+	Sunflower* sunflower = new Sunflower(p_pos);
+	AddPlants(sunflower);
 }
 
-
-vector<Sunflower*> Player::GetSunflowers()
+void Player::SpawnPea(Point p_pos)
 {
-	return m_sunflowers;
+	Pea* pea = new Pea(m_mainGameLink, p_pos);
+	AddPlants(pea);
 }
 
-vector<Plant*> Player::GetPlants()
+void Player::AddPlants(Plant* p_plant)
+{
+	m_plants.push_back(p_plant);
+}
+
+const vector<Plant*>& Player::GetPlants() const
 {
 	return m_plants;
 }

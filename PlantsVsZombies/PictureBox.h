@@ -4,6 +4,7 @@
 #include <string>
 #include "Point.h"
 #include "Size.h"
+#include "Constants.h"
 
 class PictureBox
 {

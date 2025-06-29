@@ -1,15 +1,17 @@
 #pragma once
 #include <windows.h>
 #include "Player.h"
-#include "Field.h"
+#include "GameBoard.h"
 #include "ZombieManager.h"
+#include "BulletManager.h"
 
 class MainGame
 {
 protected:
 	Player* m_player;
-	Field* m_field;
+	GameBoard* m_gameBoard;
 	ZombieManager* m_zombieManager;
+	BulletManager* m_bulletManager;
 
 	HWND m_hWnd;
 public:
@@ -19,4 +21,5 @@ public:
 
 	void Update();
 	void DrawAll(HDC hdc);
+	BulletManager* GetBulletManager();
 };
