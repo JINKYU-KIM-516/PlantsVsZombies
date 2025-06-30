@@ -28,7 +28,7 @@ MainGame::~MainGame()
 
 void MainGame::test()
 {
-	m_plantManager->SpawnSunflower(Point(128,128));
+	m_plantManager->SpawnSunflower(Point(9 * TILE_WIDTH, 0));
 	m_plantManager->SpawnPea(Point(64,64));
 }
 
@@ -42,8 +42,8 @@ void MainGame::Update()
 		zombie->Update();
 	
 	m_plantManager->Update();
-	m_zombieManager->Update();
 	m_bulletManager->Update();
+	m_zombieManager->Update();
 	m_collisionManager->Update();
 
 	InvalidateRect(m_hWnd, NULL, FALSE);

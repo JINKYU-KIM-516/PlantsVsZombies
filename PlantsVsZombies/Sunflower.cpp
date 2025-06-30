@@ -23,5 +23,5 @@ void Sunflower::Init(Point p_pos, SunlightManager* p_sunlightManager)
 
 void Sunflower::Update()
 {
-
+    CheckAlive();
 }

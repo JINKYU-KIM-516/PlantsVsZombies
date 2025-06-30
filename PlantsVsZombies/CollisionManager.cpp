@@ -35,9 +35,9 @@ void CollisionManager::CheckColliding_ZombieAndPlant()
 //public
 CollisionManager::CollisionManager()
 {
-    m_plantManager = nullptr;
-    m_zombieManager = nullptr;
-    m_bulletManager = nullptr;
+    //m_plantManager = nullptr;
+    //m_zombieManager = nullptr;
+    //m_bulletManager = nullptr;
 }
 
 void CollisionManager::Init(PlantManager* p_plantManager, ZombieManager* p_zombieManager, BulletManager* p_bulletManager)
