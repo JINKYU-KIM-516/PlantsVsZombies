@@ -12,6 +12,12 @@ GameBoard::GameBoard()
 	}
 }
 
+GameBoard::~GameBoard()
+{
+	for (auto* tile : m_tiles)
+		delete tile;
+}
+
 const vector<PictureBox*>& GameBoard::GetTiles() const
 {
 	return m_tiles;

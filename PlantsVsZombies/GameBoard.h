@@ -9,6 +9,7 @@ protected:
 	wstring m_imagePath;
 public:
 	GameBoard();
+	~GameBoard();
 
 	const vector<PictureBox*>& GetTiles() const;
 };

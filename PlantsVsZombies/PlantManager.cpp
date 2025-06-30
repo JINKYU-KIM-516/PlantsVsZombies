@@ -16,7 +16,8 @@ PlantManager::PlantManager()
 
 PlantManager::~PlantManager()
 {
-
+	for (auto* plant : m_plants)
+		delete plant;
 }
 
 void PlantManager::Init(BulletManager* p_bulletManager)
