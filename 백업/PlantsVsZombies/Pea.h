@@ -4,17 +4,19 @@
 #include "BulletPea.h"
 #include "BulletManager.h"
 
+class MainGame;
+
 class Pea : public Plant
 {
 protected:
-	BulletManager* m_bulletManager;
+	MainGame* m_mainGameLink;
 
 	IntervalTimer m_attackTimer{ INTERVAL_SEC_SPAWN_BULLET_PEA };
 	int m_attackPower;
 
 	void SpawnBullet();
 public:
-	Pea(BulletManager* p_bulletManager, Point p_pos);
+	Pea(MainGame* p_mainGameLink, Point p_pos);
 	~Pea();
 	void Update() override;
 };

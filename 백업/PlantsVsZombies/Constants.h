@@ -42,7 +42,7 @@
 
 //****이동속도****
 #define MOVESPEED_ZOMBIE 1
-#define MOVESPEED_BULLET_PEA 5
+#define MOVESPEED_BULLET_PEA 4
 
 //****전투력****
 #define ATTACKPOWER_ZOMBIE 25

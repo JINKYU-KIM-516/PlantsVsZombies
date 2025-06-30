@@ -1,38 +1,57 @@
 #include "ZombieManager.h"
 
-ZombieManager::~ZombieManager()
+//protected
+void ZombieManager::SpawnZombie(Point p_pos)
 {
-    for (auto* z : m_zombies)
-        delete z;
-}
-
-void ZombieManager::Update()
-{
-    if (m_spawnTimer.HasElapsed())
-    {
-        SpawnZombieRandomRow();
-        m_spawnTimer.Tick();
-    }
+    Zombie* zombie = new Zombie(p_pos);
+    AddZombie(zombie);
 }
 
 void ZombieManager::SpawnZombieRandomRow()
 {
-    int row = rand() % 5;
-    int x = TILE_WIDTH * GAMEBOAORD_WIDTH; // 예: 오른쪽 끝 위치
-    int y = TILE_HEIGHT * row;
-    SpawnZombie(Point(x, y));
+    if (m_spawnTimer.HasElapsed())
+    {
+        int row = rand() % 5;
+        int x = TILE_WIDTH * GAMEBOAORD_WIDTH; // 예: 오른쪽 끝 위치
+        int y = TILE_HEIGHT * row;
+        SpawnZombie(Point(x, y));
+        m_spawnTimer.Tick();
+    }
 }
 
-
-void ZombieManager::SpawnZombie(Point p_pos)
+void ZombieManager::CheckZombieAlive()
 {
-    Zombie* zombie = new Zombie(p_pos);
-    AddZobies(zombie);
+    for (auto* zombie : m_zombies)
+    {
+        if (!zombie->IsAlive())
+        {
+            DeleteZombie(zombie);
+        }
+    }
 }
 
-void ZombieManager::AddZobies(Zombie* p_zombie)
+//public
+ZombieManager::~ZombieManager()
+{
+    for (auto* zombie : m_zombies)
+        delete zombie;
+}
+
+void ZombieManager::Update()
+{
+    SpawnZombieRandomRow();
+    CheckZombieAlive();
+}
+
+void ZombieManager::AddZombie(Zombie* p_zombie)
 {
     m_zombies.push_back(p_zombie);
+}
+
+void ZombieManager::DeleteZombie(Zombie* p_zombie)
+{
+    m_zombies.erase(remove(m_zombies.begin(), m_zombies.end(), p_zombie), m_zombies.end());
+    delete p_zombie;
 }
 
 const vector<Zombie*>& ZombieManager::GetZombies() const

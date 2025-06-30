@@ -1,12 +1,12 @@
 #pragma once
-#include "PlantManager.h"
+#include "Player.h"
 #include "ZombieManager.h"
 #include "BulletManager.h"
 
 class CollisionManager
 {
 protected:
-	PlantManager* m_plantManager;
+	Player* m_player;
 	ZombieManager* m_zombieManager;
 	BulletManager* m_bulletManager;
 
@@ -14,7 +14,6 @@ protected:
 	void CheckColliding_ZombieAndPlant();
 
 public:
-	CollisionManager();
-	void Init(PlantManager* p_plantManager, ZombieManager* p_zombieManager, BulletManager* p_bulletManager);
+	CollisionManager(Player* player, ZombieManager* zombieManager, BulletManager* bulletManager);
 	void Update();
 };

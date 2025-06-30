@@ -137,7 +137,6 @@
     <ClInclude Include="Pea.h" />
     <ClInclude Include="PictureBox.h" />
     <ClInclude Include="Plant.h" />
-    <ClInclude Include="PlantManager.h" />
     <ClInclude Include="PlantsVsZombies.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Point.h" />
@@ -162,7 +161,6 @@
     <ClCompile Include="Pea.cpp" />
     <ClCompile Include="PictureBox.cpp" />
     <ClCompile Include="Plant.cpp" />
-    <ClCompile Include="PlantManager.cpp" />
     <ClCompile Include="PlantsVsZombies.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Point.cpp" />

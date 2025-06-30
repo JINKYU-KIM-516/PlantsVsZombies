@@ -6,11 +6,11 @@ void Pea::SpawnBullet()
 	BulletPea* bulletPea = new BulletPea(m_location + Point(PLANT_WIDTH / 2 + BULLET_WIDTH, PLANT_HEIGHT / 2 - BULLET_HEIGHT));
 	bulletPea->Init(m_attackPower, MOVESPEED_BULLET_PEA);
 
-	m_bulletManager->AddBullets(bulletPea);
+	m_mainGameLink->GetBulletManager()->AddBullets(bulletPea);
 }
 
-Pea::Pea(BulletManager* p_bulletManager, Point p_pos)
-	:Plant(p_pos, PLANT_SIZE, IMAGEPATH_PEA), m_bulletManager(p_bulletManager)
+Pea::Pea(MainGame* p_mainGameLink, Point p_pos)
+	:Plant(p_pos, PLANT_SIZE, IMAGEPATH_PEA), m_mainGameLink(p_mainGameLink)
 {
 	m_hp = 150;
 	m_attackPower = ATTACKPOWER_PEA;

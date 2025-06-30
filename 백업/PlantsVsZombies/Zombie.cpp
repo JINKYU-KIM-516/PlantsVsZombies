@@ -6,12 +6,6 @@ void Zombie::Move()
 	m_location.SetX(m_location.GetX() - m_moveSpeed);
 }
 
-void Zombie::CheckAlive()
-{
-	if (m_hp <= 0)
-		m_isAlive = false;
-}
-
 //public
 Zombie::Zombie(Point p_pos)
 	:PictureBox(p_pos, ZOMBIE_SIZE, IMAGEPATH_ZOMBIE)
@@ -20,13 +14,11 @@ Zombie::Zombie(Point p_pos)
 	m_attackPower = ATTACKPOWER_ZOMBIE;
 	m_attackSpeed = 1;
 	m_moveSpeed = MOVESPEED_ZOMBIE;
-	m_isAlive = true;
 }
 
 void Zombie::Update()
 {
 	Move();
-	CheckAlive();
 }
 
 void Zombie::TakeDamage(int p_damage)
@@ -37,9 +29,4 @@ void Zombie::TakeDamage(int p_damage)
 int Zombie::GetAttackPower()
 {
 	return m_attackPower;
-}
-
-bool Zombie::IsAlive()
-{
-	return m_isAlive;
 }

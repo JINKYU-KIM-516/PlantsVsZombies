@@ -11,16 +11,11 @@ protected:
 	int m_attackPower;
 	int m_moveSpeed;
 
-	bool m_isAlive;
-
 	void Move();
-
-	void CheckAlive();
 public:
 	Zombie(Point p_pos);
 	void Update();
 	void TakeDamage(int p_damage);
 
 	int GetAttackPower();
-	bool IsAlive();
 };

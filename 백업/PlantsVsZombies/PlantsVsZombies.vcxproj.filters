@@ -144,9 +144,6 @@
     <ClInclude Include="CollisionManager.h">
       <Filter>소스 파일\Game\Manager\CollisionManager</Filter>
     </ClInclude>
-    <ClInclude Include="PlantManager.h">
-      <Filter>소스 파일\Game\Manager\PlantManager</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -202,9 +199,6 @@
     </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
       <Filter>소스 파일\Game\Manager\CollisionManager</Filter>
-    </ClCompile>
-    <ClCompile Include="PlantManager.cpp">
-      <Filter>소스 파일\Game\Manager\PlantManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

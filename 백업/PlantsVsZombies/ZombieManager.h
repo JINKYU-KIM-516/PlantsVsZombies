@@ -5,18 +5,16 @@
 
 class ZombieManager
 {
-protected:
+private:
     IntervalTimer m_spawnTimer{ INTERVAL_SEC_SPAWN_ZOMBIE };
     vector<Zombie*> m_zombies;
 
-    void SpawnZombie(Point p_pos);
-    void SpawnZombieRandomRow();
-    void CheckZombieAlive();
 public:
     ~ZombieManager();
     void Update();
 
-    void AddZombie(Zombie* p_zombie);
-    void DeleteZombie(Zombie* p_zombie);
+    void SpawnZombieRandomRow();
+    void SpawnZombie(Point p_pos);
+    void AddZobies(Zombie* p_zombie);
     const vector<Zombie*>& GetZombies() const;
 };
