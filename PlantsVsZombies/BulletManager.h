@@ -8,12 +8,13 @@ using namespace std;
 class BulletManager
 {
 protected:
-	vector<Bullet*> m_bullets;
+    vector<Bullet*> m_bullets;
 public:
     ~BulletManager();
     void Update();
 
     void AddBullets(Bullet* p_bullet);
-    void DeleteBullets();
+    void DeleteBullet(Bullet* p_bullet);
+    void CheckBullets();
     const vector<Bullet*>& GetBullets() const;
 };

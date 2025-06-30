@@ -3,10 +3,11 @@
 MainGame::MainGame(HWND p_hWnd)
 {
 	m_hWnd = p_hWnd;
-	m_player = new Player(this);
 	m_gameBoard = new GameBoard();
+	m_player = new Player(this);
 	m_zombieManager = new ZombieManager();
 	m_bulletManager = new BulletManager();
+	m_collisionManager = new CollisionManager(m_player, m_zombieManager, m_bulletManager);
 
 	test();
 }
@@ -27,6 +28,7 @@ void MainGame::Update()
 		zombie->Update();
 	m_zombieManager->Update();
 	m_bulletManager->Update();
+	m_collisionManager->Update();
 	InvalidateRect(m_hWnd, NULL, FALSE);
 }
 

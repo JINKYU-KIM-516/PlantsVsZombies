@@ -67,6 +67,9 @@
     <Filter Include="소스 파일\Plant\Bullet\BulletManager">
       <UniqueIdentifier>{82f14f9d-3159-41e3-a547-0335b3ed8b56}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Game\CollisionManager">
+      <UniqueIdentifier>{be2b1933-2304-401c-8a74-f1c843815ba6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -132,6 +135,9 @@
     <ClInclude Include="BulletManager.h">
       <Filter>소스 파일\Plant\Bullet\BulletManager</Filter>
     </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>소스 파일\Game\CollisionManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -184,6 +190,9 @@
     </ClCompile>
     <ClCompile Include="BulletManager.cpp">
       <Filter>소스 파일\Plant\Bullet\BulletManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>소스 파일\Game\CollisionManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

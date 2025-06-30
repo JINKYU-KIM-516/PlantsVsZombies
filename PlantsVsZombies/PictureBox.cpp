@@ -38,6 +38,14 @@ RECT PictureBox::GetRect() const
     return rc;
 }
 
+bool PictureBox::IsCollided(const PictureBox* p_pictureBox)
+{
+    RECT src = this->GetRect();
+    RECT dest = p_pictureBox->GetRect();
+    RECT result;
+    return IntersectRect(&result, &src, &dest);
+}
+
 
 void PictureBox::Draw_Stretch(HDC hdc)
 {

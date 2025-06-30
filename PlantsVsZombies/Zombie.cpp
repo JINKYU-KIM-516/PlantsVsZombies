@@ -1,6 +1,12 @@
 #include "Zombie.h"
 #include "Bullet.h"
+//protected
+void Zombie::Move()
+{
+	m_location.SetX(m_location.GetX() - m_moveSpeed);
+}
 
+//public
 Zombie::Zombie(Point p_pos)
 	:PictureBox(p_pos, ZOMBIE_SIZE, IMAGEPATH_ZOMBIE)
 {
@@ -15,7 +21,12 @@ void Zombie::Update()
 	Move();
 }
 
-void Zombie::Move()
+void Zombie::TakeDamage(int p_damage)
 {
-	m_location.SetX(m_location.GetX() - m_moveSpeed);
+	m_hp -= p_damage;
+}
+
+int Zombie::GetAttackPower()
+{
+	return m_attackPower;
 }

@@ -8,7 +8,7 @@ BulletManager::~BulletManager()
 
 void BulletManager::Update()
 {
-	DeleteBullets();
+	CheckBullets();
 }
 
 void BulletManager::AddBullets(Bullet* p_bullet)
@@ -16,21 +16,20 @@ void BulletManager::AddBullets(Bullet* p_bullet)
 	m_bullets.push_back(p_bullet);
 }
 
-void BulletManager::DeleteBullets()
+void BulletManager::DeleteBullet(Bullet* p_bullet)
+{
+	m_bullets.erase(remove(m_bullets.begin(), m_bullets.end(), p_bullet), m_bullets.end());
+	delete p_bullet;
+}
+
+void BulletManager::CheckBullets()
 {
 	for (auto* bullet : m_bullets)
 	{
-		m_bullets.erase(
-			std::remove_if(m_bullets.begin(), m_bullets.end(),
-				[](Bullet* bullet) {
-					if (bullet->GetLocation().GetX() > (GAMEBOAORD_WIDTH + 1) * TILE_WIDTH) {
-						delete bullet; // 메모리 해제
-						return true;   // 리스트에서 제거
-					}
-					return false;
-				}),
-			m_bullets.end()
-		);
+		if (bullet->GetLocation().GetX() > (GAMEBOAORD_WIDTH + 1) * TILE_WIDTH)
+		{
+			DeleteBullet(bullet);
+		}
 	}
 }
 

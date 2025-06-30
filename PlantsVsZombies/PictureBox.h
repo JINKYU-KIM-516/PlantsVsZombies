@@ -22,6 +22,7 @@ public:
 	Size GetSize() const;
 
 	RECT GetRect() const;
+	bool IsCollided(const PictureBox *p_pictureBox);
 
 	void Draw_Stretch(HDC hdc);
 	void Draw(HDC hdc);

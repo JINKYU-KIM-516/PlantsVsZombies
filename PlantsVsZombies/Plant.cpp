@@ -16,3 +16,8 @@ void Plant::Update()
 {
 
 }
+
+void Plant::TakeDamage(int p_damage)
+{
+    m_hp -= p_damage;
+}

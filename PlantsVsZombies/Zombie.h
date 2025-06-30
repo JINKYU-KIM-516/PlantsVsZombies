@@ -10,9 +10,11 @@ protected:
 	int m_attackSpeed;
 	int m_attackPower;
 	int m_moveSpeed;
-	
+
+	void Move();
 public:
 	Zombie(Point p_pos);
 	void Update();
-	void Move();
+	void TakeDamage(int p_damage);
+	int GetAttackPower();
 };

@@ -1,17 +1,19 @@
 #pragma once
 #include <windows.h>
-#include "Player.h"
 #include "GameBoard.h"
+#include "Player.h"
 #include "ZombieManager.h"
 #include "BulletManager.h"
+#include "CollisionManager.h"
 
 class MainGame
 {
 protected:
-	Player* m_player;
 	GameBoard* m_gameBoard;
+	Player* m_player;
 	ZombieManager* m_zombieManager;
 	BulletManager* m_bulletManager;
+	CollisionManager* m_collisionManager;
 
 	HWND m_hWnd;
 public:
