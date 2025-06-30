@@ -21,15 +21,22 @@ void Pea::SpawnBulletPeriodically()
 
 
 //public
-Pea::Pea(BulletManager* p_bulletManager, Point p_pos)
-	:Plant(p_pos, PLANT_SIZE, IMAGEPATH_PEA), m_bulletManager(p_bulletManager)
+Pea::Pea()
+	:Plant(DEFAULT_LOCATION, PLANT_SIZE, IMAGEPATH_PEA)
 {
+	m_bulletManager = nullptr;
 	m_hp = 150;
 	m_attackPower = ATTACKPOWER_PEA;
 }
 
 Pea::~Pea()
 {
+}
+
+void Pea::Init(Point p_pos, BulletManager* p_bulletManager)
+{
+	m_location = p_pos;
+	m_bulletManager = p_bulletManager;
 }
 
 void Pea::Update()

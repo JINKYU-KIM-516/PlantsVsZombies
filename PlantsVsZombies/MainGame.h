@@ -2,8 +2,9 @@
 #include <windows.h>
 #include "GameBoard.h"
 #include "PlantManager.h"
-#include "ZombieManager.h"
+#include "SunlightManager.h"
 #include "BulletManager.h"
+#include "ZombieManager.h"
 #include "CollisionManager.h"
 
 class MainGame
@@ -11,8 +12,9 @@ class MainGame
 protected:
 	GameBoard* m_gameBoard;
 	PlantManager* m_plantManager;
-	ZombieManager* m_zombieManager;
+	SunlightManager* m_sunlightManager;
 	BulletManager* m_bulletManager;
+	ZombieManager* m_zombieManager;
 	CollisionManager* m_collisionManager;
 
 	HWND m_hWnd;

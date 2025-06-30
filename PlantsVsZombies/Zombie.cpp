@@ -13,8 +13,8 @@ void Zombie::CheckAlive()
 }
 
 //public
-Zombie::Zombie(Point p_pos)
-	:PictureBox(p_pos, ZOMBIE_SIZE, IMAGEPATH_ZOMBIE)
+Zombie::Zombie()
+	:PictureBox(DEFAULT_LOCATION, ZOMBIE_SIZE, IMAGEPATH_ZOMBIE)
 {
 	m_hp = 100;
 	m_attackPower = ATTACKPOWER_ZOMBIE;
@@ -22,7 +22,10 @@ Zombie::Zombie(Point p_pos)
 	m_moveSpeed = MOVESPEED_ZOMBIE;
 	m_isAlive = true;
 }
-
+void Zombie::Init(Point p_pos)
+{
+	m_location = p_pos;
+}
 void Zombie::Update()
 {
 	Move();

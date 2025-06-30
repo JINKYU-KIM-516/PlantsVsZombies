@@ -17,7 +17,8 @@ protected:
 
 	void CheckAlive();
 public:
-	Zombie(Point p_pos);
+	Zombie();
+	void Init(Point p_pos);
 	void Update();
 	void TakeDamage(int p_damage);
 

@@ -5,11 +5,12 @@ MainGame::MainGame(HWND p_hWnd)
 	m_hWnd = p_hWnd;
 	m_gameBoard = new GameBoard();
 	m_plantManager = new PlantManager();
-	m_zombieManager = new ZombieManager();
+	m_sunlightManager = new SunlightManager();
 	m_bulletManager = new BulletManager();
+	m_zombieManager = new ZombieManager();
 	m_collisionManager = new CollisionManager();
 
-	m_plantManager->Init(m_bulletManager);
+	m_plantManager->Init(m_sunlightManager ,m_bulletManager);
 	m_collisionManager->Init(m_plantManager, m_zombieManager, m_bulletManager);
 
 	test();
@@ -19,8 +20,9 @@ MainGame::~MainGame()
 {
 	delete m_gameBoard;
 	delete m_plantManager;
-	delete m_zombieManager;
+	delete m_sunlightManager;
 	delete m_bulletManager;
+	delete m_zombieManager;
 	delete m_collisionManager;
 }
 

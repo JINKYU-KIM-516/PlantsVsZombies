@@ -15,7 +15,8 @@ protected:
 	void SpawnBullet();
 	void SpawnBulletPeriodically();
 public:
-	Pea(BulletManager* p_bulletManager, Point p_pos);
+	Pea();
 	~Pea();
+	void Init(Point p_pos, BulletManager* p_bulletManager);
 	void Update() override;
 };

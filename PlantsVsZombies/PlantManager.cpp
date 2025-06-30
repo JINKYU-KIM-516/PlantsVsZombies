@@ -11,6 +11,7 @@ void PlantManager::CheckPlantsAlive()
 //public
 PlantManager::PlantManager()
 {
+	m_sunlightManager = nullptr;
 	m_bulletManager = nullptr;
 }
 
@@ -20,8 +21,9 @@ PlantManager::~PlantManager()
 		delete plant;
 }
 
-void PlantManager::Init(BulletManager* p_bulletManager)
+void PlantManager::Init(SunlightManager* p_sunlightManager, BulletManager* p_bulletManager)
 {
+	m_sunlightManager = p_sunlightManager;
 	m_bulletManager = p_bulletManager;
 }
 
@@ -32,13 +34,15 @@ void PlantManager::Update()
 
 void PlantManager::SpawnSunflower(Point p_pos)
 {
-	Sunflower* sunflower = new Sunflower(p_pos);
+	Sunflower* sunflower = new Sunflower();
+	sunflower->Init(p_pos, m_sunlightManager);
 	AddPlant(sunflower);
 }
 
 void PlantManager::SpawnPea(Point p_pos)
 {
-	Pea* pea = new Pea(m_bulletManager, p_pos);
+	Pea* pea = new Pea();
+	pea->Init(p_pos, m_bulletManager);
 	AddPlant(pea);
 }
 

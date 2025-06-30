@@ -8,8 +8,20 @@ void Sunflower::SpawnSunlight()
 }
 
 //public
-Sunflower::Sunflower(Point p_pos)
-    :Plant(p_pos, PLANT_SIZE, IMAGEPATH_SUNFLOWER)
+Sunflower::Sunflower()
+    :Plant(DEFAULT_LOCATION, PLANT_SIZE, IMAGEPATH_SUNFLOWER)
 {
+    m_sunlightManager = nullptr;
     m_hp = 100;
+}
+
+void Sunflower::Init(Point p_pos, SunlightManager* p_sunlightManager)
+{
+    m_location = p_pos;
+    m_sunlightManager = p_sunlightManager;
+}
+
+void Sunflower::Update()
+{
+
 }

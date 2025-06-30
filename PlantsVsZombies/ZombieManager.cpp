@@ -3,7 +3,8 @@
 //protected
 void ZombieManager::SpawnZombie(Point p_pos)
 {
-    Zombie* zombie = new Zombie(p_pos);
+    Zombie* zombie = new Zombie();
+    zombie->Init(p_pos);
     AddZombie(zombie);
 }
 
@@ -11,7 +12,7 @@ void ZombieManager::SpawnZombieRandomRow()
 {
     if (m_spawnTimer.HasElapsed())
     {
-        int row = rand() % 5;
+        int row = rand() % GAMEBOAORD_HEIGHT;
         int x = TILE_WIDTH * GAMEBOAORD_WIDTH; // 예: 오른쪽 끝 위치
         int y = TILE_HEIGHT * row;
         SpawnZombie(Point(x, y));

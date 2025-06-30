@@ -20,6 +20,11 @@ Plant::~Plant()
 
 }
 
+void Plant::Init(Point p_pos)
+{
+    m_location = p_pos;
+}
+
 void Plant::Update()
 {
     CheckAlive();

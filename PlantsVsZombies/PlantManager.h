@@ -9,6 +9,7 @@ using namespace std;
 class PlantManager
 {
 protected:
+	SunlightManager* m_sunlightManager;
 	BulletManager* m_bulletManager;
 	vector<Plant*> m_plants;
 
@@ -16,7 +17,7 @@ protected:
 public:
 	PlantManager();
 	~PlantManager();
-	void Init(BulletManager* p_bulletManager);
+	void Init(SunlightManager* p_sunlightManager, BulletManager* p_bulletManager);
 	void Update();
 
 	void SpawnSunflower(Point p_pos);
