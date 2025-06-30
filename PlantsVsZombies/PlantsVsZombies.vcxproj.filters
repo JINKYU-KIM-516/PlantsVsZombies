@@ -76,6 +76,12 @@
     <Filter Include="소스 파일\Game\Manager\ZombieManager">
       <UniqueIdentifier>{335e0fdc-bf8c-419d-a502-dd0749b2cd9f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Sunlight">
+      <UniqueIdentifier>{8845dbb4-c200-4038-a7ff-460e0bebda47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\SunlightManager">
+      <UniqueIdentifier>{f7e7c48d-12b4-486e-a5f6-0f540f41dcfa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -147,6 +153,12 @@
     <ClInclude Include="PlantManager.h">
       <Filter>소스 파일\Game\Manager\PlantManager</Filter>
     </ClInclude>
+    <ClInclude Include="Sunlight.h">
+      <Filter>소스 파일\Sunlight</Filter>
+    </ClInclude>
+    <ClInclude Include="SunlightManager.h">
+      <Filter>소스 파일\Game\Manager\SunlightManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -205,6 +217,12 @@
     </ClCompile>
     <ClCompile Include="PlantManager.cpp">
       <Filter>소스 파일\Game\Manager\PlantManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Sunlight.cpp">
+      <Filter>소스 파일\Sunlight</Filter>
+    </ClCompile>
+    <ClCompile Include="SunlightManager.cpp">
+      <Filter>소스 파일\Game\Manager\SunlightManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
