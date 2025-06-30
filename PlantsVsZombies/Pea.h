@@ -13,6 +13,7 @@ protected:
 	int m_attackPower;
 
 	void SpawnBullet();
+	void SpawnBulletPeriodically();
 public:
 	Pea(BulletManager* p_bulletManager, Point p_pos);
 	~Pea();

@@ -39,6 +39,7 @@ void MainGame::Update()
 	for (auto* zombie : m_zombieManager->GetZombies())
 		zombie->Update();
 	
+	m_plantManager->Update();
 	m_zombieManager->Update();
 	m_bulletManager->Update();
 	m_collisionManager->Update();

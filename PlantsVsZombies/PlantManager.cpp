@@ -1,5 +1,14 @@
 #include "PlantManager.h"
 
+//protected
+void PlantManager::CheckPlantsAlive()
+{
+	for (auto* plant : m_plants)
+		if (!plant->IsAlive())
+			DeletePlant(plant);
+}
+
+//public
 PlantManager::PlantManager()
 {
 	m_bulletManager = nullptr;
@@ -13,6 +22,11 @@ PlantManager::~PlantManager()
 void PlantManager::Init(BulletManager* p_bulletManager)
 {
 	m_bulletManager = p_bulletManager;
+}
+
+void PlantManager::Update()
+{
+	CheckPlantsAlive();
 }
 
 void PlantManager::SpawnSunflower(Point p_pos)

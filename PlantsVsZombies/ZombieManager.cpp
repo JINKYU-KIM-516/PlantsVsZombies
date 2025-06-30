@@ -19,15 +19,11 @@ void ZombieManager::SpawnZombieRandomRow()
     }
 }
 
-void ZombieManager::CheckZombieAlive()
+void ZombieManager::CheckZombiesAlive()
 {
     for (auto* zombie : m_zombies)
-    {
         if (!zombie->IsAlive())
-        {
             DeleteZombie(zombie);
-        }
-    }
 }
 
 //public
@@ -40,7 +36,7 @@ ZombieManager::~ZombieManager()
 void ZombieManager::Update()
 {
     SpawnZombieRandomRow();
-    CheckZombieAlive();
+    CheckZombiesAlive();
 }
 
 void ZombieManager::AddZombie(Zombie* p_zombie)

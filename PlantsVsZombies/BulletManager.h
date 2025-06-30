@@ -9,12 +9,13 @@ class BulletManager
 {
 protected:
     vector<Bullet*> m_bullets;
+
+    void CheckBulletsInScreen();
 public:
     ~BulletManager();
     void Update();
 
     void AddBullets(Bullet* p_bullet);
     void DeleteBullet(Bullet* p_bullet);
-    void CheckBullets();
     const vector<Bullet*>& GetBullets() const;
 };

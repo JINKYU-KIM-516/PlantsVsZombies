@@ -11,7 +11,7 @@ protected:
 
     void SpawnZombie(Point p_pos);
     void SpawnZombieRandomRow();
-    void CheckZombieAlive();
+    void CheckZombiesAlive();
 public:
     ~ZombieManager();
     void Update();
