@@ -12,9 +12,9 @@ void ZombieManager::SpawnZombieRandom()
 {
     if (m_spawnTimer.HasElapsed())
     {
-        int row = rand() % GAMEBOAORD_HEIGHT;
-        int x = TILE_WIDTH * GAMEBOAORD_WIDTH; // 예: 오른쪽 끝 위치
-        int y = TILE_HEIGHT * row;
+        int row = rand() % GAMEBOARD_HEIGHT;
+        int x = GAMEBOARD_START_X + (TILE_WIDTH * GAMEBOARD_WIDTH);
+        int y = GAMEBOARD_START_Y + (TILE_HEIGHT * row);
         SpawnZombie(Point(x, y));
         m_spawnTimer.Tick();
     }
@@ -23,16 +23,16 @@ void ZombieManager::SpawnZombieRandom()
 void ZombieManager::CheckZombiesAlive()
 {
     for (auto* zombie : m_zombies)
-        if (!zombie->IsAlive())
+        if (!zombie->IsAlive() || zombie->GetLocation().GetX() <= GAMEBOARD_START_X)
             DeleteZombie(zombie);
 }
 
+//public
 ZombieManager::ZombieManager()
 {
     m_spawnTimer.Init(INTERVAL_SEC_SPAWN_ZOMBIE);
 }
 
-//public
 ZombieManager::~ZombieManager()
 {
     for (auto* zombie : m_zombies)
@@ -41,6 +41,8 @@ ZombieManager::~ZombieManager()
 
 void ZombieManager::Update()
 {
+    for (auto* zombie : m_zombies)
+        zombie->Update();
     SpawnZombieRandom();
     CheckZombiesAlive();
 }

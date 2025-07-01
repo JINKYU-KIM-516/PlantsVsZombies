@@ -29,6 +29,8 @@ void PlantManager::Init(SunlightManager* p_sunlightManager, BulletManager* p_bul
 
 void PlantManager::Update()
 {
+	for (auto* plant : m_plants)
+		plant->Update();
 	CheckPlantsAlive();
 }
 

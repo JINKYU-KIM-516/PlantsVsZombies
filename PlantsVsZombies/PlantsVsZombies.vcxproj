@@ -143,6 +143,8 @@
     <ClInclude Include="Point.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Size.h" />
+    <ClInclude Include="Store.h" />
+    <ClInclude Include="StorePlantImage.h" />
     <ClInclude Include="Sunflower.h" />
     <ClInclude Include="Sunlight.h" />
     <ClInclude Include="SunlightManager.h" />
@@ -169,6 +171,8 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Size.cpp" />
+    <ClCompile Include="Store.cpp" />
+    <ClCompile Include="StorePlantImage.cpp" />
     <ClCompile Include="Sunflower.cpp" />
     <ClCompile Include="Sunlight.cpp" />
     <ClCompile Include="SunlightManager.cpp" />

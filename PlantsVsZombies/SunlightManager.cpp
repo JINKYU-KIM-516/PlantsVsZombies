@@ -12,9 +12,10 @@ void SunlightManager::SpawnSunlightRandom()
 {
     if (m_spawnSunlightTimer.HasElapsed())
     {
-        int x = rand() % ((GAMEBOAORD_WIDTH - 1) * TILE_WIDTH);
-        int limitY = rand() % ((GAMEBOAORD_HEIGHT * TILE_HEIGHT) - SUNLIGHT_HEIGHT);
-        SpawnSunlight(Point(x, 0), limitY);
+        int x = GAMEBOARD_START_X + (rand() % ((GAMEBOARD_WIDTH - 1) * TILE_WIDTH));
+        int y = GAMEBOARD_START_Y;
+        int limitY = GAMEBOARD_START_Y + (rand() % ((GAMEBOARD_HEIGHT * TILE_HEIGHT) - SUNLIGHT_HEIGHT));
+        SpawnSunlight(Point(x, y), limitY);
         m_spawnSunlightTimer.Tick();
     }
 }
@@ -33,6 +34,8 @@ void SunlightManager::Init()
 
 void SunlightManager::Update()
 {
+    for (auto* sunlight : m_sunlights)
+        sunlight->Update();
     SpawnSunlightRandom();
 }
 

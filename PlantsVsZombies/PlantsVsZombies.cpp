@@ -191,19 +191,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
             EndPaint(hWnd, &ps);
         }
-        /*
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
-            
-            if (mainGame)
-            {
-                mainGame->DrawAll(hdc);
-            }
-
-            EndPaint(hWnd, &ps);
-        }
-        */
         break;
     case WM_KEYDOWN:
         {
