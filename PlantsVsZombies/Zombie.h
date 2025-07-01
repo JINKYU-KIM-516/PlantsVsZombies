@@ -33,7 +33,7 @@ public:
 	bool IsAlive();	
 	bool IsAttacking();
 
-	void TargetPlant(Plant* p_plant);
+	void Target(Plant* p_plant);
 	void TakeDamage(int p_damage);
 	void StopAttacking();
 };

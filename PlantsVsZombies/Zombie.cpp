@@ -65,7 +65,7 @@ bool Zombie::IsAttacking()
 	return m_isAttacking;
 }
 
-void Zombie::TargetPlant(Plant* p_plant)
+void Zombie::Target(Plant* p_plant)
 {
 	m_plant = p_plant;
 	m_isAttacking = true;

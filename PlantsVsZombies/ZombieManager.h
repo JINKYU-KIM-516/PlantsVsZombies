@@ -10,7 +10,7 @@ protected:
     vector<Zombie*> m_zombies;
 
     void SpawnZombie(Point p_pos);
-    void SpawnZombieRandomRow();
+    void SpawnZombieRandom();
     void CheckZombiesAlive();
 public:
     ZombieManager();

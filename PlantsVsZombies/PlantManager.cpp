@@ -11,8 +11,8 @@ void PlantManager::CheckPlantsAlive()
 //public
 PlantManager::PlantManager()
 {
-	//m_sunlightManager = nullptr;
-	//m_bulletManager = nullptr;
+	m_sunlightManager = nullptr;
+	m_bulletManager = nullptr;
 }
 
 PlantManager::~PlantManager()

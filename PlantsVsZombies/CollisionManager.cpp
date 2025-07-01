@@ -27,7 +27,7 @@ void CollisionManager::CheckColliding_ZombieAndPlant()
             if (zombie->IsCollided(plant))
             {
                 if (!zombie->IsAttacking())
-                    zombie->TargetPlant(plant);
+                    zombie->Target(plant);
             }
         }
     }

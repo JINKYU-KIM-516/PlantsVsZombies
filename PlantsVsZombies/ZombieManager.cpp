@@ -8,7 +8,7 @@ void ZombieManager::SpawnZombie(Point p_pos)
     AddZombie(zombie);
 }
 
-void ZombieManager::SpawnZombieRandomRow()
+void ZombieManager::SpawnZombieRandom()
 {
     if (m_spawnTimer.HasElapsed())
     {
@@ -41,7 +41,7 @@ ZombieManager::~ZombieManager()
 
 void ZombieManager::Update()
 {
-    SpawnZombieRandomRow();
+    SpawnZombieRandom();
     CheckZombiesAlive();
 }
 

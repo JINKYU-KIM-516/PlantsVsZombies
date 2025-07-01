@@ -74,7 +74,7 @@ void Point::SetX(int p_x)
 
 void Point::SetY(int p_y)
 {
-    m_x = p_y;
+    m_y = p_y;
 }
 
 void Point::printPoint() //디버그용

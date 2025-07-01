@@ -6,8 +6,8 @@
 #define PLANT_HEIGHT 64
 #define PLANT_SIZE Size(PLANT_WIDTH, PLANT_HEIGHT)
 
-#define SUNLIGHT_WIDTH 32
-#define SUNLIGHT_HEIGHT 32
+#define SUNLIGHT_WIDTH 40
+#define SUNLIGHT_HEIGHT 40
 #define SUNLIGHT_SIZE Size(SUNLIGHT_WIDTH, SUNLIGHT_HEIGHT)
 
 #define BULLET_WIDTH 16
@@ -42,11 +42,14 @@
 #define IMAGEPATH_ZOMBIE L"../Resources_PlantsVsZombies_bmp/Zombie.bmp"
 
 //****주기 시간****
-//좀비 소환 주기
-#define INTERVAL_SEC_SPAWN_ZOMBIE 5
+//햇빛 소환 주기
+#define INTERVAL_SEC_SPAWN_SUNLIGHT 4
 
 //총알 소환 주기
 #define INTERVAL_SEC_SPAWN_BULLET_PEA 2
+
+//좀비 소환 주기
+#define INTERVAL_SEC_SPAWN_ZOMBIE 5
 
 //****이동속도****
 #define MOVESPEED_SUNLIGHT 2

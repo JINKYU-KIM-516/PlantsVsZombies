@@ -11,6 +11,7 @@ MainGame::MainGame(HWND p_hWnd)
 	m_collisionManager = new CollisionManager();
 
 	m_plantManager->Init(m_sunlightManager ,m_bulletManager);
+	m_sunlightManager->Init();
 	m_collisionManager->Init(m_plantManager, m_zombieManager, m_bulletManager);
 
 	test();
@@ -36,12 +37,15 @@ void MainGame::Update()
 {
 	for (auto* plant : m_plantManager->GetPlants())
 		plant->Update();
+	for (auto* sunlight : m_sunlightManager->GetSunlights())
+		sunlight->Update();
 	for (auto* bullet : m_bulletManager->GetBullets())
 		bullet->Update();
 	for (auto* zombie : m_zombieManager->GetZombies())
 		zombie->Update();
 	
 	m_plantManager->Update();
+	m_sunlightManager->Update();
 	m_bulletManager->Update();
 	m_zombieManager->Update();
 	m_collisionManager->Update();
@@ -70,6 +74,11 @@ void MainGame::DrawAll(HDC hdc)
 	{
 		for (auto* zombie : m_zombieManager->GetZombies())
 			zombie->Draw(hdc);
+	}
+	if (m_sunlightManager)
+	{
+		for (auto* sunlight : m_sunlightManager->GetSunlights())
+			sunlight->Draw(hdc);
 	}
 }
 
