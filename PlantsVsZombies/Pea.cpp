@@ -37,6 +37,7 @@ void Pea::Init(Point p_pos, BulletManager* p_bulletManager)
 {
 	m_location = p_pos;
 	m_bulletManager = p_bulletManager;
+	m_attackTimer.Init(INTERVAL_SEC_SPAWN_BULLET_PEA);
 }
 
 void Pea::Update()

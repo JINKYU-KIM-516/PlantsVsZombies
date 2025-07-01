@@ -54,5 +54,8 @@
 #define MOVESPEED_ZOMBIE 1
 
 //****전투력****
-#define ATTACKPOWER_ZOMBIE 25
+#define ATTACKPOWER_ZOMBIE 15
 #define ATTACKPOWER_PEA 25
+
+//****공격속도****
+#define ATTACKSPEED_ZOMBIE 1

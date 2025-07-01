@@ -28,8 +28,8 @@ MainGame::~MainGame()
 
 void MainGame::test()
 {
-	m_plantManager->SpawnSunflower(Point(9 * TILE_WIDTH, 0));
-	m_plantManager->SpawnPea(Point(64,64));
+	m_plantManager->SpawnSunflower(Point(8 * TILE_WIDTH, 2 * TILE_HEIGHT));
+	m_plantManager->SpawnPea(Point(TILE_WIDTH, TILE_HEIGHT));
 }
 
 void MainGame::Update()

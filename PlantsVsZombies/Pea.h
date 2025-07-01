@@ -9,7 +9,7 @@ class Pea : public Plant
 protected:
 	BulletManager* m_bulletManager;
 
-	IntervalTimer m_attackTimer{ INTERVAL_SEC_SPAWN_BULLET_PEA };
+	IntervalTimer m_attackTimer;
 	int m_attackPower;
 
 	void SpawnBullet();

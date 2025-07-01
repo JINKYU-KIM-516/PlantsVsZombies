@@ -6,13 +6,14 @@
 class ZombieManager
 {
 protected:
-    IntervalTimer m_spawnTimer{ INTERVAL_SEC_SPAWN_ZOMBIE };
+    IntervalTimer m_spawnTimer;
     vector<Zombie*> m_zombies;
 
     void SpawnZombie(Point p_pos);
     void SpawnZombieRandomRow();
     void CheckZombiesAlive();
 public:
+    ZombieManager();
     ~ZombieManager();
     void Update();
 

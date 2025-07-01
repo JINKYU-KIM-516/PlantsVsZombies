@@ -27,6 +27,11 @@ void ZombieManager::CheckZombiesAlive()
             DeleteZombie(zombie);
 }
 
+ZombieManager::ZombieManager()
+{
+    m_spawnTimer.Init(INTERVAL_SEC_SPAWN_ZOMBIE);
+}
+
 //public
 ZombieManager::~ZombieManager()
 {

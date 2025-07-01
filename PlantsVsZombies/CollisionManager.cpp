@@ -26,7 +26,8 @@ void CollisionManager::CheckColliding_ZombieAndPlant()
         {
             if (zombie->IsCollided(plant))
             {
-                plant->TakeDamage(zombie->GetAttackPower());
+                if (!zombie->IsAttacking())
+                    zombie->TargetPlant(plant);
             }
         }
     }
@@ -35,9 +36,9 @@ void CollisionManager::CheckColliding_ZombieAndPlant()
 //public
 CollisionManager::CollisionManager()
 {
-    //m_plantManager = nullptr;
-    //m_zombieManager = nullptr;
-    //m_bulletManager = nullptr;
+    m_plantManager = nullptr;
+    m_zombieManager = nullptr;
+    m_bulletManager = nullptr;
 }
 
 void CollisionManager::Init(PlantManager* p_plantManager, ZombieManager* p_zombieManager, BulletManager* p_bulletManager)

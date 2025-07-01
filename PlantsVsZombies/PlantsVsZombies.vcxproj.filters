@@ -99,9 +99,6 @@
     <ClInclude Include="Point.h">
       <Filter>소스 파일\CoreFunction\Point</Filter>
     </ClInclude>
-    <ClInclude Include="Constants.h">
-      <Filter>소스 파일\CoreFunction</Filter>
-    </ClInclude>
     <ClInclude Include="Size.h">
       <Filter>소스 파일\CoreFunction\Size</Filter>
     </ClInclude>
@@ -158,6 +155,9 @@
     </ClInclude>
     <ClInclude Include="SunlightManager.h">
       <Filter>소스 파일\Game\Manager\SunlightManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>소스 파일\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

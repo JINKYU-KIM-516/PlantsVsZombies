@@ -1,9 +1,14 @@
 #include "IntervalTimer.h"
 
-IntervalTimer::IntervalTimer(int sec)
-    : m_interval(sec), m_last(std::chrono::steady_clock::now())
+IntervalTimer::IntervalTimer()
+    : m_interval(0), m_last(std::chrono::steady_clock::now())
 {
 
+}
+
+void IntervalTimer::Init(int p_sec)
+{
+    m_interval = p_sec;
 }
 
 bool IntervalTimer::HasElapsed() const
