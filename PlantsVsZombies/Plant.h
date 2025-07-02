@@ -4,7 +4,6 @@
 class Plant : public PictureBox
 {
 protected:
-	int m_code;
 	int m_hp;
 	bool m_isAlive;
 

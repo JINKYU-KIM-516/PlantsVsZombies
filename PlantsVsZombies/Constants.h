@@ -1,6 +1,14 @@
 #pragma once
-#define CODE_SUNFLOWER 1
-#define CODE_PEA 2
+
+enum PlayerState
+{
+	NORMAL, SELECTING
+};
+
+enum PlantCode
+{
+	CODE_SUNFLOWER = 1, CODE_PEA = 2
+};
 
 #define COST_SUNFLOWER 50
 #define COST_PEA 100

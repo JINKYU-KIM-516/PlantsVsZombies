@@ -9,6 +9,6 @@ public:
 	StorePlantImage(const wstring& p_imagePath);
 	void Init(Point p_pos, int p_code, int p_cost);
 
-	int GetCode();
-	int GetCost();
+	int GetCode() const;
+	int GetCost() const;
 };

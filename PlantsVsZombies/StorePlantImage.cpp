@@ -14,12 +14,12 @@ void StorePlantImage::Init(Point p_pos, int p_code, int p_cost)
 	m_cost = p_cost;
 }
 
-int StorePlantImage::GetCode()
+int StorePlantImage::GetCode() const
 {
 	return m_code;
 }
 
-int StorePlantImage::GetCost()
+int StorePlantImage::GetCost() const
 {
 	return m_cost;
 }

@@ -46,11 +46,11 @@ bool PictureBox::IsCollided(const PictureBox* p_pictureBox)
     return IntersectRect(&result, &src, &dest);
 }
 
-bool PictureBox::Contains(int p_x, int p_y) const
+bool PictureBox::Contains(Point p_pos) const
 {
     RECT rc = GetRect();
-    return (p_x >= rc.left && p_x <= rc.right &&
-        p_y >= rc.top && p_y <= rc.bottom);
+    return (p_pos.GetX() >= rc.left && p_pos.GetX() <= rc.right &&
+        p_pos.GetY() >= rc.top && p_pos.GetY() <= rc.bottom);
 }
 
 

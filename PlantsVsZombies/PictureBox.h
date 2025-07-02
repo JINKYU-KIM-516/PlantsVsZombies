@@ -23,7 +23,7 @@ public:
 
 	RECT GetRect() const;
 	bool IsCollided(const PictureBox *p_pictureBox);
-	bool Contains(int p_x, int p_y) const;
+	bool Contains(Point p_pos) const;
 
 	void Draw_Stretch(HDC hdc);
 	void Draw(HDC hdc);

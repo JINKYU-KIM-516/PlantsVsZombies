@@ -7,6 +7,7 @@
 #include "ZombieManager.h"
 #include "CollisionManager.h"
 #include "Store.h"
+#include "Player.h"
 
 class MainGame
 {
@@ -18,6 +19,7 @@ protected:
 	ZombieManager* m_zombieManager;
 	CollisionManager* m_collisionManager;
 	Store* m_store;
+	Player* m_player;
 
 	Point m_mousePosition;
 	bool m_clickOccured;
@@ -30,6 +32,13 @@ public:
 
 	void Update();
 	void DrawAll(HDC hdc);
+
+	GameBoard* GetGameBoard();
+	Player* GetPlayer();
+	PlantManager* GetPlantManager();
+
+	Point GetMousePosition();
+	bool IsClickOccured();
 
 	void SetMousePosition(Point p_pos);
 	void ClickOccured();

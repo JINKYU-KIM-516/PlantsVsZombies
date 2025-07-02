@@ -10,11 +10,14 @@ MainGame::MainGame(HWND p_hWnd)
 	m_zombieManager = new ZombieManager();
 	m_collisionManager = new CollisionManager();
 	m_store = new Store();
+	m_player = new Player();
 
+	m_gameBoard->Init(this);
 	m_plantManager->Init(m_sunlightManager ,m_bulletManager);
 	m_sunlightManager->Init();
 	m_collisionManager->Init(m_plantManager, m_zombieManager, m_bulletManager);
-	m_store->Init();
+	m_store->Init(this);
+	m_player->Init(this);
 
 	test();
 }
@@ -28,6 +31,7 @@ MainGame::~MainGame()
 	delete m_zombieManager;
 	delete m_collisionManager;
 	delete m_store;
+	delete m_player;
 }
 
 void MainGame::test()
@@ -44,8 +48,10 @@ void MainGame::Update()
 	m_zombieManager->Update();
 	m_collisionManager->Update();
 	m_store->Update();
+	m_player->Update();
 
 	InvalidateRect(m_hWnd, NULL, FALSE);
+	m_clickOccured = false;
 }
 
 void MainGame::DrawAll(HDC hdc)
@@ -80,6 +86,31 @@ void MainGame::DrawAll(HDC hdc)
 		for (auto* sunlight : m_sunlightManager->GetSunlights())
 			sunlight->Draw(hdc);
 	}
+}
+
+GameBoard* MainGame::GetGameBoard()
+{
+	return m_gameBoard;
+}
+
+Player* MainGame::GetPlayer()
+{
+	return m_player;
+}
+
+PlantManager* MainGame::GetPlantManager()
+{
+	return m_plantManager;
+}
+
+Point MainGame::GetMousePosition()
+{
+	return m_mousePosition;
+}
+
+bool MainGame::IsClickOccured()
+{
+	return m_clickOccured;
 }
 
 void MainGame::SetMousePosition(Point p_pos)

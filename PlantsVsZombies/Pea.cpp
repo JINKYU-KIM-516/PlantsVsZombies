@@ -1,5 +1,4 @@
 #include "Pea.h"
-#include "MainGame.h"
 
 //protected
 void Pea::SpawnBullet()
@@ -25,7 +24,6 @@ Pea::Pea()
 	:Plant(DEFAULT_POSITION, PLANT_SIZE, IMAGEPATH_PEA)
 {
 	m_bulletManager = nullptr;
-	m_code = CODE_PEA;
 	m_hp = 150;
 	m_attackPower = ATTACKPOWER_PEA;
 }

@@ -21,7 +21,6 @@ Sunflower::Sunflower()
     :Plant(DEFAULT_POSITION, PLANT_SIZE, IMAGEPATH_SUNFLOWER)
 {
     m_sunlightManager = nullptr;
-    m_code = CODE_SUNFLOWER;
     m_hp = 100;
 }
 
