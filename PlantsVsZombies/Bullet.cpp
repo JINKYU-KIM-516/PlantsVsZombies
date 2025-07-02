@@ -3,7 +3,7 @@
 //protected
 void Bullet::Move()
 {
-	m_location.SetX(m_location.GetX() + m_moveSpeed);
+	m_positon.SetX(m_positon.GetX() + m_moveSpeed);
 }
 
 //public

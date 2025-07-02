@@ -82,7 +82,12 @@ void MainGame::DrawAll(HDC hdc)
 	}
 }
 
-BulletManager* MainGame::GetBulletManager()
+void MainGame::SetMousePosition(Point p_pos)
 {
-	return m_bulletManager;
+	m_mousePosition = p_pos;
+}
+
+void MainGame::ClickOccured()
+{
+	m_clickOccured = true;
 }

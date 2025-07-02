@@ -1,28 +1,43 @@
 #include "Store.h"
 
 //protected
-void Store::AddImage(PictureBox* p_pictureBox)
+void Store::AddImage(StorePlantImage* p_plantImage)
 {
-	m_plantImages.push_back(p_pictureBox);
+	m_plantImages.push_back(p_plantImage);
 }
 
-void Store::PaintImage(int p_index, const wstring& p_imagePath)
+void Store::PaintSunflowerImage()
+{
+	StorePlantImage* sunflowerImage = new StorePlantImage(IMAGEPATH_SUNFLOWER);
+	sunflowerImage->Init(GetCurrentStoreImagePosition(m_index), CODE_SUNFLOWER, 50);
+	AddImage(sunflowerImage);
+}
+
+void Store::PaintPeaImage()
+{
+	StorePlantImage* peaImage = new StorePlantImage(IMAGEPATH_PEA);
+	peaImage->Init(GetCurrentStoreImagePosition(m_index), CODE_PEA, 50);
+	AddImage(peaImage);
+}
+
+Point Store::GetCurrentStoreImagePosition(int p_index)
 {
 	int x = GAMEBOARD_START_X + (p_index * PLANT_WIDTH);
 	int y = GAMEBOARD_START_Y - PLANT_HEIGHT;
-	PictureBox* box = new PictureBox(Point(x,y), PLANT_SIZE, p_imagePath);
-	AddImage(box);
+	return Point(x, y);
 }
 
 //public
 Store::Store()
 {
+	m_index = 0;
 }
 
 void Store::Init()
 {
-	PaintImage(0, IMAGEPATH_SUNFLOWER);
-	PaintImage(1, IMAGEPATH_PEA);
+	PaintSunflowerImage();
+	m_index++;
+	PaintPeaImage();
 }
 
 void Store::Update()
@@ -30,7 +45,7 @@ void Store::Update()
 
 }
 
-const vector<PictureBox*>& Store::GetImages() const
+const vector<StorePlantImage*>& Store::GetImages() const
 {
 	return m_plantImages;
 }

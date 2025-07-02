@@ -3,6 +3,7 @@
 
 #include "framework.h"
 #include "PlantsVsZombies.h"
+#include <windowsx.h>
 #include "MainGame.h"
 
 #define MAX_LOADSTRING 100
@@ -12,7 +13,7 @@ HINSTANCE hInst;                                // 현재 인스턴스입니다.
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
 
-MainGame* mainGame = nullptr;
+MainGame* g_mainGame = nullptr;
 
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -44,7 +45,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     HWND hWnd = FindWindow(szWindowClass, szTitle);
 
-    mainGame = new MainGame(hWnd);
+    g_mainGame = new MainGame(hWnd);
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_PLANTSVSZOMBIES));
 
@@ -60,7 +61,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
     }
 
-    delete mainGame;
+    delete g_mainGame;
     return (int) msg.wParam;
 }
 
@@ -155,8 +156,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         }
         break;
     case WM_TIMER:
-        if (mainGame)
-            mainGame->Update();
+        if (g_mainGame)
+            g_mainGame->Update();
         break;
     case WM_PAINT:
         {
@@ -178,8 +179,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             FillRect(memDC, &rect, (HBRUSH)(COLOR_WINDOW + 1));
 
             // 4. 메모리 DC에 그리기
-            if(mainGame)
-                mainGame->DrawAll(memDC);
+            if(g_mainGame)
+                g_mainGame->DrawAll(memDC);
 
             // 5. 실제 화면에 한 번에 출력
             BitBlt(hdc, 0, 0, width, height, memDC, 0, 0, SRCCOPY);
@@ -191,6 +192,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
             EndPaint(hWnd, &ps);
         }
+        break;
+    case WM_MOUSEMOVE:
+        if(g_mainGame)
+            g_mainGame->SetMousePosition(Point(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam)));
+        break;
+    case WM_LBUTTONDOWN:
+        if (g_mainGame)
+            g_mainGame->ClickOccured();
         break;
     case WM_KEYDOWN:
         {

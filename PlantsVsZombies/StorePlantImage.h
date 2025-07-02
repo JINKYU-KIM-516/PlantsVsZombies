@@ -2,7 +2,13 @@
 #include "PictureBox.h"
 class StorePlantImage : public PictureBox
 {
+protected:
+	int m_code;
+	int m_cost;
 public:
-	StorePlantImage(Point p_pos, Size p_size, const wstring& p_imagePath);
-};
+	StorePlantImage(const wstring& p_imagePath);
+	void Init(Point p_pos, int p_code, int p_cost);
 
+	int GetCode();
+	int GetCost();
+};

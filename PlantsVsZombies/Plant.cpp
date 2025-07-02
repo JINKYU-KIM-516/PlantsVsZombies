@@ -11,6 +11,7 @@ void Plant::CheckAlive()
 Plant::Plant(Point p_pos, Size p_size, const wstring& p_imagePath)
     :PictureBox(p_pos, p_size, p_imagePath)
 {
+    m_code = -1;
     m_hp = 100;
     m_isAlive = true;
 }
@@ -22,7 +23,7 @@ Plant::~Plant()
 
 void Plant::Init(Point p_pos)
 {
-    m_location = p_pos;
+    m_positon = p_pos;
 }
 
 void Plant::Update()

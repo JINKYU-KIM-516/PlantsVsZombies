@@ -19,6 +19,9 @@ protected:
 	CollisionManager* m_collisionManager;
 	Store* m_store;
 
+	Point m_mousePosition;
+	bool m_clickOccured;
+
 	HWND m_hWnd;
 public:
 	MainGame(HWND);
@@ -27,7 +30,9 @@ public:
 
 	void Update();
 	void DrawAll(HDC hdc);
-	BulletManager* GetBulletManager();
+
+	void SetMousePosition(Point p_pos);
+	void ClickOccured();
 };
 
 //constants 이게 맞나요 상수 싹 다 define으로 해도 되나요

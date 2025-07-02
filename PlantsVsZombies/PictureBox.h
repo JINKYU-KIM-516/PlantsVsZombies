@@ -9,7 +9,7 @@
 class PictureBox
 {
 protected:
-	Point m_location;
+	Point m_positon;
 	Size m_size;
 
 	HBITMAP m_hBmp;
@@ -18,11 +18,12 @@ public:
 	PictureBox(Point p_pos, Size p_size, const wstring& p_imagePath);
 	~PictureBox();
 
-	Point GetLocation() const;
+	Point GetPosition() const;
 	Size GetSize() const;
 
 	RECT GetRect() const;
 	bool IsCollided(const PictureBox *p_pictureBox);
+	bool Contains(int p_x, int p_y) const;
 
 	void Draw_Stretch(HDC hdc);
 	void Draw(HDC hdc);

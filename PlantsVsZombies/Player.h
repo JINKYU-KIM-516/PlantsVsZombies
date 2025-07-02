@@ -1,8 +1,7 @@
 #pragma once
 #include <vector>
-#include "BulletManager.h"
-#include "Sunflower.h"
-#include "Pea.h"
+#include "PlantManager.h"
+#include "Store.h"
 
 using namespace std;
 
@@ -19,4 +18,5 @@ protected:
 public:
 	Player();
 	void Init();
+	void Update();
 };

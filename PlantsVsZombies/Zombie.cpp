@@ -3,7 +3,7 @@
 //protected
 void Zombie::Move()
 {
-	m_location.SetX(m_location.GetX() - m_moveSpeed);
+	m_positon.SetX(m_positon.GetX() - m_moveSpeed);
 }
 
 void Zombie::CheckAlive()
@@ -14,7 +14,7 @@ void Zombie::CheckAlive()
 
 //public
 Zombie::Zombie()
-	:PictureBox(DEFAULT_LOCATION, ZOMBIE_SIZE, IMAGEPATH_ZOMBIE)
+	:PictureBox(DEFAULT_POSITION, ZOMBIE_SIZE, IMAGEPATH_ZOMBIE)
 {
 	m_hp = 100;
 	m_attackPower = ATTACKPOWER_ZOMBIE;
@@ -25,7 +25,7 @@ Zombie::Zombie()
 }
 void Zombie::Init(Point p_pos)
 {
-	m_location = p_pos;
+	m_positon = p_pos;
 	m_attackTimer.Init(m_attackSpeed);
 }
 void Zombie::Update()

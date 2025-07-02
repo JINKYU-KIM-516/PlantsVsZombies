@@ -23,7 +23,7 @@ void ZombieManager::SpawnZombieRandom()
 void ZombieManager::CheckZombiesAlive()
 {
     for (auto* zombie : m_zombies)
-        if (!zombie->IsAlive() || zombie->GetLocation().GetX() <= GAMEBOARD_START_X)
+        if (!zombie->IsAlive() || zombie->GetPosition().GetX() <= GAMEBOARD_START_X)
             DeleteZombie(zombie);
 }
 

@@ -1,3 +1,10 @@
+#pragma once
+#define CODE_SUNFLOWER 1
+#define CODE_PEA 2
+
+#define COST_SUNFLOWER 50
+#define COST_PEA 100
+
 #define TILE_WIDTH 64
 #define TILE_HEIGHT 64
 #define TILE_SIZE Size(TILE_WIDTH, TILE_HEIGHT)
@@ -26,7 +33,7 @@
 #define GAMEBOARD_HEIGHT 5
 
 #define TRANSPARENT_COLOR RGB(255,50,150) //크로마키용 핑크
-#define DEFAULT_LOCATION Point(0, 0)
+#define DEFAULT_POSITION Point(0, 0)
 
 //****이미지 경로****
 //게임보드(타일) 이미지
