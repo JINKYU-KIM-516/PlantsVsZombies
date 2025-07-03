@@ -1,4 +1,5 @@
 #include "SunlightManager.h"
+#include "MainGame.h"
 
 //protected
 void SunlightManager::SpawnSunlight(Point p_pos, int p_limitY)
@@ -20,7 +21,25 @@ void SunlightManager::SpawnSunlightRandom()
     }
 }
 
+void SunlightManager::ClickSunlight()
+{
+    auto pos = m_mainGame->GetMousePosition();
+    for (auto* sunlight : m_sunlights)
+    {
+        if (sunlight->Contains( pos ))
+        {
+            m_mainGame->GetPlayer()->SetSunlight(m_mainGame->GetPlayer()->GetSunlight() + 50);
+            DeleteSunlight(sunlight);
+        }
+    }
+}
+
 //public
+SunlightManager::SunlightManager()
+{
+    Init();
+}
+
 SunlightManager::~SunlightManager()
 {
     for (auto* sunlight : m_sunlights)
@@ -29,7 +48,13 @@ SunlightManager::~SunlightManager()
 
 void SunlightManager::Init()
 {
+    m_mainGame = nullptr;
     m_spawnSunlightTimer.Init(INTERVAL_SEC_SPAWN_SUNLIGHT);
+}
+
+void SunlightManager::Link(MainGame* p_mainGame)
+{
+    m_mainGame = p_mainGame;
 }
 
 void SunlightManager::Update()
@@ -37,6 +62,11 @@ void SunlightManager::Update()
     for (auto* sunlight : m_sunlights)
         sunlight->Update();
     SpawnSunlightRandom();
+}
+
+void SunlightManager::ClickHandle()
+{
+    ClickSunlight();
 }
 
 void SunlightManager::AddSunlight(Sunlight* p_sunlight)

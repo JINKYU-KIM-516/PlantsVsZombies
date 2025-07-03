@@ -28,9 +28,11 @@ protected:
 public:
 	MainGame(HWND);
 	~MainGame();
+
 	void test();
 
 	void Update();
+	void ClickHandle();
 	void DrawAll(HDC hdc);
 
 	GameBoard* GetGameBoard();
@@ -44,6 +46,4 @@ public:
 	void ClickOccured();
 };
 
-//constants 이게 맞나요 상수 싹 다 define으로 해도 되나요
-//Init 어떻게 써야할지 모르겠어요 초기화는 생성자에 해도 되는거 아닌가요 생성자에서 멤버변수 어차피 다 초기화해야되는거 아닌가요
-//update x의 update는 XManager에 넣어놨는데 MainGame Update에서 하는게 나을까요?
+//DrawManager 시도 -> z로 순서 정렬

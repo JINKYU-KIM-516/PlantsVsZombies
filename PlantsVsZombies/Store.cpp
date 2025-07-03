@@ -30,17 +30,14 @@ Point Store::GetCurrentStoreImagePosition(int p_index)
 	return Point(x, y);
 }
 
-void Store::CheckImageClicked()
+void Store::ClickStorePlantImage()
 {
-	if (m_mainGame->IsClickOccured())
+	for (auto* image : m_plantImages)
 	{
-		for (auto* image : m_plantImages)
+		if (image->Contains(m_mainGame->GetMousePosition()))
 		{
-			if (image->Contains(m_mainGame->GetMousePosition()))
-			{
-				m_mainGame->GetPlayer()->SetSelectedCode(image->GetCode());
-				m_mainGame->GetPlayer()->SetState(SELECTING);
-			}
+			m_mainGame->GetPlayer()->SetSelectedCode(image->GetCode());
+			m_mainGame->GetPlayer()->SetState(SELECTING);
 		}
 	}
 }
@@ -48,8 +45,9 @@ void Store::CheckImageClicked()
 //public
 Store::Store()
 {
-	m_mainGame = nullptr;
-	m_index = -1;
+	Init();
+	PaintSunflowerImage();
+	PaintPeaImage();
 }
 
 Store::~Store()
@@ -58,16 +56,25 @@ Store::~Store()
 		delete image;
 }
 
-void Store::Init(MainGame* p_mainGame)
+void Store::Init()
+{
+	m_mainGame = nullptr;
+	m_index = -1;
+}
+
+void Store::Link(MainGame* p_mainGame)
 {
 	m_mainGame = p_mainGame;
-	PaintSunflowerImage();
-	PaintPeaImage();
 }
 
 void Store::Update()
 {
-	CheckImageClicked();
+
+}
+
+void Store::ClickHandle()
+{
+	ClickStorePlantImage();
 }
 
 const vector<StorePlantImage*>& Store::GetImages() const

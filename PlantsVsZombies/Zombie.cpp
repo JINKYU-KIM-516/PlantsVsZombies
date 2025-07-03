@@ -44,7 +44,7 @@ void Zombie::Attack()
 		m_plant->TakeDamage(m_attackPower);
 		m_attackTimer.Tick();
 	}
-	if (!m_plant->IsAlive())
+	if (m_plant->IsAlive())
 	{
 		StopAttacking();
 	}

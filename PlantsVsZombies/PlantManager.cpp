@@ -11,8 +11,7 @@ void PlantManager::CheckPlantsAlive()
 //public
 PlantManager::PlantManager()
 {
-	m_sunlightManager = nullptr;
-	m_bulletManager = nullptr;
+	Init();
 }
 
 PlantManager::~PlantManager()
@@ -21,7 +20,13 @@ PlantManager::~PlantManager()
 		delete plant;
 }
 
-void PlantManager::Init(SunlightManager* p_sunlightManager, BulletManager* p_bulletManager)
+void PlantManager::Init()
+{
+	m_sunlightManager = nullptr;
+	m_bulletManager = nullptr;
+}
+
+void PlantManager::Link(SunlightManager* p_sunlightManager, BulletManager* p_bulletManager)
 {
 	m_sunlightManager = p_sunlightManager;
 	m_bulletManager = p_bulletManager;

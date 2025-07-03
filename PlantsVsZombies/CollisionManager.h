@@ -15,6 +15,7 @@ protected:
 
 public:
 	CollisionManager();
-	void Init(PlantManager* p_plantManager, ZombieManager* p_zombieManager, BulletManager* p_bulletManager);
+	void Init();
+	void Link(PlantManager* p_plantManager, ZombieManager* p_zombieManager, BulletManager* p_bulletManager);
 	void Update();
 };

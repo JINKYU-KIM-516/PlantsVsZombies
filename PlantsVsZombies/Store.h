@@ -18,12 +18,14 @@ protected:
 	void PaintPeaImage();
 
 	Point GetCurrentStoreImagePosition(int p_index);
-	void CheckImageClicked();
+	void ClickStorePlantImage();
 public:
 	Store();
 	~Store();
-	void Init(MainGame* p_mainGame);
+	void Init();
+	void Link(MainGame* p_mainGame);
 	void Update();
+	void ClickHandle();
 
 	const vector<StorePlantImage*>& GetImages() const;
 };

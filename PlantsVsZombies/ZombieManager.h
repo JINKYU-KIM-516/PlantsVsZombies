@@ -9,7 +9,6 @@ protected:
     IntervalTimer m_spawnTimer;
     vector<Zombie*> m_zombies;
 
-    void SpawnZombie(Point p_pos);
     void SpawnZombieRandom();
     void CheckZombiesAlive();
 public:
@@ -17,6 +16,7 @@ public:
     ~ZombieManager();
     void Update();
 
+    void SpawnZombie(Point p_pos);
     void AddZombie(Zombie* p_zombie);
     void DeleteZombie(Zombie* p_zombie);
     const vector<Zombie*>& GetZombies() const;

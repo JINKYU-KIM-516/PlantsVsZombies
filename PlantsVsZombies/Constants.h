@@ -7,7 +7,8 @@ enum PlayerState
 
 enum PlantCode
 {
-	CODE_SUNFLOWER = 1, CODE_PEA = 2
+	CODE_SUNFLOWER = 1,
+	CODE_PEA = 2
 };
 
 #define COST_SUNFLOWER 50

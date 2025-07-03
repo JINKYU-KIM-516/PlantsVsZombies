@@ -16,10 +16,13 @@ protected:
 	Point m_currentTilePos;
 
 	void SpawnPlant(Point p_pos);
+	void ResetState();
 public:
 	Player();
-	void Init(MainGame* m_mainGame);
+	void Init();
+	void Link(MainGame* p_mainGame);
 	void Update();
+	void ClickHandle();
 
 	int GetSunlight();
 

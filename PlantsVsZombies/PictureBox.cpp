@@ -18,6 +18,29 @@ PictureBox::~PictureBox()
     }
 }
 
+void PictureBox::Draw(HDC hdc)
+{
+    if (!m_hBmp) {
+        MessageBox(NULL, L"비트맵 로드 실패", L"오류", MB_OK);
+        return;
+    }
+
+    BITMAP bmp;
+    GetObject(m_hBmp, sizeof(BITMAP), &bmp);
+
+    HDC hdcMem = CreateCompatibleDC(hdc);
+    HGDIOBJ oldBmp = SelectObject(hdcMem, m_hBmp);
+
+    TransparentBlt(hdc,
+        m_positon.GetX(), m_positon.GetY(),
+        m_size.GetWidth(), m_size.GetHeight(),
+        hdcMem, 0, 0, bmp.bmWidth, bmp.bmHeight,
+        TRANSPARENT_COLOR);
+
+    SelectObject(hdcMem, oldBmp);
+    DeleteDC(hdcMem);
+}
+
 Point PictureBox::GetPosition() const
 {
     return m_positon;
@@ -26,6 +49,11 @@ Point PictureBox::GetPosition() const
 Size PictureBox::GetSize() const
 {
     return m_size;
+}
+
+int PictureBox::GetZ() const
+{
+    return m_z;
 }
 
 RECT PictureBox::GetRect() const
@@ -53,48 +81,7 @@ bool PictureBox::Contains(Point p_pos) const
         p_pos.GetY() >= rc.top && p_pos.GetY() <= rc.bottom);
 }
 
-
-void PictureBox::Draw_Stretch(HDC hdc)
+void PictureBox::SetZ(int p_z)
 {
-    if (!m_hBmp) {
-        MessageBox(NULL, L"비트맵 로드 실패", L"오류", MB_OK);
-        return;
-    }
-
-    BITMAP bmp;
-    GetObject(m_hBmp, sizeof(BITMAP), &bmp);
-
-    HDC hdcMem = CreateCompatibleDC(hdc);
-    HGDIOBJ oldBmp = SelectObject(hdcMem, m_hBmp);
-
-    StretchBlt(hdc,
-        m_positon.GetX(), m_positon.GetY(),
-        m_size.GetWidth(), m_size.GetHeight(),
-        hdcMem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
-
-    SelectObject(hdcMem, oldBmp);
-    DeleteDC(hdcMem);
-}
-
-void PictureBox::Draw(HDC hdc)
-{
-    if (!m_hBmp) {
-        MessageBox(NULL, L"비트맵 로드 실패", L"오류", MB_OK);
-        return;
-    }
-
-    BITMAP bmp;
-    GetObject(m_hBmp, sizeof(BITMAP), &bmp);
-
-    HDC hdcMem = CreateCompatibleDC(hdc);
-    HGDIOBJ oldBmp = SelectObject(hdcMem, m_hBmp);
-
-    TransparentBlt(hdc,
-        m_positon.GetX(), m_positon.GetY(),
-        m_size.GetWidth(), m_size.GetHeight(),
-        hdcMem, 0, 0, bmp.bmWidth, bmp.bmHeight,
-        TRANSPARENT_COLOR);
-
-    SelectObject(hdcMem, oldBmp);
-    DeleteDC(hdcMem);
+    m_z = p_z;
 }

@@ -12,12 +12,12 @@ MainGame::MainGame(HWND p_hWnd)
 	m_store = new Store();
 	m_player = new Player();
 
-	m_gameBoard->Init(this);
-	m_plantManager->Init(m_sunlightManager ,m_bulletManager);
-	m_sunlightManager->Init();
-	m_collisionManager->Init(m_plantManager, m_zombieManager, m_bulletManager);
-	m_store->Init(this);
-	m_player->Init(this);
+	m_gameBoard->Link(this);
+	m_plantManager->Link(m_sunlightManager ,m_bulletManager);
+	m_sunlightManager->Link(this);
+	m_collisionManager->Link(m_plantManager, m_zombieManager, m_bulletManager);
+	m_store->Link(this);
+	m_player->Link(this);
 
 	test();
 }
@@ -38,6 +38,8 @@ void MainGame::test()
 {
 	m_plantManager->SpawnSunflower(Point(GAMEBOARD_START_X + (8 * TILE_WIDTH), GAMEBOARD_START_Y + (2 * TILE_HEIGHT)));
 	m_plantManager->SpawnPea(Point(GAMEBOARD_START_X + TILE_WIDTH, GAMEBOARD_START_Y + TILE_HEIGHT));
+	m_zombieManager->SpawnZombie(Point(GAMEBOARD_START_X + (10 * TILE_WIDTH), GAMEBOARD_START_Y + (2 * TILE_HEIGHT)));
+	m_zombieManager->SpawnZombie(Point(GAMEBOARD_START_X + (11 * TILE_WIDTH), GAMEBOARD_START_Y + (2 * TILE_HEIGHT)));
 }
 
 void MainGame::Update()
@@ -50,8 +52,20 @@ void MainGame::Update()
 	m_store->Update();
 	m_player->Update();
 
+	if (m_clickOccured)
+	{
+		ClickHandle();
+		m_clickOccured = false;
+	}
+
 	InvalidateRect(m_hWnd, NULL, FALSE);
-	m_clickOccured = false;
+}
+
+void MainGame::ClickHandle()
+{
+	m_sunlightManager->ClickHandle();
+	m_store->ClickHandle();
+	m_player->ClickHandle();
 }
 
 void MainGame::DrawAll(HDC hdc)

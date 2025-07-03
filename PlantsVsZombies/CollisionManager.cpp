@@ -36,12 +36,17 @@ void CollisionManager::CheckColliding_ZombieAndPlant()
 //public
 CollisionManager::CollisionManager()
 {
+    Init();
+}
+
+void CollisionManager::Init()
+{
     m_plantManager = nullptr;
     m_zombieManager = nullptr;
     m_bulletManager = nullptr;
 }
 
-void CollisionManager::Init(PlantManager* p_plantManager, ZombieManager* p_zombieManager, BulletManager* p_bulletManager)
+void CollisionManager::Link(PlantManager* p_plantManager, ZombieManager* p_zombieManager, BulletManager* p_bulletManager)
 {
     m_plantManager = p_plantManager;
     m_zombieManager = p_zombieManager;

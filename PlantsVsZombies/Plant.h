@@ -11,7 +11,7 @@ protected:
 public:
 	Plant(Point p_pos, Size p_size, const wstring& p_imagePath);
 	virtual ~Plant();
-	virtual void Init(Point p_pos);
+	virtual void Init(int p_hp);
 	virtual void Update();
 
 	void TakeDamage(int p_damage);

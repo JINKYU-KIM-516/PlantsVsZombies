@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "MainGame.h"
 
+//protected
 void Player::SpawnPlant(Point p_pos)
 {
 	if (m_state == SELECTING)
@@ -19,21 +20,37 @@ void Player::SpawnPlant(Point p_pos)
 	}
 }
 
+void Player::ResetState()
+{
+	m_state = NORMAL;
+	m_selectedCode = -1;
+}
+
+//public
 Player::Player()
 {
-	m_mainGame = nullptr;
+	Init();
+}
 
+void Player::Init()
+{
+	m_mainGame = nullptr;
 	m_sunlight = 0;
 	m_state = NORMAL;
 	m_selectedCode = -1;
 }
 
-void Player::Init(MainGame* p_mainGame)
+void Player::Link(MainGame* p_mainGame)
 {
 	m_mainGame = p_mainGame;
 }
 
 void Player::Update()
+{
+
+}
+
+void Player::ClickHandle()
 {
 	SetCurrentTilePos(m_mainGame->GetGameBoard()->GetMouseOverTilePos());
 }

@@ -1,9 +1,8 @@
 #include "GameBoard.h"
 #include "MainGame.h"
 
-GameBoard::GameBoard()
+void GameBoard::CreateTiles()
 {
-	m_mainGame = nullptr;
 	for (int y = 0; y < GAMEBOARD_HEIGHT; y++)
 	{
 		for (int x = 0; x < GAMEBOARD_WIDTH; x++)
@@ -14,13 +13,24 @@ GameBoard::GameBoard()
 	}
 }
 
+GameBoard::GameBoard()
+{
+	Init();
+	CreateTiles();
+}
+
 GameBoard::~GameBoard()
 {
 	for (auto* tile : m_tiles)
 		delete tile;
 }
 
-void GameBoard::Init(MainGame* p_mainGame)
+void GameBoard::Init()
+{
+	m_mainGame = nullptr;
+}
+
+void GameBoard::Link(MainGame* p_mainGame)
 {
 	m_mainGame = p_mainGame;
 }

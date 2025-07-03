@@ -17,7 +17,9 @@ protected:
 public:
 	PlantManager();
 	~PlantManager();
-	void Init(SunlightManager* p_sunlightManager, BulletManager* p_bulletManager);
+
+	void Init();
+	void Link(SunlightManager* p_sunlightManager, BulletManager* p_bulletManager);
 	void Update();
 
 	void SpawnSunflower(Point p_pos);
