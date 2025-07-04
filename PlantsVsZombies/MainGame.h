@@ -24,12 +24,15 @@ protected:
 	Point m_mousePosition;
 	bool m_clickOccured;
 
+	int m_debugTextIndex;
+
 	HWND m_hWnd;
 public:
 	MainGame(HWND);
 	~MainGame();
 
 	void test();
+	void DebugTextOut(HDC hdc);
 
 	void Update();
 	void ClickHandle();

@@ -49,10 +49,22 @@ Point GameBoard::GetMouseOverTilePos()
 			return tile->GetPosition();
 		}
 	}
-	return DEFAULT_POSITION;
+	return Point(-1, -1);
 }
 
-const vector<PictureBox*>& GameBoard::GetTiles() const
+Tile* GameBoard::GetMouseOverTile()
+{
+	for (auto* tile : m_tiles)
+	{
+		if (tile->Contains(m_mainGame->GetMousePosition()))
+		{
+			return tile;
+		}
+	}
+	return nullptr;
+}
+
+const vector<Tile*>& GameBoard::GetTiles() const
 {
 	return m_tiles;
 }

@@ -9,7 +9,7 @@ class GameBoard
 protected:
 	MainGame* m_mainGame;
 
-	vector<PictureBox*> m_tiles;
+	vector<Tile*> m_tiles;
 	wstring m_imagePath;
 
 	void CreateTiles();
@@ -21,5 +21,6 @@ public:
 	void Update();
 
 	Point GetMouseOverTilePos();
-	const vector<PictureBox*>& GetTiles() const;
+	Tile* GetMouseOverTile();
+	const vector<Tile*>& GetTiles() const;
 };

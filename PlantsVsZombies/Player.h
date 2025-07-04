@@ -17,6 +17,7 @@ protected:
 
 	void SpawnPlant(Point p_pos);
 	void ResetState();
+	void ClickTile();
 public:
 	Player();
 	void Init();
@@ -25,6 +26,8 @@ public:
 	void ClickHandle();
 
 	int GetSunlight();
+	int GetState();
+	int GetSelectedCode();
 
 	void SetSunlight(int p_sunlight);
 	void SetState(int p_state);

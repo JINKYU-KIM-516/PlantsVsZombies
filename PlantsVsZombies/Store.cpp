@@ -19,7 +19,7 @@ void Store::PaintPeaImage()
 {
 	m_index++;
 	StorePlantImage* peaImage = new StorePlantImage(IMAGEPATH_PEA);
-	peaImage->Init(GetCurrentStoreImagePosition(m_index), CODE_SUNFLOWER, COST_PEA);
+	peaImage->Init(GetCurrentStoreImagePosition(m_index), CODE_PEA, COST_PEA);
 	AddImage(peaImage);
 }
 
@@ -38,6 +38,7 @@ void Store::ClickStorePlantImage()
 		{
 			m_mainGame->GetPlayer()->SetSelectedCode(image->GetCode());
 			m_mainGame->GetPlayer()->SetState(SELECTING);
+			return;
 		}
 	}
 }

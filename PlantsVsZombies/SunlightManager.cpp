@@ -30,6 +30,7 @@ void SunlightManager::ClickSunlight()
         {
             m_mainGame->GetPlayer()->SetSunlight(m_mainGame->GetPlayer()->GetSunlight() + 50);
             DeleteSunlight(sunlight);
+            return;
         }
     }
 }

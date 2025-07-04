@@ -26,6 +26,17 @@ void Player::ResetState()
 	m_selectedCode = -1;
 }
 
+void Player::ClickTile()
+{
+	Tile* currentTile = m_mainGame->GetGameBoard()->GetMouseOverTile();
+	if (!currentTile || currentTile->IsPlantExist())
+		return;
+	SetCurrentTilePos(currentTile->GetPosition());
+	currentTile->SetPlantExist(true);
+	SpawnPlant(m_currentTilePos);
+	ResetState();
+}
+
 //public
 Player::Player()
 {
@@ -52,12 +63,22 @@ void Player::Update()
 
 void Player::ClickHandle()
 {
-	SetCurrentTilePos(m_mainGame->GetGameBoard()->GetMouseOverTilePos());
+	ClickTile();
 }
 
 int Player::GetSunlight()
 {
 	return m_sunlight;
+}
+
+int Player::GetState()
+{
+	return m_state;
+}
+
+int Player::GetSelectedCode()
+{
+	return m_selectedCode;
 }
 
 void Player::SetSunlight(int p_sunlight)
