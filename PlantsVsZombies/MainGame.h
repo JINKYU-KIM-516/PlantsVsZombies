@@ -1,17 +1,11 @@
 #pragma once
 #include <windows.h>
-#include "GameBoard.h"
-#include "PlantManager.h"
-#include "SunlightManager.h"
-#include "BulletManager.h"
-#include "ZombieManager.h"
-#include "CollisionManager.h"
-#include "Store.h"
-#include "Player.h"
+#include "ManagerManager.h"
 
 class MainGame
 {
 protected:
+	ManagerManager* m_managerManager;
 	GameBoard* m_gameBoard;
 	PlantManager* m_plantManager;
 	SunlightManager* m_sunlightManager;
@@ -39,8 +33,9 @@ public:
 	void DrawAll(HDC hdc);
 
 	GameBoard* GetGameBoard();
-	Player* GetPlayer();
 	PlantManager* GetPlantManager();
+
+	Player* GetPlayer();
 
 	Point GetMousePosition();
 	bool IsClickOccured();

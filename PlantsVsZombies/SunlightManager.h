@@ -1,11 +1,12 @@
 #pragma once
 #include <vector>
+#include "BaseManager.h"
 #include "IntervalTimer.h"
 #include "Sunlight.h"
 
 class MainGame;
 
-class SunlightManager
+class SunlightManager : public BaseManager
 {
 protected:
 	MainGame* m_mainGame;
@@ -19,10 +20,11 @@ protected:
 public:
 	SunlightManager();
 	~SunlightManager();
-	void Init();
+	void Init() override;
 	void Link(MainGame* p_mainGame);
-	void Update();
-	void ClickHandle();
+	void Update() override;
+	void ClickHandle() override;
+	void Draw(HDC p_hdc) override;
 
 	void AddSunlight(Sunlight* p_sunlight);
 	void DeleteSunlight(Sunlight* p_sunlight);

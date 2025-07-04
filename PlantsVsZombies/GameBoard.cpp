@@ -35,9 +35,12 @@ void GameBoard::Link(MainGame* p_mainGame)
 	m_mainGame = p_mainGame;
 }
 
-void GameBoard::Update()
+void GameBoard::Draw(HDC p_hdc)
 {
-
+	for (auto* tile : m_tiles)
+	{
+		tile->Draw(p_hdc);
+	}
 }
 
 Point GameBoard::GetMouseOverTilePos()

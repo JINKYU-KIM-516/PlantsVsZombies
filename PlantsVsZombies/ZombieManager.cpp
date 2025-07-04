@@ -47,6 +47,12 @@ void ZombieManager::Update()
     CheckZombiesAlive();
 }
 
+void ZombieManager::Draw(HDC p_hdc)
+{
+    for (auto* zombie : m_zombies)
+        zombie->Draw(p_hdc);
+}
+
 void ZombieManager::AddZombie(Zombie* p_zombie)
 {
     m_zombies.push_back(p_zombie);

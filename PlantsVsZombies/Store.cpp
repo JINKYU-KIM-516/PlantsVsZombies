@@ -78,6 +78,12 @@ void Store::ClickHandle()
 	ClickStorePlantImage();
 }
 
+void Store::Draw(HDC p_hdc)
+{
+	for (auto* image : m_plantImages)
+		image->Draw(p_hdc);
+}
+
 const vector<StorePlantImage*>& Store::GetImages() const
 {
 	return m_plantImages;

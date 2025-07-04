@@ -1,11 +1,11 @@
 #pragma once
 #include <vector>
-#include "PictureBox.h"
+#include "BaseManager.h"
 #include "StorePlantImage.h"
 
 class MainGame;
 
-class Store
+class Store : public BaseManager
 {
 protected:
 	MainGame* m_mainGame;
@@ -22,10 +22,11 @@ protected:
 public:
 	Store();
 	~Store();
-	void Init();
+	void Init() override;
 	void Link(MainGame* p_mainGame);
-	void Update();
-	void ClickHandle();
+	void Update() override;
+	void ClickHandle() override;
+	void Draw(HDC p_hdc) override;
 
 	const vector<StorePlantImage*>& GetImages() const;
 };

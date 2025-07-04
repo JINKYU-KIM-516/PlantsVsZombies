@@ -1,4 +1,5 @@
 #include "PlantManager.h"
+#include "MainGame.h"
 
 //protected
 void PlantManager::CheckPlantsAlive()
@@ -22,6 +23,7 @@ PlantManager::~PlantManager()
 
 void PlantManager::Init()
 {
+	m_mainGame = nullptr;
 	m_sunlightManager = nullptr;
 	m_bulletManager = nullptr;
 }
@@ -37,6 +39,12 @@ void PlantManager::Update()
 	for (auto* plant : m_plants)
 		plant->Update();
 	CheckPlantsAlive();
+}
+
+void PlantManager::Draw(HDC p_hdc)
+{
+	for (auto* plant : m_plants)
+		plant->Draw(p_hdc);
 }
 
 void PlantManager::SpawnSunflower(Point p_pos)

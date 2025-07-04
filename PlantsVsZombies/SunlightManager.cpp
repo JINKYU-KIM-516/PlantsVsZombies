@@ -70,6 +70,12 @@ void SunlightManager::ClickHandle()
     ClickSunlight();
 }
 
+void SunlightManager::Draw(HDC p_hdc)
+{
+    for (auto* sunlight : m_sunlights)
+        sunlight->Draw(p_hdc);
+}
+
 void SunlightManager::AddSunlight(Sunlight* p_sunlight)
 {
     m_sunlights.push_back(p_sunlight);

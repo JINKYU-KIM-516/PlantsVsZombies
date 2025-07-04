@@ -1,10 +1,11 @@
 #pragma once
 #include <vector>
+#include "BaseManager.h"
 #include "Tile.h"
 
 class MainGame;
 
-class GameBoard
+class GameBoard : public BaseManager
 {
 protected:
 	MainGame* m_mainGame;
@@ -16,9 +17,9 @@ protected:
 public:
 	GameBoard();
 	~GameBoard();
-	void Init();
+	void Init() override;
 	void Link(MainGame* p_mainGame);
-	void Update();
+	void Draw(HDC p_hdc) override;
 
 	Point GetMouseOverTilePos();
 	Tile* GetMouseOverTile();

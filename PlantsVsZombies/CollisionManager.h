@@ -1,9 +1,10 @@
 #pragma once
+#include "BaseManager.h"
 #include "PlantManager.h"
 #include "ZombieManager.h"
 #include "BulletManager.h"
 
-class CollisionManager
+class CollisionManager : public BaseManager
 {
 protected:
 	PlantManager* m_plantManager;
@@ -15,7 +16,7 @@ protected:
 
 public:
 	CollisionManager();
-	void Init();
+	void Init() override;
 	void Link(PlantManager* p_plantManager, ZombieManager* p_zombieManager, BulletManager* p_bulletManager);
-	void Update();
+	void Update() override;
 };

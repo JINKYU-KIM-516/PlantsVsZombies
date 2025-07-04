@@ -1,10 +1,11 @@
 #pragma once
 #include <vector>
+#include "BaseManager.h"
 #include "Store.h"
 
 using namespace std;
 
-class Player
+class Player : public BaseManager
 {
 protected:
 	MainGame* m_mainGame;
@@ -20,10 +21,10 @@ protected:
 	void ClickTile();
 public:
 	Player();
-	void Init();
+	void Init() override;
 	void Link(MainGame* p_mainGame);
-	void Update();
-	void ClickHandle();
+	void Update() override;
+	void ClickHandle() override;
 
 	int GetSunlight();
 	int GetState();

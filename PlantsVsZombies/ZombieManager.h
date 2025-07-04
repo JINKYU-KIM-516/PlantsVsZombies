@@ -1,9 +1,10 @@
 #pragma once
 #include <vector>
+#include "BaseManager.h"
 #include "Zombie.h"
 #include "IntervalTimer.h"
 
-class ZombieManager
+class ZombieManager : public BaseManager
 {
 protected:
     IntervalTimer m_spawnTimer;
@@ -14,7 +15,8 @@ protected:
 public:
     ZombieManager();
     ~ZombieManager();
-    void Update();
+    void Update() override;
+    void Draw(HDC p_hdc) override;
 
     void SpawnZombie(Point p_pos);
     void AddZombie(Zombie* p_zombie);

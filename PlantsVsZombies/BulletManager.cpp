@@ -26,6 +26,12 @@ void BulletManager::Update()
 	CheckBulletsInScreen();
 }
 
+void BulletManager::Draw(HDC p_hdc)
+{
+	for (auto* bullet : m_bullets)
+		bullet->Draw(p_hdc);
+}
+
 void BulletManager::AddBullets(Bullet* p_bullet)
 {
 	m_bullets.push_back(p_bullet);
