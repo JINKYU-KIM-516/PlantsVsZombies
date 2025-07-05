@@ -13,18 +13,22 @@ protected:
 	int m_sunlight;
 	int m_state;
 	int m_selectedCode;
+	PictureBox* m_currentSelectedPlant;
 
 	Point m_currentTilePos;
 
 	void SpawnPlant(Point p_pos);
 	void ResetState();
 	void ClickTile();
+	void PreviewPlant();
+	void CurrentSelectedPlant();
 public:
 	Player();
 	void Init() override;
 	void Link(MainGame* p_mainGame);
 	void Update() override;
 	void ClickHandle() override;
+	void Draw(HDC p_hdc) override;
 
 	int GetSunlight();
 	int GetState();

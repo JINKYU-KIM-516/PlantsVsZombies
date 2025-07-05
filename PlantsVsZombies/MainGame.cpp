@@ -4,9 +4,7 @@
 MainGame::MainGame(HWND p_hWnd)
 {
 	m_hWnd = p_hWnd;
-
 	m_managerManager = new ManagerManager(this);
-
 	m_debugTextIndex = GAMEBOARD_START_Y + (TILE_HEIGHT * GAMEBOARD_HEIGHT);
 	test();
 }
@@ -28,51 +26,77 @@ void MainGame::DebugTextOut(HDC hdc)
 {
 	int index = GAMEBOARD_START_Y + (TILE_HEIGHT * GAMEBOARD_HEIGHT);
 	int interval = 20;
-	/*
+	Player* player = dynamic_cast<Player*>(m_managerManager->GetManagers()[PLAYER_INDEX]);
+	
 	TCHAR str[20];
-	wsprintf(str, TEXT("햇빛 : %d"), m_player->GetSunlight());
+	wsprintf(str, TEXT("햇빛 : %d"), player->GetSunlight());
 	TextOut(hdc, 0, index, str, lstrlen(str));
 	index += interval;
 
 	TCHAR str1[30];
-	wsprintf(str1, TEXT("플레이어 상태 : %d"), m_player->GetState());
+	wsprintf(str1, TEXT("플레이어 상태 : %d"), player->GetState());
 	TextOut(hdc, 0, index, str1, lstrlen(str1));
 	index += interval;
 
 	TCHAR str2[30];
-	wsprintf(str2, TEXT("고른 식물 : %d"), m_player->GetSelectedCode());
+	wsprintf(str2, TEXT("고른 식물 : %d"), player->GetSelectedCode());
 	TextOut(hdc, 0, index, str2, lstrlen(str2));
 	index += interval;
-	*/
 }
 
 void MainGame::Update()
 {
 	m_managerManager->Update();
-	if (m_clickOccured)
-	{
-		m_managerManager->ClickHandle();
-		m_clickOccured = false;
-	}
-
+	ClickHandle();
 	InvalidateRect(m_hWnd, NULL, FALSE);
 }
 
 void MainGame::ClickHandle()
 {
-
+	if (m_clickOccured)
+	{
+		m_managerManager->ClickHandle();
+		m_clickOccured = false;
+	}
 }
 
-void MainGame::DrawAll(HDC hdc)
+void MainGame::Draw(HWND p_hWnd)
 {
+	PAINTSTRUCT ps;
+	HDC hdc = BeginPaint(p_hWnd, &ps);
 
+	// 1. 메모리 DC 생성
+	HDC memDC = CreateCompatibleDC(hdc);
+	RECT rect;
+	GetClientRect(p_hWnd, &rect);
+	int width = rect.right;
+	int height = rect.bottom;
+
+	// 2. 버퍼용 비트맵 생성 및 선택
+	HBITMAP bufferBmp = CreateCompatibleBitmap(hdc, width, height);
+	HBITMAP oldBmp = (HBITMAP)SelectObject(memDC, bufferBmp);
+
+	// 3. 배경 지우기
+	FillRect(memDC, &rect, (HBRUSH)(COLOR_WINDOW + 1));
+
+	// 4. 메모리 DC에 그리기
+	m_managerManager->Draw(memDC);
+
+	// 5. 실제 화면에 한 번에 출력
+	BitBlt(hdc, 0, 0, width, height, memDC, 0, 0, SRCCOPY);
+
+	// 6. 자원 정리
+	SelectObject(memDC, oldBmp);
+	DeleteObject(bufferBmp);
+	DeleteDC(memDC);
+
+	EndPaint(p_hWnd, &ps);
 	m_managerManager->Draw(hdc);
 	DebugTextOut(hdc);
 }
 
 GameBoard* MainGame::GetGameBoard()
 {
-	
 	return dynamic_cast<GameBoard*>(m_managerManager->GetManagers()[GAMEBOARD_INDEX]);
 }
 

@@ -10,7 +10,7 @@
 
 class MainGame;
 
-class ManagerManager// : public BaseManager
+class ManagerManager : public BaseManager
 {
 protected:
 	MainGame* m_mainGame;
@@ -18,11 +18,11 @@ protected:
 public:
 	ManagerManager(MainGame* p_mainGame);
 	~ManagerManager();
-	void Init();
+	void Init() override;
 	void Link(MainGame* p_mainGame);
-	void Update();
-	void ClickHandle();
-	void Draw(HDC p_hdc);
+	void Update() override;
+	void ClickHandle() override;
+	void Draw(HDC p_hdc) override;
 
 	void AddManager(BaseManager* p_manager);
 	const vector<BaseManager*>& GetManagers() const;

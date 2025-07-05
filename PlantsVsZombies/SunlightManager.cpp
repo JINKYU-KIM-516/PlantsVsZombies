@@ -24,9 +24,10 @@ void SunlightManager::SpawnSunlightRandom()
 void SunlightManager::ClickSunlight()
 {
     auto pos = m_mainGame->GetMousePosition();
-    for (auto* sunlight : m_sunlights)
+    for (auto itr = m_sunlights.rbegin(); itr != m_sunlights.rend(); ++itr)
     {
-        if (sunlight->Contains( pos ))
+        Sunlight* sunlight = *itr;
+        if (sunlight->Contains(pos))
         {
             m_mainGame->GetPlayer()->SetSunlight(m_mainGame->GetPlayer()->GetSunlight() + 50);
             DeleteSunlight(sunlight);

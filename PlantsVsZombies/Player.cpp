@@ -31,10 +31,42 @@ void Player::ClickTile()
 	Tile* currentTile = m_mainGame->GetGameBoard()->GetMouseOverTile();
 	if (!currentTile || currentTile->IsPlantExist())
 		return;
-	SetCurrentTilePos(currentTile->GetPosition());
+	SetCurrentTilePos(currentTile->GetPos());
 	currentTile->SetPlantExist(true);
 	SpawnPlant(m_currentTilePos);
 	ResetState();
+}
+
+void Player::PreviewPlant()
+{
+	Tile* currentTile = m_mainGame->GetGameBoard()->GetMouseOverTile();
+	if (m_state == SELECTING && m_currentSelectedPlant && currentTile && !currentTile->IsPlantExist())
+	{
+		CurrentSelectedPlant();
+		SetCurrentTilePos(currentTile->GetPos());
+		m_currentSelectedPlant->SetPos(m_currentTilePos);
+	}
+	else
+	{
+		if (m_currentSelectedPlant)
+			delete m_currentSelectedPlant;
+	}
+
+}
+
+void Player::CurrentSelectedPlant()
+{
+	Point point = DEFAULT_POSITION;
+	Size size = PLANT_SIZE;
+	switch (m_selectedCode)
+	{
+	case CODE_SUNFLOWER:
+		m_currentSelectedPlant = new PictureBox(DEFAULT_POSITION, PLANT_SIZE, IMAGEPATH_SUNFLOWER);
+		break;
+	case CODE_PEA:
+		m_currentSelectedPlant = new PictureBox(DEFAULT_POSITION, PLANT_SIZE, IMAGEPATH_PEA);
+		break;
+	}
 }
 
 //public
@@ -49,6 +81,7 @@ void Player::Init()
 	m_sunlight = 0;
 	m_state = NORMAL;
 	m_selectedCode = -1;
+	m_currentSelectedPlant = nullptr;
 }
 
 void Player::Link(MainGame* p_mainGame)
@@ -58,12 +91,18 @@ void Player::Link(MainGame* p_mainGame)
 
 void Player::Update()
 {
-
+	PreviewPlant();
 }
 
 void Player::ClickHandle()
 {
 	ClickTile();
+}
+
+void Player::Draw(HDC p_hdc)
+{
+	if(m_currentSelectedPlant)
+		m_currentSelectedPlant->Draw(p_hdc);
 }
 
 int Player::GetSunlight()

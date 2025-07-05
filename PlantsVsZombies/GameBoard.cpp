@@ -49,7 +49,7 @@ Point GameBoard::GetMouseOverTilePos()
 	{
 		if (tile->Contains(m_mainGame->GetMousePosition()))
 		{
-			return tile->GetPosition();
+			return tile->GetPos();
 		}
 	}
 	return Point(-1, -1);

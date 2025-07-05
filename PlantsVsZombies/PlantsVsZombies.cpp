@@ -162,6 +162,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         break;
     case WM_PAINT:
         {
+        if (g_mainGame)
+            g_mainGame->Draw(hWnd);
+        /*
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
 
@@ -192,6 +195,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             DeleteDC(memDC);
 
             EndPaint(hWnd, &ps);
+            */
         }
         break;
     case WM_MOUSEMOVE:

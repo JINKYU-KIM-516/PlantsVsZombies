@@ -6,14 +6,6 @@ class MainGame
 {
 protected:
 	ManagerManager* m_managerManager;
-	GameBoard* m_gameBoard;
-	PlantManager* m_plantManager;
-	SunlightManager* m_sunlightManager;
-	BulletManager* m_bulletManager;
-	ZombieManager* m_zombieManager;
-	CollisionManager* m_collisionManager;
-	Store* m_store;
-	Player* m_player;
 
 	Point m_mousePosition;
 	bool m_clickOccured;
@@ -30,7 +22,7 @@ public:
 
 	void Update();
 	void ClickHandle();
-	void DrawAll(HDC hdc);
+	void Draw(HWND p_hWnd);
 
 	GameBoard* GetGameBoard();
 	PlantManager* GetPlantManager();

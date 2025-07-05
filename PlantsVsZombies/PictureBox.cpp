@@ -41,7 +41,7 @@ void PictureBox::Draw(HDC hdc)
     DeleteDC(hdcMem);
 }
 
-Point PictureBox::GetPosition() const
+Point PictureBox::GetPos() const
 {
     return m_positon;
 }
@@ -49,11 +49,6 @@ Point PictureBox::GetPosition() const
 Size PictureBox::GetSize() const
 {
     return m_size;
-}
-
-int PictureBox::GetZ() const
-{
-    return m_z;
 }
 
 RECT PictureBox::GetRect() const
@@ -81,7 +76,7 @@ bool PictureBox::Contains(Point p_pos) const
         p_pos.GetY() >= rc.top && p_pos.GetY() <= rc.bottom);
 }
 
-void PictureBox::SetZ(int p_z)
+void PictureBox::SetPos(Point p_pos)
 {
-    m_z = p_z;
+    m_positon = p_pos;
 }
