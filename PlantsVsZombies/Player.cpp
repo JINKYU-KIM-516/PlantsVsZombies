@@ -24,6 +24,11 @@ void Player::ResetState()
 {
 	m_state = NORMAL;
 	m_selectedCode = -1;
+	if (m_currentSelectedPlant)
+	{
+		delete m_currentSelectedPlant;
+		m_currentSelectedPlant = nullptr;
+	}
 }
 
 void Player::ClickTile()
@@ -40,9 +45,9 @@ void Player::ClickTile()
 void Player::PreviewPlant()
 {
 	Tile* currentTile = m_mainGame->GetGameBoard()->GetMouseOverTile();
-	if (m_state == SELECTING && m_currentSelectedPlant && currentTile && !currentTile->IsPlantExist())
+	CurrentSelectedPlant();
+	if (m_state == SELECTING && currentTile && !currentTile->IsPlantExist() && m_currentSelectedPlant)
 	{
-		CurrentSelectedPlant();
 		SetCurrentTilePos(currentTile->GetPos());
 		m_currentSelectedPlant->SetPos(m_currentTilePos);
 	}
@@ -51,7 +56,6 @@ void Player::PreviewPlant()
 		if (m_currentSelectedPlant)
 			delete m_currentSelectedPlant;
 	}
-
 }
 
 void Player::CurrentSelectedPlant()
@@ -65,6 +69,8 @@ void Player::CurrentSelectedPlant()
 		break;
 	case CODE_PEA:
 		m_currentSelectedPlant = new PictureBox(DEFAULT_POSITION, PLANT_SIZE, IMAGEPATH_PEA);
+		break;
+	default:
 		break;
 	}
 }
