@@ -20,7 +20,6 @@ protected:
 	void SpawnPlant(Point p_pos);
 	void ClickTile();
 	void PreviewPlant();
-	void CurrentSelectedPlant();
 public:
 	Player();
 	void Init() override;
@@ -28,6 +27,9 @@ public:
 	void Update() override;
 	void ClickHandle() override;
 	void Draw(HDC p_hdc) override;
+
+	void SelectPlant(int p_code);
+	void ResetState();
 
 	int GetSunlight();
 	int GetState();
@@ -37,6 +39,4 @@ public:
 	void SetState(int p_state);
 	void SetSelectedCode(int p_code);
 	void SetCurrentTilePos(Point p_pos);
-
-	void ResetState();
 };

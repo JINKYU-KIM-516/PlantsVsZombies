@@ -61,6 +61,7 @@ enum StorePlantIndex
 
 #define TRANSPARENT_COLOR RGB(255,50,150) //크로마키용 핑크
 #define DEFAULT_POSITION Point(0, 0)
+#define INVISIBLE_POS Point(-512, -512)
 
 //****이미지 경로****
 //게임보드(타일) 이미지

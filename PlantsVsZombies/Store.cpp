@@ -10,16 +10,20 @@ void Store::AddImage(StorePlantImage* p_plantImage)
 void Store::PaintSunflowerImage()
 {
 	m_index++;
-	StorePlantImage* sunflowerImage = new StorePlantImage(IMAGEPATH_SUNFLOWER);
-	sunflowerImage->Init(GetCurrentStoreImagePosition(m_index), CODE_SUNFLOWER, COST_SUNFLOWER);
+	StorePlantImage* sunflowerImage = new StorePlantImage(
+		GetCurrentStoreImagePosition(m_index),
+		IMAGEPATH_SUNFLOWER, IMAGEPATH_SUNFLOWER_GRAYSCALE,
+		CODE_SUNFLOWER, COST_SUNFLOWER);
 	AddImage(sunflowerImage);
 }
 
 void Store::PaintPeaImage()
 {
 	m_index++;
-	StorePlantImage* peaImage = new StorePlantImage(IMAGEPATH_PEA);
-	peaImage->Init(GetCurrentStoreImagePosition(m_index), CODE_PEA, COST_PEA);
+	StorePlantImage* peaImage = new StorePlantImage(
+		GetCurrentStoreImagePosition(m_index),
+		IMAGEPATH_PEA, IMAGEPATH_PEA_GRAYSCALE,
+		CODE_PEA, COST_PEA);
 	AddImage(peaImage);
 }
 
@@ -36,45 +40,23 @@ void Store::ClickStorePlantImage()
 	{
 		if (image->Contains(m_mainGame->GetMousePosition()))
 		{
-			int sunlight = m_mainGame->GetPlayer()->GetSunlight();
-			if (sunlight < image->GetCost())
+			if (!image->CanCost())
 				return;
-			/*
 			if (m_mainGame->GetPlayer()->GetSelectedCode() == image->GetCode())
 			{
 				m_mainGame->GetPlayer()->ResetState();
 				return;
 			}
-			*/
-			m_mainGame->GetPlayer()->SetSelectedCode(image->GetCode());
-			m_mainGame->GetPlayer()->SetState(SELECTING);
+			m_mainGame->GetPlayer()->SelectPlant(image->GetCode());
 			return;
 		}
 	}
-}
-
-void Store::CheckCost()
-{
-	int sunlight = m_mainGame->GetPlayer()->GetSunlight();
-	int index = SUNFLOWER_INDEX;
-	if (sunlight >= m_plantImages[index]->GetCost())
-		m_plantImages[index]->SetImage(IMAGEPATH_SUNFLOWER);
-	else 
-		m_plantImages[index]->SetImage(IMAGEPATH_SUNFLOWER_GRAYSCALE);
-
-	index = PEA_INDEX;
-	if (sunlight >= m_plantImages[index]->GetCost())
-		m_plantImages[index]->SetImage(IMAGEPATH_PEA);
-	else
-		m_plantImages[index]->SetImage(IMAGEPATH_PEA_GRAYSCALE);
 }
 
 //public
 Store::Store()
 {
 	Init();
-	PaintSunflowerImage();
-	PaintPeaImage();
 }
 
 Store::~Store()
@@ -87,6 +69,9 @@ void Store::Init()
 {
 	m_mainGame = nullptr;
 	m_index = -1;
+
+	PaintSunflowerImage();
+	PaintPeaImage();
 }
 
 void Store::Link(MainGame* p_mainGame)
@@ -96,7 +81,8 @@ void Store::Link(MainGame* p_mainGame)
 
 void Store::Update()
 {
-	CheckCost();
+	for (auto* image : m_plantImages)
+		image->Update(m_mainGame->GetPlayer()->GetSunlight());
 }
 
 void Store::ClickHandle()

@@ -37,34 +37,18 @@ void Player::ClickTile()
 
 void Player::PreviewPlant()
 {
+	if (!m_currentSelectedPlant)
+		return;
 	Tile* currentTile = m_mainGame->GetGameBoard()->GetMouseOverTile();
-	CurrentSelectedPlant();
-	if (m_state == SELECTING && currentTile && !currentTile->IsPlantExist() && m_currentSelectedPlant)
+
+	if (m_state == SELECTING && currentTile && !currentTile->IsPlantExist())
 	{
 		SetCurrentTilePos(currentTile->GetPos());
 		m_currentSelectedPlant->SetPos(m_currentTilePos);
 	}
 	else
 	{
-		if (m_currentSelectedPlant)
-			delete m_currentSelectedPlant;
-	}
-}
-
-void Player::CurrentSelectedPlant()
-{
-	Point point = DEFAULT_POSITION;
-	Size size = PLANT_SIZE;
-	switch (m_selectedCode)
-	{
-	case CODE_SUNFLOWER:
-		m_currentSelectedPlant = new PictureBox(DEFAULT_POSITION, PLANT_SIZE, IMAGEPATH_SUNFLOWER);
-		break;
-	case CODE_PEA:
-		m_currentSelectedPlant = new PictureBox(DEFAULT_POSITION, PLANT_SIZE, IMAGEPATH_PEA);
-		break;
-	default:
-		break;
+		m_currentSelectedPlant->SetPos(INVISIBLE_POS);
 	}
 }
 
@@ -104,6 +88,37 @@ void Player::Draw(HDC p_hdc)
 		m_currentSelectedPlant->Draw(p_hdc);
 }
 
+void Player::SelectPlant(int p_code)
+{
+	m_selectedCode = p_code;
+	m_state = SELECTING;
+	Point point = DEFAULT_POSITION;
+	Size size = PLANT_SIZE;
+	switch (m_selectedCode)
+	{
+	case CODE_SUNFLOWER:
+		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_SUNFLOWER);
+		break;
+	case CODE_PEA:
+		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_PEA);
+		break;
+	default:
+		break;
+	}
+}
+
+void Player::ResetState()
+{
+	m_state = NORMAL;
+	m_selectedCode = -1;
+	if (m_currentSelectedPlant)
+	{
+		delete m_currentSelectedPlant;
+		m_currentSelectedPlant = nullptr;
+	}
+}
+
+
 int Player::GetSunlight()
 {
 	return m_sunlight;
@@ -137,15 +152,4 @@ void Player::SetSelectedCode(int p_code)
 void Player::SetCurrentTilePos(Point p_pos)
 {
 	m_currentTilePos = p_pos;
-}
-
-void Player::ResetState()
-{
-	m_state = NORMAL;
-	m_selectedCode = -1;
-	if (m_currentSelectedPlant)
-	{
-		delete m_currentSelectedPlant;
-		m_currentSelectedPlant = nullptr;
-	}
 }

@@ -5,10 +5,19 @@ class StorePlantImage : public PictureBox
 protected:
 	int m_code;
 	int m_cost;
+
+	wstring m_basicImagePath;
+	wstring m_grayscaleImagePath;
+
+	bool m_canCost;
+
+	void CheckCost(int p_sunlight);
 public:
-	StorePlantImage(const wstring& p_imagePath);
-	void Init(Point p_pos, int p_code, int p_cost);
+	StorePlantImage(Point p_pos, const wstring& p_basicIP, const wstring& p_grayscaleIP, int p_code, int p_cost);
+	void Init(const wstring& p_basicIP, const wstring& p_grayscaleIP, int p_code, int p_cost);
+	void Update(int p_sunlight);
 
 	int GetCode() const;
 	int GetCost() const;
+	bool CanCost() const;
 };

@@ -19,7 +19,6 @@ protected:
 
 	Point GetCurrentStoreImagePosition(int p_index);
 	void ClickStorePlantImage();
-	void CheckCost();
 public:
 	Store();
 	~Store();
