@@ -10,9 +10,11 @@ void Player::SpawnPlant(Point p_pos)
 		{
 		case CODE_SUNFLOWER:
 			m_mainGame->GetPlantManager()->SpawnSunflower(m_currentTilePos);
+			m_sunlight -= COST_SUNFLOWER;
 			break;
 		case CODE_PEA:
 			m_mainGame->GetPlantManager()->SpawnPea(m_currentTilePos);
+			m_sunlight -= COST_PEA;
 			break;
 		default:
 			break;
@@ -20,19 +22,10 @@ void Player::SpawnPlant(Point p_pos)
 	}
 }
 
-void Player::ResetState()
-{
-	m_state = NORMAL;
-	m_selectedCode = -1;
-	if (m_currentSelectedPlant)
-	{
-		delete m_currentSelectedPlant;
-		m_currentSelectedPlant = nullptr;
-	}
-}
-
 void Player::ClickTile()
 {
+	if (m_state != SELECTING)
+		return;
 	Tile* currentTile = m_mainGame->GetGameBoard()->GetMouseOverTile();
 	if (!currentTile || currentTile->IsPlantExist())
 		return;
@@ -144,4 +137,15 @@ void Player::SetSelectedCode(int p_code)
 void Player::SetCurrentTilePos(Point p_pos)
 {
 	m_currentTilePos = p_pos;
+}
+
+void Player::ResetState()
+{
+	m_state = NORMAL;
+	m_selectedCode = -1;
+	if (m_currentSelectedPlant)
+	{
+		delete m_currentSelectedPlant;
+		m_currentSelectedPlant = nullptr;
+	}
 }

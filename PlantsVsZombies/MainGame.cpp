@@ -81,6 +81,8 @@ void MainGame::Draw(HWND p_hWnd)
 
 	// 4. 메모리 DC에 그리기
 	m_managerManager->Draw(memDC);
+	DebugTextOut(memDC);
+
 
 	// 5. 실제 화면에 한 번에 출력
 	BitBlt(hdc, 0, 0, width, height, memDC, 0, 0, SRCCOPY);
@@ -92,7 +94,6 @@ void MainGame::Draw(HWND p_hWnd)
 
 	EndPaint(p_hWnd, &ps);
 	m_managerManager->Draw(hdc);
-	DebugTextOut(hdc);
 }
 
 GameBoard* MainGame::GetGameBoard()

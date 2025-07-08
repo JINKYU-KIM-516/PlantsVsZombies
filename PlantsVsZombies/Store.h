@@ -19,6 +19,7 @@ protected:
 
 	Point GetCurrentStoreImagePosition(int p_index);
 	void ClickStorePlantImage();
+	void CheckCost();
 public:
 	Store();
 	~Store();
@@ -30,3 +31,5 @@ public:
 
 	const vector<StorePlantImage*>& GetImages() const;
 };
+
+//함수에 이름, 이미지 경로, 비용 입력하면 알아서 상점에 추가되게 하고싶음

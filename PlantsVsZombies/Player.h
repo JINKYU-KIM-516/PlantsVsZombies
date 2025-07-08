@@ -18,7 +18,6 @@ protected:
 	Point m_currentTilePos;
 
 	void SpawnPlant(Point p_pos);
-	void ResetState();
 	void ClickTile();
 	void PreviewPlant();
 	void CurrentSelectedPlant();
@@ -38,4 +37,6 @@ public:
 	void SetState(int p_state);
 	void SetSelectedCode(int p_code);
 	void SetCurrentTilePos(Point p_pos);
+
+	void ResetState();
 };

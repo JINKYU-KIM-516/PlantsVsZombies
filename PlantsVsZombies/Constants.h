@@ -23,6 +23,12 @@ enum ManagerIndex
 	PLAYER_INDEX
 };
 
+enum StorePlantIndex
+{
+	SUNFLOWER_INDEX,
+	PEA_INDEX
+};
+
 #define COST_SUNFLOWER 50
 #define COST_PEA 100
 
@@ -62,7 +68,9 @@ enum ManagerIndex
 
 //식물 이미지
 #define IMAGEPATH_SUNFLOWER L"../Resources_PlantsVsZombies_bmp/Plant_Sunflower.bmp"
+#define IMAGEPATH_SUNFLOWER_GRAYSCALE L"../Resources_PlantsVsZombies_bmp/Plant_Sunflower_Grayscale.bmp"
 #define IMAGEPATH_PEA L"../Resources_PlantsVsZombies_bmp/Plant_Pea.bmp"
+#define IMAGEPATH_PEA_GRAYSCALE L"../Resources_PlantsVsZombies_bmp/Plant_Pea_Grayscale.bmp"
 
 //햇빛 이미지
 #define IMAGEPATH_SUNLIGHT L"../Resources_PlantsVsZombies_bmp/sunlight.bmp"

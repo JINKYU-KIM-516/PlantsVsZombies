@@ -80,3 +80,9 @@ void PictureBox::SetPos(Point p_pos)
 {
     m_positon = p_pos;
 }
+
+void PictureBox::SetImage(const wstring& p_imagePath)
+{
+    m_imagePath = p_imagePath;
+    m_hBmp = (HBITMAP)LoadImage(NULL, m_imagePath.c_str(), IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+}
