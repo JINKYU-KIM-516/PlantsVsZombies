@@ -6,6 +6,7 @@ MainGame::MainGame(HWND p_hWnd)
 	m_hWnd = p_hWnd;
 	m_managerManager = new ManagerManager(this);
 	m_debugTextIndex = GAMEBOARD_START_Y + (TILE_HEIGHT * GAMEBOARD_HEIGHT);
+	m_isGameOver = false;
 	test();
 }
 
@@ -20,6 +21,7 @@ void MainGame::test()
 	//m_plantManager->SpawnPea(Point(GAMEBOARD_START_X + TILE_WIDTH, GAMEBOARD_START_Y + TILE_HEIGHT));
 	//m_zombieManager->SpawnZombie(Point(GAMEBOARD_START_X + (10 * TILE_WIDTH), GAMEBOARD_START_Y + (2 * TILE_HEIGHT)));
 	//m_zombieManager->SpawnZombie(Point(GAMEBOARD_START_X + (11 * TILE_WIDTH), GAMEBOARD_START_Y + (2 * TILE_HEIGHT)));
+	dynamic_cast<ZombieManager*>(m_managerManager->GetManagers()[ZOMBIE_MANAGER_INDEX])->SpawnZombie(Point(GAMEBOARD_START_X, GAMEBOARD_START_Y));
 }
 
 void MainGame::DebugTextOut(HDC hdc)
@@ -96,6 +98,13 @@ void MainGame::Draw(HWND p_hWnd)
 	m_managerManager->Draw(hdc);
 }
 
+void MainGame::GameOver(LPCWSTR p_reason)
+{
+	m_isGameOver = true;
+	MessageBoxW(m_hWnd, p_reason, L"게임 오버", MB_OK);
+	DestroyWindow(m_hWnd);
+}
+
 GameBoard* MainGame::GetGameBoard()
 {
 	return dynamic_cast<GameBoard*>(m_managerManager->GetManagers()[GAMEBOARD_INDEX]);
@@ -119,6 +128,11 @@ Point MainGame::GetMousePosition()
 bool MainGame::IsClickOccured()
 {
 	return m_clickOccured;
+}
+
+bool MainGame::IsGameOver()
+{
+	return m_isGameOver;
 }
 
 void MainGame::SetMousePosition(Point p_pos)

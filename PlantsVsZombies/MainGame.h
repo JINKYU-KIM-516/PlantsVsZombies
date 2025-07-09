@@ -9,6 +9,7 @@ protected:
 
 	Point m_mousePosition;
 	bool m_clickOccured;
+	bool m_isGameOver;
 
 	int m_debugTextIndex;
 
@@ -24,13 +25,14 @@ public:
 	void ClickHandle();
 	void Draw(HWND p_hWnd);
 
+	void GameOver(LPCWSTR p_reason);
+
 	GameBoard* GetGameBoard();
 	PlantManager* GetPlantManager();
-
 	Player* GetPlayer();
-
 	Point GetMousePosition();
 	bool IsClickOccured();
+	bool IsGameOver();
 
 	void SetMousePosition(Point p_pos);
 	void ClickOccured();

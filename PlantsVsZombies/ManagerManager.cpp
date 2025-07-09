@@ -49,6 +49,8 @@ void ManagerManager::Link(MainGame* p_mainGame)
 
 	dynamic_cast<SunlightManager*>(m_managers[SUNLIGHT_MANAGER_INDEX])->Link(m_mainGame);
 
+	dynamic_cast<ZombieManager*>(m_managers[ZOMBIE_MANAGER_INDEX])->Link(m_mainGame);
+
 	dynamic_cast<CollisionManager*>(m_managers[COLLISION_MANAGER_INDEX])->Link(
 		dynamic_cast<PlantManager*>(m_managers[PLANT_MANAGER_INDEX]),
 		dynamic_cast<ZombieManager*>(m_managers[ZOMBIE_MANAGER_INDEX]),

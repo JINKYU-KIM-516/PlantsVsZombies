@@ -1,4 +1,5 @@
 #include "ZombieManager.h"
+#include "MainGame.h"
 
 //protected
 void ZombieManager::SpawnZombie(Point p_pos)
@@ -23,14 +24,26 @@ void ZombieManager::SpawnZombieRandom()
 void ZombieManager::CheckZombiesAlive()
 {
     for (auto* zombie : m_zombies)
-        if (!zombie->IsAlive() || zombie->GetPos().GetX() <= GAMEBOARD_START_X)
+        if (!zombie->IsAlive())
             DeleteZombie(zombie);
+}
+
+void ZombieManager::CheckZombiesInHome()
+{
+    if (m_mainGame->IsGameOver())
+        return;
+    for (auto* zombie : m_zombies)
+        if (zombie->GetPos().GetX() <= GAMEBOARD_START_X - TILE_WIDTH)
+        {
+            m_mainGame->GameOver(L"좀비가 집에 들어와버렸습니다..");
+            return;
+        }
 }
 
 //public
 ZombieManager::ZombieManager()
 {
-    m_spawnTimer.Init(INTERVAL_SEC_SPAWN_ZOMBIE);
+    Init();
 }
 
 ZombieManager::~ZombieManager()
@@ -45,6 +58,17 @@ void ZombieManager::Update()
         zombie->Update();
     SpawnZombieRandom();
     CheckZombiesAlive();
+    CheckZombiesInHome();
+}
+
+void ZombieManager::Init()
+{
+    m_spawnTimer.Init(INTERVAL_SEC_SPAWN_ZOMBIE);
+}
+
+void ZombieManager::Link(MainGame* p_mainGame)
+{
+    m_mainGame = p_mainGame;
 }
 
 void ZombieManager::Draw(HDC p_hdc)
