@@ -125,36 +125,64 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CoreFunction\IntervalTimer\IntervalTimer.h" />
-    <ClInclude Include="CoreFunction\PictureBox\PictureBox.h" />
-    <ClInclude Include="CoreFunction\Point\Point.h" />
-    <ClInclude Include="CoreFunction\Singleton\SingletonT.h" />
-    <ClInclude Include="CoreFunction\Size\Size.h" />
+    <ClInclude Include="BaseManager.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="BulletManager.h" />
+    <ClInclude Include="BulletPea.h" />
+    <ClInclude Include="CollisionManager.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="GameBoard.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="GameObject\Bullet\Bullet.h" />
-    <ClInclude Include="GameObject\Bullet\BulletPea\BulletPea.h" />
-    <ClInclude Include="GameObject\Plant\Pea\Pea.h" />
-    <ClInclude Include="GameObject\Plant\Plant.h" />
-    <ClInclude Include="GameObject\Plant\Sunflower\Sunflower.h" />
-    <ClInclude Include="GameObject\StorePlantImage\StorePlantImage.h" />
-    <ClInclude Include="GameObject\Sunlight\Sunlight.h" />
-    <ClInclude Include="GameObject\Tile\Tile.h" />
-    <ClInclude Include="GameObject\Zombie\Zombie.h" />
-    <ClInclude Include="Main\Constants.h" />
-    <ClInclude Include="Main\MainGame.h" />
-    <ClInclude Include="Manager\BaseManager\BaseManager.h" />
-    <ClInclude Include="Manager\ManagerManager\ManagerManager.h" />
-    <ClInclude Include="Manager\Managers\BulletManager\BulletManager.h" />
-    <ClInclude Include="Manager\Managers\CollisionManager\CollisionManager.h" />
-    <ClInclude Include="Manager\Managers\GameBoardManager\GameBoard.h" />
-    <ClInclude Include="Manager\Managers\PlantManager\PlantManager.h" />
-    <ClInclude Include="Manager\Managers\PlayerManager\Player.h" />
-    <ClInclude Include="Manager\Managers\StoreManager\Store.h" />
-    <ClInclude Include="Manager\Managers\SunlightManager\SunlightManager.h" />
-    <ClInclude Include="Manager\Managers\ZombieManager\ZombieManager.h" />
+    <ClInclude Include="IntervalTimer.h" />
+    <ClInclude Include="MainGame.h" />
+    <ClInclude Include="ManagerManager.h" />
+    <ClInclude Include="Pea.h" />
+    <ClInclude Include="PictureBox.h" />
+    <ClInclude Include="Plant.h" />
+    <ClInclude Include="PlantManager.h" />
     <ClInclude Include="PlantsVsZombies.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Size.h" />
+    <ClInclude Include="Store.h" />
+    <ClInclude Include="StorePlantImage.h" />
+    <ClInclude Include="Sunflower.h" />
+    <ClInclude Include="Sunlight.h" />
+    <ClInclude Include="SunlightManager.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="Zombie.h" />
+    <ClInclude Include="ZombieManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseManager.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="BulletManager.cpp" />
+    <ClCompile Include="BulletPea.cpp" />
+    <ClCompile Include="CollisionManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GameBoard.cpp" />
+    <ClCompile Include="IntervalTimer.cpp" />
+    <ClCompile Include="MainGame.cpp" />
+    <ClCompile Include="ManagerManager.cpp" />
+    <ClCompile Include="Pea.cpp" />
+    <ClCompile Include="PictureBox.cpp" />
+    <ClCompile Include="Plant.cpp" />
+    <ClCompile Include="PlantManager.cpp" />
+    <ClCompile Include="PlantsVsZombies.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Size.cpp" />
+    <ClCompile Include="Store.cpp" />
+    <ClCompile Include="StorePlantImage.cpp" />
+    <ClCompile Include="Sunflower.cpp" />
+    <ClCompile Include="Sunlight.cpp" />
+    <ClCompile Include="SunlightManager.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="Zombie.cpp" />
+    <ClCompile Include="ZombieManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="PlantsVsZombies.rc" />
@@ -162,34 +190,6 @@
   <ItemGroup>
     <Image Include="PlantsVsZombies.ico" />
     <Image Include="small.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="CoreFunction\IntervalTimer\IntervalTimer.cpp" />
-    <ClCompile Include="CoreFunction\PictureBox\PictureBox.cpp" />
-    <ClCompile Include="CoreFunction\Point\Point.cpp" />
-    <ClCompile Include="CoreFunction\Singleton\SingletonT.cpp" />
-    <ClCompile Include="CoreFunction\Size\Size.cpp" />
-    <ClCompile Include="GameObject\Bullet\Bullet.cpp" />
-    <ClCompile Include="GameObject\Bullet\BulletPea\BulletPea.cpp" />
-    <ClCompile Include="GameObject\Plant\Pea\Pea.cpp" />
-    <ClCompile Include="GameObject\Plant\Plant.cpp" />
-    <ClCompile Include="GameObject\Plant\Sunflower\Sunflower.cpp" />
-    <ClCompile Include="GameObject\StorePlantImage\StorePlantImage.cpp" />
-    <ClCompile Include="GameObject\Sunlight\Sunlight.cpp" />
-    <ClCompile Include="GameObject\Tile\Tile.cpp" />
-    <ClCompile Include="GameObject\Zombie\Zombie.cpp" />
-    <ClCompile Include="Main\MainGame.cpp" />
-    <ClCompile Include="Manager\BaseManager\BaseManager.cpp" />
-    <ClCompile Include="Manager\ManagerManager\ManagerManager.cpp" />
-    <ClCompile Include="Manager\Managers\BulletManager\BulletManager.cpp" />
-    <ClCompile Include="Manager\Managers\CollisionManager\CollisionManager.cpp" />
-    <ClCompile Include="Manager\Managers\GameBoardManager\GameBoard.cpp" />
-    <ClCompile Include="Manager\Managers\PlantManager\PlantManager.cpp" />
-    <ClCompile Include="Manager\Managers\PlayerManager\Player.cpp" />
-    <ClCompile Include="Manager\Managers\StoreManager\Store.cpp" />
-    <ClCompile Include="Manager\Managers\SunlightManager\SunlightManager.cpp" />
-    <ClCompile Include="Manager\Managers\ZombieManager\ZombieManager.cpp" />
-    <ClCompile Include="PlantsVsZombies.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

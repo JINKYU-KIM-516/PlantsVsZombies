@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Game">
+      <UniqueIdentifier>{cfc273d5-98b4-48c6-afdc-3e0d9a082b26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\CoreFunction">
+      <UniqueIdentifier>{258ac5a0-066b-45be-a235-59d2e2a49348}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\CoreFunction\Point">
+      <UniqueIdentifier>{2dafdcbe-855f-4265-85f0-efe5a817f56a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\CoreFunction\Size">
+      <UniqueIdentifier>{717f11c6-a97d-4820-b1e4-f9bac5628660}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\CoreFunction\PictureBox">
+      <UniqueIdentifier>{e67299b2-c305-401c-9468-77607aa88fc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Main">
+      <UniqueIdentifier>{df77c6c2-b0f1-445d-bcd3-5d5013828f4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\CoreFunction\IntervalTimer">
+      <UniqueIdentifier>{87e1761a-51f0-4f99-a8ed-820a707566db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager">
+      <UniqueIdentifier>{fdfb1852-f1c6-41c9-8209-749fb69a622a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\SunlightManager">
+      <UniqueIdentifier>{f7e7c48d-12b4-486e-a5f6-0f540f41dcfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\ManagerManager">
+      <UniqueIdentifier>{05b44544-6700-4900-a103-160242b9a275}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\BaseManager">
+      <UniqueIdentifier>{8d6283ae-d42a-43ba-9fbf-9c74401a6277}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers">
+      <UniqueIdentifier>{0074ed86-d462-45b7-b663-276b4e716471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\BulletManager">
+      <UniqueIdentifier>{82f14f9d-3159-41e3-a547-0335b3ed8b56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\CollisionManager">
+      <UniqueIdentifier>{be2b1933-2304-401c-8a74-f1c843815ba6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\PlantManager">
+      <UniqueIdentifier>{67ba0f14-e4e9-4ca6-8059-bd222124c687}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\ZombieManager">
+      <UniqueIdentifier>{335e0fdc-bf8c-419d-a502-dd0749b2cd9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\Store">
+      <UniqueIdentifier>{14ed5336-399d-45a7-9f4d-552a43502132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\Store\StorePlantImage">
+      <UniqueIdentifier>{9ae8c368-23db-4ec4-b7e3-9ab386c2d34e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\GameBoard">
+      <UniqueIdentifier>{598a03c3-0b2e-404c-9127-174567e57dbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\GameBoard\Tile">
+      <UniqueIdentifier>{15466b94-16d0-4333-b3e4-7aa94cb0c437}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\BulletManager\Bullet">
+      <UniqueIdentifier>{b584fe15-54ac-4930-aee3-07a251b11b5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\BulletManager\Bullet\BulletPea">
+      <UniqueIdentifier>{74a03951-1309-40a2-a861-2757aeaf7bdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\PlantManager\Plant">
+      <UniqueIdentifier>{f24ac04d-85be-4965-b9af-9482a99bb4cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\PlantManager\Plant\Sunflower">
+      <UniqueIdentifier>{4eca7184-b3d8-4b2d-810a-08392d279803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\PlantManager\Plant\Pea">
+      <UniqueIdentifier>{4b13eb0f-ef76-4903-8260-31e78705220b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\SunlightManager\Sunlight">
+      <UniqueIdentifier>{8845dbb4-c200-4038-a7ff-460e0bebda47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\ZombieManager\Zombie">
+      <UniqueIdentifier>{09bd6a98-4706-4860-8268-f1fec28d83fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Game\Manager\Managers\Player">
+      <UniqueIdentifier>{b3fea389-c85a-452b-850e-91381c2c86da}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>소스 파일\Game\Manager\Managers\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>소스 파일\CoreFunction\Point</Filter>
+    </ClInclude>
+    <ClInclude Include="Size.h">
+      <Filter>소스 파일\CoreFunction\Size</Filter>
+    </ClInclude>
+    <ClInclude Include="GameBoard.h">
+      <Filter>소스 파일\Game\Manager\Managers\GameBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="PictureBox.h">
+      <Filter>소스 파일\CoreFunction\PictureBox</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>소스 파일\Game\Manager\Managers\GameBoard\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="MainGame.h">
+      <Filter>소스 파일\Game\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="PlantsVsZombies.h">
+      <Filter>소스 파일\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Sunflower.h">
+      <Filter>소스 파일\Game\Manager\Managers\PlantManager\Plant\Sunflower</Filter>
+    </ClInclude>
+    <ClInclude Include="Plant.h">
+      <Filter>소스 파일\Game\Manager\Managers\PlantManager\Plant</Filter>
+    </ClInclude>
+    <ClInclude Include="Pea.h">
+      <Filter>소스 파일\Game\Manager\Managers\PlantManager\Plant\Pea</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombie.h">
+      <Filter>소스 파일\Game\Manager\Managers\ZombieManager\Zombie</Filter>
+    </ClInclude>
+    <ClInclude Include="ZombieManager.h">
+      <Filter>소스 파일\Game\Manager\Managers\ZombieManager</Filter>
+    </ClInclude>
+    <ClInclude Include="IntervalTimer.h">
+      <Filter>소스 파일\CoreFunction\IntervalTimer</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>소스 파일\Game\Manager\Managers\BulletManager\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletPea.h">
+      <Filter>소스 파일\Game\Manager\Managers\BulletManager\Bullet\BulletPea</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletManager.h">
+      <Filter>소스 파일\Game\Manager\Managers\BulletManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>소스 파일\Game\Manager\Managers\CollisionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="PlantManager.h">
+      <Filter>소스 파일\Game\Manager\Managers\PlantManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sunlight.h">
+      <Filter>소스 파일\Game\Manager\SunlightManager\Sunlight</Filter>
+    </ClInclude>
+    <ClInclude Include="SunlightManager.h">
+      <Filter>소스 파일\Game\Manager\SunlightManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>소스 파일\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Store.h">
+      <Filter>소스 파일\Game\Manager\Managers\Store</Filter>
+    </ClInclude>
+    <ClInclude Include="StorePlantImage.h">
+      <Filter>소스 파일\Game\Manager\Managers\Store\StorePlantImage</Filter>
+    </ClInclude>
+    <ClInclude Include="ManagerManager.h">
+      <Filter>소스 파일\Game\Manager\ManagerManager</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseManager.h">
+      <Filter>소스 파일\Game\Manager\BaseManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>소스 파일\CoreFunction\Point</Filter>
+    </ClCompile>
+    <ClCompile Include="Size.cpp">
+      <Filter>소스 파일\CoreFunction\Size</Filter>
+    </ClCompile>
+    <ClCompile Include="GameBoard.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\GameBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="PictureBox.cpp">
+      <Filter>소스 파일\CoreFunction\PictureBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\GameBoard\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>소스 파일\Game\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="PlantsVsZombies.cpp">
+      <Filter>소스 파일\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Sunflower.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\PlantManager\Plant\Sunflower</Filter>
+    </ClCompile>
+    <ClCompile Include="Plant.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\PlantManager\Plant</Filter>
+    </ClCompile>
+    <ClCompile Include="Pea.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\PlantManager\Plant\Pea</Filter>
+    </ClCompile>
+    <ClCompile Include="Zombie.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\ZombieManager\Zombie</Filter>
+    </ClCompile>
+    <ClCompile Include="ZombieManager.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\ZombieManager</Filter>
+    </ClCompile>
+    <ClCompile Include="IntervalTimer.cpp">
+      <Filter>소스 파일\CoreFunction\IntervalTimer</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\BulletManager\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletPea.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\BulletManager\Bullet\BulletPea</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletManager.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\BulletManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\CollisionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="PlantManager.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\PlantManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Sunlight.cpp">
+      <Filter>소스 파일\Game\Manager\SunlightManager\Sunlight</Filter>
+    </ClCompile>
+    <ClCompile Include="SunlightManager.cpp">
+      <Filter>소스 파일\Game\Manager\SunlightManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Store.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\Store</Filter>
+    </ClCompile>
+    <ClCompile Include="StorePlantImage.cpp">
+      <Filter>소스 파일\Game\Manager\Managers\Store\StorePlantImage</Filter>
+    </ClCompile>
+    <ClCompile Include="ManagerManager.cpp">
+      <Filter>소스 파일\Game\Manager\ManagerManager</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseManager.cpp">
+      <Filter>소스 파일\Game\Manager\BaseManager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PlantsVsZombies.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="PlantsVsZombies.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

@@ -4,7 +4,7 @@
 #include "framework.h"
 #include "PlantsVsZombies.h"
 #include <windowsx.h>
-#include "../PlantsVsZombies/Main/MainGame.h"
+#include "MainGame.h"
 
 #define MAX_LOADSTRING 100
 
