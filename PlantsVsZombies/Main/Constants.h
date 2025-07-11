@@ -64,23 +64,26 @@ enum StorePlantIndex
 #define INVISIBLE_POS Point(-512, -512)
 
 //****이미지 경로****
+// 
+// ../../Bmp_Resources_ver2/
 //게임보드(타일) 이미지
-#define IMAGEPATH_GAMEBOARD_GRASS L"../Resources_PlantsVsZombies_bmp/GameBoard_Grass.bmp"
+#define IMAGEPATH_GAMEBOARD_GROUND_BRIGHTER L"../Bmp_Resources_ver2/UI/Ground_Brighter.bmp"
+#define IMAGEPATH_GAMEBOARD_GROUND_DARKER L"../Bmp_Resources_ver2/UI/Ground_Darker.bmp"
 
 //식물 이미지
-#define IMAGEPATH_SUNFLOWER L"../Resources_PlantsVsZombies_bmp/Plant_Sunflower.bmp"
-#define IMAGEPATH_SUNFLOWER_GRAYSCALE L"../Resources_PlantsVsZombies_bmp/Plant_Sunflower_Grayscale.bmp"
-#define IMAGEPATH_PEA L"../Resources_PlantsVsZombies_bmp/Plant_Pea.bmp"
-#define IMAGEPATH_PEA_GRAYSCALE L"../Resources_PlantsVsZombies_bmp/Plant_Pea_Grayscale.bmp"
+#define IMAGEPATH_SUNFLOWER L"../Bmp_Resources_ver2/Plant/Sunflower/Sunflower.bmp"
+#define IMAGEPATH_SUNFLOWER_GRAYSCALE L"../Bmp_Resources_ver2/Plant/Sunflower/Sunflower_Grayscale.bmp"
+#define IMAGEPATH_PEA L"../Bmp_Resources_ver2/Plant/Pea/Pea.bmp"
+#define IMAGEPATH_PEA_GRAYSCALE L"../Bmp_Resources_ver2/Plant/Pea/Pea_Grayscale.bmp"
 
 //햇빛 이미지
-#define IMAGEPATH_SUNLIGHT L"../Resources_PlantsVsZombies_bmp/sunlight.bmp"
+#define IMAGEPATH_SUNLIGHT L"../Bmp_Resources_ver2/Sunlight/Sunlight.bmp"
 
 //총알 이미지
-#define IMAGEPATH_BULLET_PEA L"../Resources_PlantsVsZombies_bmp/Bullet_Pea.bmp"
+#define IMAGEPATH_BULLET_PEA L"../Bmp_Resources_ver2/Bullet/PeaBullet.bmp"
 
 //좀비 이미지
-#define IMAGEPATH_ZOMBIE L"../Resources_PlantsVsZombies_bmp/Zombie.bmp"
+#define IMAGEPATH_ZOMBIE L"../Bmp_Resources_ver2/Zombie/Zombie.bmp"
 
 //****주기 시간****
 //햇빛 소환 주기

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{d2c7ab8e-64d0-40a8-9a69-9ae9df9920c2}</ProjectGuid>
+    <RootNamespace>PlantsVsZombies</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="CoreFunction\IntervalTimer\IntervalTimer.h" />
+    <ClInclude Include="CoreFunction\PictureBox\PictureBox.h" />
+    <ClInclude Include="CoreFunction\Point\Point.h" />
+    <ClInclude Include="CoreFunction\Singleton\SingletonT.h" />
+    <ClInclude Include="CoreFunction\Size\Size.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="GameObject\Bullet\Bullet.h" />
+    <ClInclude Include="GameObject\Bullet\BulletPea\BulletPea.h" />
+    <ClInclude Include="GameObject\Plant\Pea\Pea.h" />
+    <ClInclude Include="GameObject\Plant\Plant.h" />
+    <ClInclude Include="GameObject\Plant\Sunflower\Sunflower.h" />
+    <ClInclude Include="GameObject\StorePlantImage\StorePlantImage.h" />
+    <ClInclude Include="GameObject\Sunlight\Sunlight.h" />
+    <ClInclude Include="GameObject\Tile\Tile.h" />
+    <ClInclude Include="GameObject\Zombie\Zombie.h" />
+    <ClInclude Include="Main\Constants.h" />
+    <ClInclude Include="Main\MainGame.h" />
+    <ClInclude Include="Manager\BaseManager\BaseManager.h" />
+    <ClInclude Include="Manager\ManagerManager\ManagerManager.h" />
+    <ClInclude Include="Manager\Managers\BulletManager\BulletManager.h" />
+    <ClInclude Include="Manager\Managers\CollisionManager\CollisionManager.h" />
+    <ClInclude Include="Manager\Managers\GameBoardManager\GameBoard.h" />
+    <ClInclude Include="Manager\Managers\PlantManager\PlantManager.h" />
+    <ClInclude Include="Manager\Managers\PlayerManager\Player.h" />
+    <ClInclude Include="Manager\Managers\StoreManager\Store.h" />
+    <ClInclude Include="Manager\Managers\SunlightManager\SunlightManager.h" />
+    <ClInclude Include="Manager\Managers\ZombieManager\ZombieManager.h" />
+    <ClInclude Include="PlantsVsZombies.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PlantsVsZombies.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="PlantsVsZombies.ico" />
+    <Image Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CoreFunction\IntervalTimer\IntervalTimer.cpp" />
+    <ClCompile Include="CoreFunction\PictureBox\PictureBox.cpp" />
+    <ClCompile Include="CoreFunction\Point\Point.cpp" />
+    <ClCompile Include="CoreFunction\Singleton\SingletonT.cpp" />
+    <ClCompile Include="CoreFunction\Size\Size.cpp" />
+    <ClCompile Include="GameObject\Bullet\Bullet.cpp" />
+    <ClCompile Include="GameObject\Bullet\BulletPea\BulletPea.cpp" />
+    <ClCompile Include="GameObject\Plant\Pea\Pea.cpp" />
+    <ClCompile Include="GameObject\Plant\Plant.cpp" />
+    <ClCompile Include="GameObject\Plant\Sunflower\Sunflower.cpp" />
+    <ClCompile Include="GameObject\StorePlantImage\StorePlantImage.cpp" />
+    <ClCompile Include="GameObject\Sunlight\Sunlight.cpp" />
+    <ClCompile Include="GameObject\Tile\Tile.cpp" />
+    <ClCompile Include="GameObject\Zombie\Zombie.cpp" />
+    <ClCompile Include="Main\MainGame.cpp" />
+    <ClCompile Include="Manager\BaseManager\BaseManager.cpp" />
+    <ClCompile Include="Manager\ManagerManager\ManagerManager.cpp" />
+    <ClCompile Include="Manager\Managers\BulletManager\BulletManager.cpp" />
+    <ClCompile Include="Manager\Managers\CollisionManager\CollisionManager.cpp" />
+    <ClCompile Include="Manager\Managers\GameBoardManager\GameBoard.cpp" />
+    <ClCompile Include="Manager\Managers\PlantManager\PlantManager.cpp" />
+    <ClCompile Include="Manager\Managers\PlayerManager\Player.cpp" />
+    <ClCompile Include="Manager\Managers\StoreManager\Store.cpp" />
+    <ClCompile Include="Manager\Managers\SunlightManager\SunlightManager.cpp" />
+    <ClCompile Include="Manager\Managers\ZombieManager\ZombieManager.cpp" />
+    <ClCompile Include="PlantsVsZombies.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
