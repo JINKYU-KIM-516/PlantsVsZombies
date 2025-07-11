@@ -64,8 +64,6 @@ enum StorePlantIndex
 #define INVISIBLE_POS Point(-512, -512)
 
 //****이미지 경로****
-// 
-// ../../Bmp_Resources_ver2/
 //게임보드(타일) 이미지
 #define IMAGEPATH_GAMEBOARD_GROUND_BRIGHTER L"../Bmp_Resources_ver2/UI/Ground_Brighter.bmp"
 #define IMAGEPATH_GAMEBOARD_GROUND_DARKER L"../Bmp_Resources_ver2/UI/Ground_Darker.bmp"
@@ -75,15 +73,23 @@ enum StorePlantIndex
 #define IMAGEPATH_SUNFLOWER_GRAYSCALE L"../Bmp_Resources_ver2/Plant/Sunflower/Sunflower_Grayscale.bmp"
 #define IMAGEPATH_PEA L"../Bmp_Resources_ver2/Plant/Pea/Pea.bmp"
 #define IMAGEPATH_PEA_GRAYSCALE L"../Bmp_Resources_ver2/Plant/Pea/Pea_Grayscale.bmp"
+#define IMAGEPATH_NUT L"../Bmp_Resources_ver2/Plant/Nut/Nut.bmp"
+#define IMAGEPATH_NUT_GRAYSCALE L"../Bmp_Resources_ver2/Plant/Nut/Nut_Grayscale.bmp"
+#define IMAGEPATH_NUT_DAMAGED L"../Bmp_Resources_ver2/Plant/Nut/Nut_Damaged.bmp"
+#define IMAGEPATH_NUT_EMERGENCY L"../Bmp_Resources_ver2/Plant/Nut/Nut_Emergency.bmp"
+#define IMAGEPATH_ICEPEA L"../Bmp_Resources_ver2/Plant/IcePea/IcePea.bmp"
+#define IMAGEPATH_ICEPEA_GRAYSCALE L"../Bmp_Resources_ver2/Plant/IcePea/IcePea_Grayscale.bmp"
 
 //햇빛 이미지
 #define IMAGEPATH_SUNLIGHT L"../Bmp_Resources_ver2/Sunlight/Sunlight.bmp"
 
 //총알 이미지
 #define IMAGEPATH_BULLET_PEA L"../Bmp_Resources_ver2/Bullet/PeaBullet.bmp"
+#define IMAGEPATH_BULLET_ICEPEA L"../Bmp_Resources_ver2/Bullet/IcePeaBullet.bmp"
 
 //좀비 이미지
 #define IMAGEPATH_ZOMBIE L"../Bmp_Resources_ver2/Zombie/Zombie.bmp"
+#define IMAGEPATH_FUNNEL_ZOMBIE L"../Bmp_Resources_ver2/Zombie/FunnelZombie.bmp"
 
 //****주기 시간****
 //햇빛 소환 주기

@@ -133,6 +133,7 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="GameObject\Bullet\Bullet.h" />
     <ClInclude Include="GameObject\Bullet\BulletPea\BulletPea.h" />
+    <ClInclude Include="GameObject\Plant\IcePea\IcePea.h" />
     <ClInclude Include="GameObject\Plant\Pea\Pea.h" />
     <ClInclude Include="GameObject\Plant\Plant.h" />
     <ClInclude Include="GameObject\Plant\Sunflower\Sunflower.h" />
@@ -171,6 +172,7 @@
     <ClCompile Include="CoreFunction\Size\Size.cpp" />
     <ClCompile Include="GameObject\Bullet\Bullet.cpp" />
     <ClCompile Include="GameObject\Bullet\BulletPea\BulletPea.cpp" />
+    <ClCompile Include="GameObject\Plant\IcePea\IcePea.cpp" />
     <ClCompile Include="GameObject\Plant\Pea\Pea.cpp" />
     <ClCompile Include="GameObject\Plant\Plant.cpp" />
     <ClCompile Include="GameObject\Plant\Sunflower\Sunflower.cpp" />

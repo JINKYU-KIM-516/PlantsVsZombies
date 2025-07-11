@@ -100,6 +100,9 @@
     <Filter Include="소스 파일\Manager\BaseManager">
       <UniqueIdentifier>{bed3eee9-6fa4-4c84-b27c-7e8dd0b77c27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\GameObject\Plant\IcePea">
+      <UniqueIdentifier>{13a0f7bf-0cb7-4413-a5e0-0ca21c4eb80c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -191,6 +194,9 @@
     </ClInclude>
     <ClInclude Include="PlantsVsZombies.h">
       <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Plant\IcePea\IcePea.h">
+      <Filter>소스 파일\GameObject\Plant\IcePea</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -284,6 +290,9 @@
     </ClCompile>
     <ClCompile Include="PlantsVsZombies.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Plant\IcePea\IcePea.cpp">
+      <Filter>소스 파일\GameObject\Plant\IcePea</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
