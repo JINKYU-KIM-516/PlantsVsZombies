@@ -11,10 +11,7 @@ void CollisionManager::CheckColliding_BulletAndZombie()
             if (bullet->IsCollided(zombie))
             {
                 zombie->TakeDamage(bullet->GetAttackPower());
-                if (dynamic_cast<IcePeaBullet*>(bullet))
-                {
-
-                }
+                bullet->Active(zombie);
                 m_bulletManager->DeleteBullet(bullet);
             }
         }

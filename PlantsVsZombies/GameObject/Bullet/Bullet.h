@@ -1,5 +1,6 @@
 #pragma once
 #include "../../CoreFunction/PictureBox/PictureBox.h"
+#include "../Zombie/Zombie.h"
 
 class Bullet : public PictureBox
 {
@@ -13,6 +14,8 @@ public:
 	virtual ~Bullet();
 	void Init(float p_ap, float p_ms);
 	void Update();
+
+	virtual void Active(Zombie* p_zombie);
 
 	float GetAttackPower();
 };

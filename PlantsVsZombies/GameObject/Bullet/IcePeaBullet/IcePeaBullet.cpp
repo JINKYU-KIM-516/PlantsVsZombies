@@ -5,3 +5,8 @@ IcePeaBullet::IcePeaBullet(Point p_pos)
 {
 
 }
+
+void IcePeaBullet::Active(Zombie* p_zombie)
+{
+	p_zombie->SetStateFrozen();
+}

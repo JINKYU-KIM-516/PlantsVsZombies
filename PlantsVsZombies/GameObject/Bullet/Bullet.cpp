@@ -30,6 +30,11 @@ void Bullet::Update()
 	Move();
 }
 
+void Bullet::Active(Zombie* p_zombie)
+{
+
+}
+
 float Bullet::GetAttackPower()
 {
 	return m_attackPower;

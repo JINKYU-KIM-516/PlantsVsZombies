@@ -23,8 +23,8 @@ void Zombie::CheckAlive()
 void Zombie::CheckState()
 {
 	if (m_frozenDuration.HasElapsed())
-		m_state = ZOMBIE_STATE_NORMAL;
-
+		ResetState();
+	/*
 	switch (m_state)
 	{
 	case ZOMBIE_STATE_NORMAL:
@@ -32,9 +32,11 @@ void Zombie::CheckState()
 		m_moveSpeed = MOVESPEED_ZOMBIE;
 		break;
 	case ZOMBIE_STATE_FROZEN:
-		m_attackSpeed = 2;
+		m_attackSpeed = ATTACKSPEED_ZOMBIE / 2;
+		m_moveSpeed = MOVESPEED_ZOMBIE / 2;
 		break;
 	}
+	*/
 }
 
 
@@ -42,8 +44,6 @@ void Zombie::CheckState()
 Zombie::Zombie()
 	:PictureBox(DEFAULT_POSITION, ZOMBIE_SIZE, IMAGEPATH_ZOMBIE)
 {
-	m_attackTimer.Init(m_attackSpeed);
-	m_frozenDuration.Init(DURATION_FROZEN_BY_ICEPEA);
 	m_hp = 100;
 	m_attackPower = ATTACKPOWER_ZOMBIE;
 	m_attackSpeed = ATTACKSPEED_ZOMBIE;
@@ -52,6 +52,8 @@ Zombie::Zombie()
 	m_isAttacking = false;
 	m_plant = nullptr;
 	m_state = ZOMBIE_STATE_NORMAL;
+	m_attackTimer.Init(m_attackSpeed);
+	m_frozenDuration.Init(DURATION_FROZEN_BY_ICEPEA);
 }
 void Zombie::Init(Point p_pos)
 {
@@ -60,6 +62,7 @@ void Zombie::Init(Point p_pos)
 void Zombie::Update()
 {
 	CheckAlive();
+	CheckState();
 	if (!m_isAttacking)
 		Move();
 	else
@@ -97,6 +100,8 @@ bool Zombie::IsAttacking()
 void Zombie::SetStateFrozen()
 {
 	m_state = ZOMBIE_STATE_FROZEN;
+	m_attackSpeed = ATTACKSPEED_ZOMBIE / 2;
+	m_moveSpeed = MOVESPEED_ZOMBIE / 2;
 	m_frozenDuration.Tick();
 }
 
