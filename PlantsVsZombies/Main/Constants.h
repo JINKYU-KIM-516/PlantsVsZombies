@@ -2,7 +2,7 @@
 
 enum PlayerState
 {
-	NORMAL, SELECTING
+	PLAYER_STATE_NORMAL, PLAYER_STATE_SELECTING
 };
 
 enum PlantCode
@@ -33,7 +33,7 @@ enum StorePlantIndex
 
 enum ZombieState
 {
-	NORMAL, FROZEN
+	ZOMBIE_STATE_NORMAL, ZOMBIE_STATE_FROZEN
 };
 
 #define COST_SUNFLOWER 50
