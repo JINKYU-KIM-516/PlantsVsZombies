@@ -12,6 +12,14 @@ void Zombie::CheckAlive()
 		m_isAlive = false;
 }
 
+void Zombie::ResetState()
+{
+	m_state = ZombieState::NORMAL;
+	m_attackPower = ATTACKPOWER_ZOMBIE;
+	m_attackSpeed = ATTACKSPEED_ZOMBIE;
+	m_moveSpeed = MOVESPEED_ZOMBIE;
+}
+
 //public
 Zombie::Zombie()
 	:PictureBox(DEFAULT_POSITION, ZOMBIE_SIZE, IMAGEPATH_ZOMBIE)
@@ -23,11 +31,12 @@ Zombie::Zombie()
 	m_isAlive = true;
 	m_isAttacking = false;
 	m_plant = nullptr;
+	m_attackTimer.Init(m_attackSpeed);
+	m_frozenDuration.Init(DURATION_FROZEN_BY_ICEPEA);
 }
 void Zombie::Init(Point p_pos)
 {
 	m_positon = p_pos;
-	m_attackTimer.Init(m_attackSpeed);
 }
 void Zombie::Update()
 {
@@ -64,6 +73,10 @@ bool Zombie::IsAlive()
 bool Zombie::IsAttacking()
 {
 	return m_isAttacking;
+}
+
+void Zombie::SetStateFrozen()
+{
 }
 
 void Zombie::Target(Plant* p_plant)

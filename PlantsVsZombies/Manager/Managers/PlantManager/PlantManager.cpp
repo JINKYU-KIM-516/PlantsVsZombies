@@ -61,6 +61,14 @@ void PlantManager::SpawnPea(Point p_pos)
 	AddPlant(pea);
 }
 
+void PlantManager::SpawnIcePea(Point p_pos)
+{
+	IcePea* icePea = new IcePea();
+	icePea->Init(p_pos, m_bulletManager);
+	AddPlant(icePea);
+}
+
+
 void PlantManager::AddPlant(Plant* p_plant)
 {
 	m_plants.push_back(p_plant);

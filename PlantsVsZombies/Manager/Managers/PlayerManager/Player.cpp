@@ -16,6 +16,10 @@ void Player::SpawnPlant(Point p_pos)
 			m_mainGame->GetPlantManager()->SpawnPea(m_currentTilePos);
 			m_sunlight -= COST_PEA;
 			break;
+		case CODE_ICEPEA:
+			m_mainGame->GetPlantManager()->SpawnIcePea(m_currentTilePos);
+			m_sunlight -= COST_ICEPEA;
+			break;
 		default:
 			break;
 		}
@@ -62,7 +66,7 @@ void Player::Init()
 {
 	m_mainGame = nullptr;
 	m_sunlight = 0;
-	m_state = NORMAL;
+	m_state = PlayerState::NORMAL;
 	m_selectedCode = -1;
 	m_currentSelectedPlant = nullptr;
 }
@@ -102,6 +106,9 @@ void Player::SelectPlant(int p_code)
 	case CODE_PEA:
 		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_PEA);
 		break;
+	case CODE_ICEPEA:
+		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_ICEPEA);
+		break;
 	default:
 		break;
 	}
@@ -109,7 +116,7 @@ void Player::SelectPlant(int p_code)
 
 void Player::ResetState()
 {
-	m_state = NORMAL;
+	m_state = PlayerState::NORMAL;
 	m_selectedCode = -1;
 	if (m_currentSelectedPlant)
 	{
@@ -139,7 +146,7 @@ void Player::SetSunlight(int p_sunlight)
 	m_sunlight = p_sunlight;
 }
 
-void Player::SetState(int p_state)
+void Player::SetState(PlayerState p_state)
 {
 	m_state = p_state;
 }

@@ -4,6 +4,7 @@
 #include "../BulletManager/BulletManager.h"
 #include "../../../GameObject/Plant/Sunflower/Sunflower.h"
 #include "../../../GameObject/Plant/Pea/Pea.h"
+#include "../../../GameObject/Plant/IcePea/IcePea.h"
 
 using namespace std;
 
@@ -27,6 +28,7 @@ public:
 
 	void SpawnSunflower(Point p_pos);
 	void SpawnPea(Point p_pos);
+	void SpawnIcePea(Point p_pos);
 
 	void AddPlant(Plant* p_plant);
 	void DeletePlant(Plant* p_plant);

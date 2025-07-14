@@ -14,6 +14,11 @@ Bullet::Bullet(Point p_pos, Size p_size, const wstring& p_imagePath)
 	m_moveSpeed = 0;
 }
 
+Bullet::~Bullet()
+{
+
+}
+
 void Bullet::Init(int p_ap, int p_ms)
 {
 	m_attackPower = p_ap;

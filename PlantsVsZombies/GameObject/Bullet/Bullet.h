@@ -10,6 +10,7 @@ protected:
 	void Move();
 public:
 	Bullet(Point p_pos, Size p_size, const wstring& p_imagePath);
+	virtual ~Bullet();
 	void Init(int p_ap, int p_ms);
 	void Update();
 

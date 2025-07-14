@@ -14,8 +14,9 @@ protected:
 	vector<StorePlantImage*> m_plantImages;
 
 	void AddImage(StorePlantImage* p_plantImage);
-	void PaintSunflowerImage();
-	void PaintPeaImage();
+	void PaintImage_Sunflower();
+	void PaintImage_Pea();
+	void PaintImage_IcePea();
 
 	Point GetCurrentStoreImagePosition(int p_index);
 	void ClickStorePlantImage();

@@ -8,7 +8,8 @@ enum PlayerState
 enum PlantCode
 {
 	CODE_SUNFLOWER = 1,
-	CODE_PEA = 2
+	CODE_PEA = 2,
+	CODE_ICEPEA = 3
 };
 
 enum ManagerIndex
@@ -26,11 +27,18 @@ enum ManagerIndex
 enum StorePlantIndex
 {
 	SUNFLOWER_INDEX,
-	PEA_INDEX
+	PEA_INDEX,
+	ICEPEA_INDEX
+};
+
+enum ZombieState
+{
+	NORMAL, FROZEN
 };
 
 #define COST_SUNFLOWER 50
 #define COST_PEA 100
+#define COST_ICEPEA 150
 
 #define TILE_WIDTH 64
 #define TILE_HEIGHT 64
@@ -84,8 +92,8 @@ enum StorePlantIndex
 #define IMAGEPATH_SUNLIGHT L"../Bmp_Resources_ver2/Sunlight/Sunlight.bmp"
 
 //총알 이미지
-#define IMAGEPATH_BULLET_PEA L"../Bmp_Resources_ver2/Bullet/PeaBullet.bmp"
-#define IMAGEPATH_BULLET_ICEPEA L"../Bmp_Resources_ver2/Bullet/IcePeaBullet.bmp"
+#define IMAGEPATH_PEA_BULLET L"../Bmp_Resources_ver2/Bullet/PeaBullet.bmp"
+#define IMAGEPATH_ICEPEA_BULLET L"../Bmp_Resources_ver2/Bullet/IcePeaBullet.bmp"
 
 //좀비 이미지
 #define IMAGEPATH_ZOMBIE L"../Bmp_Resources_ver2/Zombie/Zombie.bmp"
@@ -94,9 +102,6 @@ enum StorePlantIndex
 //****주기 시간****
 //햇빛 소환 주기
 #define INTERVAL_SEC_SPAWN_SUNLIGHT 4
-
-//총알 소환 주기
-#define INTERVAL_SEC_SPAWN_BULLET_PEA 2
 
 //좀비 소환 주기
 #define INTERVAL_SEC_SPAWN_ZOMBIE 5
@@ -109,6 +114,13 @@ enum StorePlantIndex
 //****전투력****
 #define ATTACKPOWER_ZOMBIE 15
 #define ATTACKPOWER_PEA 25
+#define ATTACKPOWER_ICEPEA 25
+
 
 //****공격속도****
 #define ATTACKSPEED_ZOMBIE 1
+#define ATTACKSPEED_PEA 2
+#define ATTACKSPEED_ICEPEA 3
+
+//****상태이상****
+#define DURATION_FROZEN_BY_ICEPEA 5
