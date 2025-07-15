@@ -16,6 +16,8 @@ protected:
 	int m_attackSpeed;
 	int m_attackPower;
 	int m_moveSpeed;
+	int m_moveInterval;
+	int m_moveIntervalCount;
 	ZombieState m_state;
 
 	bool m_isAlive;

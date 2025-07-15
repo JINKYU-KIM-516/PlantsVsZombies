@@ -3,14 +3,20 @@
 //protected
 void Zombie::Move()
 {
-	m_positon.SetX(m_positon.GetX() - m_moveSpeed);
+	m_moveIntervalCount++;
+	if (m_moveInterval <= m_moveIntervalCount)
+	{
+		m_positon.SetX(m_positon.GetX() - m_moveSpeed);
+		m_moveIntervalCount = 0;
+	}
 }
 
 void Zombie::ResetState()
 {
 	m_state = ZOMBIE_STATE_NORMAL;
 	m_attackSpeed = ATTACKSPEED_ZOMBIE;
-	m_moveSpeed = MOVESPEED_ZOMBIE;
+	m_attackTimer.Init(m_attackSpeed);
+	m_moveInterval = 1;
 }
 
 void Zombie::CheckAlive()
@@ -24,19 +30,6 @@ void Zombie::CheckState()
 {
 	if (m_frozenDuration.HasElapsed())
 		ResetState();
-	/*
-	switch (m_state)
-	{
-	case ZOMBIE_STATE_NORMAL:
-		m_attackSpeed = ATTACKSPEED_ZOMBIE;
-		m_moveSpeed = MOVESPEED_ZOMBIE;
-		break;
-	case ZOMBIE_STATE_FROZEN:
-		m_attackSpeed = ATTACKSPEED_ZOMBIE / 2;
-		m_moveSpeed = MOVESPEED_ZOMBIE / 2;
-		break;
-	}
-	*/
 }
 
 
@@ -48,10 +41,14 @@ Zombie::Zombie()
 	m_attackPower = ATTACKPOWER_ZOMBIE;
 	m_attackSpeed = ATTACKSPEED_ZOMBIE;
 	m_moveSpeed = MOVESPEED_ZOMBIE;
+	m_moveInterval = 1;
+	m_moveIntervalCount = 0;
+	m_state = ZOMBIE_STATE_NORMAL;
+
 	m_isAlive = true;
 	m_isAttacking = false;
+
 	m_plant = nullptr;
-	m_state = ZOMBIE_STATE_NORMAL;
 	m_attackTimer.Init(m_attackSpeed);
 	m_frozenDuration.Init(DURATION_FROZEN_BY_ICEPEA);
 }
@@ -100,8 +97,9 @@ bool Zombie::IsAttacking()
 void Zombie::SetStateFrozen()
 {
 	m_state = ZOMBIE_STATE_FROZEN;
-	m_attackSpeed = ATTACKSPEED_ZOMBIE / 2;
-	m_moveSpeed = MOVESPEED_ZOMBIE / 2;
+	m_attackSpeed = ATTACKSPEED_ZOMBIE * 2;
+	m_attackTimer.Init(m_attackSpeed);
+	m_moveInterval = 2;
 	m_frozenDuration.Tick();
 }
 

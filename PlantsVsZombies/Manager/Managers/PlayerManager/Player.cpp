@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "../../../Main/MainGame.h"
 
+
 //protected
 void Player::SpawnPlant(Point p_pos)
 {
@@ -26,6 +27,30 @@ void Player::SpawnPlant(Point p_pos)
 	}
 }
 
+void Player::SpawnPlant(Point p_pos, Tile* p_tile)
+{
+	if (m_state == PLAYER_STATE_SELECTING)
+	{
+		switch (m_selectedCode)
+		{
+		case CODE_SUNFLOWER:
+			m_mainGame->GetPlantManager()->SpawnSunflower(m_currentTilePos, p_tile);
+			m_sunlight -= COST_SUNFLOWER;
+			break;
+		case CODE_PEA:
+			m_mainGame->GetPlantManager()->SpawnPea(m_currentTilePos, p_tile);
+			m_sunlight -= COST_PEA;
+			break;
+		case CODE_ICEPEA:
+			m_mainGame->GetPlantManager()->SpawnIcePea(m_currentTilePos, p_tile);
+			m_sunlight -= COST_ICEPEA;
+			break;
+		default:
+			break;
+		}
+	}
+}
+
 void Player::ClickTile()
 {
 	if (m_state != PLAYER_STATE_SELECTING)
@@ -34,8 +59,7 @@ void Player::ClickTile()
 	if (!currentTile || currentTile->IsPlantExist())
 		return;
 	SetCurrentTilePos(currentTile->GetPos());
-	currentTile->SetPlantExist(true);
-	SpawnPlant(m_currentTilePos);
+	SpawnPlant(m_currentTilePos, currentTile);
 	ResetState();
 }
 

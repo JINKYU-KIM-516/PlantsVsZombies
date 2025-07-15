@@ -30,6 +30,10 @@ public:
 	void SpawnPea(Point p_pos);
 	void SpawnIcePea(Point p_pos);
 
+	void SpawnSunflower(Point p_pos, Tile* p_tile);
+	void SpawnPea(Point p_pos, Tile* p_tile);
+	void SpawnIcePea(Point p_pos, Tile* p_tile);
+
 	void AddPlant(Plant* p_plant);
 	void DeletePlant(Plant* p_plant);
 	const vector<Plant*>& GetPlants() const;

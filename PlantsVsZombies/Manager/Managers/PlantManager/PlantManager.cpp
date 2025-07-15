@@ -68,6 +68,30 @@ void PlantManager::SpawnIcePea(Point p_pos)
 	AddPlant(icePea);
 }
 
+void PlantManager::SpawnSunflower(Point p_pos, Tile* p_tile)
+{
+	Sunflower* sunflower = new Sunflower();
+	sunflower->Init(p_pos, m_sunlightManager);
+	sunflower->LinkTile(p_tile);
+	AddPlant(sunflower);
+}
+
+void PlantManager::SpawnPea(Point p_pos, Tile* p_tile)
+{
+	Pea* pea = new Pea();
+	pea->Init(p_pos, m_bulletManager);
+	pea->LinkTile(p_tile);
+	AddPlant(pea);
+}
+
+void PlantManager::SpawnIcePea(Point p_pos, Tile* p_tile)
+{
+	IcePea* icePea = new IcePea();
+	icePea->Init(p_pos, m_bulletManager);
+	icePea->LinkTile(p_tile);
+	AddPlant(icePea);
+}
+
 
 void PlantManager::AddPlant(Plant* p_plant)
 {

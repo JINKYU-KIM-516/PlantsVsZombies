@@ -5,6 +5,8 @@
 
 using namespace std;
 
+class Tile;
+
 class Player : public BaseManager
 {
 protected:
@@ -17,7 +19,9 @@ protected:
 
 	Point m_currentTilePos;
 
+	//protected
 	void SpawnPlant(Point p_pos);
+	void SpawnPlant(Point p_pos, Tile* p_tile);
 	void ClickTile();
 	void PreviewPlant();
 public:
