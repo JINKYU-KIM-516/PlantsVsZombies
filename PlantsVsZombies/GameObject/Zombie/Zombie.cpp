@@ -17,6 +17,7 @@ void Zombie::ResetState()
 	m_attackSpeed = ATTACKSPEED_ZOMBIE;
 	m_attackTimer.Init(m_attackSpeed);
 	m_moveInterval = 1;
+	SetImage(IMAGEPATH_ZOMBIE);
 }
 
 void Zombie::CheckAlive()
@@ -100,6 +101,7 @@ void Zombie::SetStateFrozen()
 	m_attackSpeed = ATTACKSPEED_ZOMBIE * 2;
 	m_attackTimer.Init(m_attackSpeed);
 	m_moveInterval = 2;
+	SetImage(IMAGEPATH_ZOMBIE_FROZEN);
 	m_frozenDuration.Tick();
 }
 

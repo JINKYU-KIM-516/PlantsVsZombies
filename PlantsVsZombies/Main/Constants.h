@@ -97,6 +97,7 @@ enum ZombieState
 
 //좀비 이미지
 #define IMAGEPATH_ZOMBIE L"../Bmp_Resources_ver2/Zombie/Zombie.bmp"
+#define IMAGEPATH_ZOMBIE_FROZEN L"../Bmp_Resources_ver2/Zombie/Zombie_Frozen.bmp"
 #define IMAGEPATH_FUNNEL_ZOMBIE L"../Bmp_Resources_ver2/Zombie/FunnelZombie.bmp"
 
 //****주기 시간****
