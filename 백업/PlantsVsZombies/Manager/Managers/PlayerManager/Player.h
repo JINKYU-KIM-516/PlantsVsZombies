@@ -11,7 +11,7 @@ protected:
 	MainGame* m_mainGame;
 
 	int m_sunlight;
-	int m_state;
+	PlayerState m_state;
 	int m_selectedCode;
 	PictureBox* m_currentSelectedPlant;
 
@@ -36,7 +36,7 @@ public:
 	int GetSelectedCode();
 
 	void SetSunlight(int p_sunlight);
-	void SetState(int p_state);
+	void SetState(PlayerState p_state);
 	void SetSelectedCode(int p_code);
 	void SetCurrentTilePos(Point p_pos);
 };

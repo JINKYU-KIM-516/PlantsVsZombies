@@ -12,10 +12,10 @@ protected:
 	IntervalTimer m_frozenDuration;
 	Plant* m_plant;
 
-	float m_hp;
-	float m_attackSpeed;
-	float m_attackPower;
-	float m_moveSpeed;
+	int m_hp;
+	int m_attackSpeed;
+	int m_attackPower;
+	int m_moveSpeed;
 	ZombieState m_state;
 
 	bool m_isAlive;
@@ -33,13 +33,13 @@ public:
 
 	void Attack();
 
-	float GetAttackPower();
+	int GetAttackPower();
 	bool IsAlive();	
 	bool IsAttacking();
 
 	void SetStateFrozen();
 
 	void Target(Plant* p_plant);
-	void TakeDamage(float p_damage);
+	void TakeDamage(int p_damage);
 	void StopAttacking();
 };

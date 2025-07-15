@@ -19,7 +19,7 @@ Plant::~Plant()
 
 }
 
-void Plant::Init(float p_hp)
+void Plant::Init(int p_hp)
 {
     m_hp = p_hp;
     m_isAlive = true;
@@ -30,7 +30,7 @@ void Plant::Update()
     CheckAlive();
 }
 
-void Plant::TakeDamage(float p_damage)
+void Plant::TakeDamage(int p_damage)
 {
     m_hp -= p_damage;
 }

@@ -4,16 +4,16 @@
 class Plant : public PictureBox
 {
 protected:
-	float m_hp;
+	int m_hp;
 	bool m_isAlive;
 
 	void CheckAlive();
 public:
 	Plant(Point p_pos, Size p_size, const wstring& p_imagePath);
 	virtual ~Plant();
-	virtual void Init(float p_hp);
+	virtual void Init(int p_hp);
 	virtual void Update();
 
-	void TakeDamage(float p_damage);
+	void TakeDamage(int p_damage);
 	bool IsAlive();
 };

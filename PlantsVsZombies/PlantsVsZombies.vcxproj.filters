@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="소스 파일\CoreFunction">
-      <UniqueIdentifier>{93880efb-bfe2-402b-8511-f01a27d43f83}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\GameObject">
       <UniqueIdentifier>{85e27340-8c18-463a-9851-8fcffdccc8d8}</UniqueIdentifier>
     </Filter>
@@ -24,21 +21,6 @@
     </Filter>
     <Filter Include="소스 파일\Manager">
       <UniqueIdentifier>{e44c4202-c6a4-4416-8e72-062404b87190}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\CoreFunction\IntervalTimer">
-      <UniqueIdentifier>{ea87a316-6fbf-4738-aedf-8353fc866185}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\CoreFunction\PictureBox">
-      <UniqueIdentifier>{1cecdfd9-2c7b-4521-9efd-def8f1a75b72}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\CoreFunction\Point">
-      <UniqueIdentifier>{52e487e3-ed01-4607-953e-30b2c6f6feda}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\CoreFunction\Singleton">
-      <UniqueIdentifier>{9a2a74cc-207f-439b-9362-108eee8076b8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\CoreFunction\Size">
-      <UniqueIdentifier>{018999d9-0b28-4e83-8994-a4b6f5a74f0c}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\GameObject\Bullet">
       <UniqueIdentifier>{28c83ef8-9426-47ca-845f-d7230ab04d05}</UniqueIdentifier>
@@ -106,6 +88,24 @@
     <Filter Include="소스 파일\GameObject\Bullet\IcePeaBullet">
       <UniqueIdentifier>{7a307451-1d6b-4022-a21a-267b3cf60dae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\CoreFunction">
+      <UniqueIdentifier>{11feed1c-662b-4522-a650-22506f53eb58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\CoreFunction\IntiervalTimer">
+      <UniqueIdentifier>{94e3d464-867b-4c7b-b2ee-87dbfb61470d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\CoreFunction\PictureBox">
+      <UniqueIdentifier>{d35bc428-f2c5-4742-b018-ea8e3863fc55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\CoreFunction\Point">
+      <UniqueIdentifier>{68169cd5-dbe8-4da0-92fa-33a335e52a4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\CoreFunction\Singleton">
+      <UniqueIdentifier>{69ffaebd-4513-40c3-b591-b8fa693b271e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\CoreFunction\Size">
+      <UniqueIdentifier>{c1b08e74-b291-45ee-8390-f67e6b998f4d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -116,21 +116,6 @@
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="CoreFunction\IntervalTimer\IntervalTimer.h">
-      <Filter>소스 파일\CoreFunction\IntervalTimer</Filter>
-    </ClInclude>
-    <ClInclude Include="CoreFunction\Size\Size.h">
-      <Filter>소스 파일\CoreFunction\Size</Filter>
-    </ClInclude>
-    <ClInclude Include="CoreFunction\Singleton\SingletonT.h">
-      <Filter>소스 파일\CoreFunction\Singleton</Filter>
-    </ClInclude>
-    <ClInclude Include="CoreFunction\Point\Point.h">
-      <Filter>소스 파일\CoreFunction\Point</Filter>
-    </ClInclude>
-    <ClInclude Include="CoreFunction\PictureBox\PictureBox.h">
-      <Filter>소스 파일\CoreFunction\PictureBox</Filter>
     </ClInclude>
     <ClInclude Include="GameObject\Bullet\Bullet.h">
       <Filter>소스 파일\GameObject\Bullet</Filter>
@@ -204,6 +189,21 @@
     <ClInclude Include="GameObject\Bullet\PeaBullet\PeaBullet.h">
       <Filter>소스 파일\GameObject\Bullet\PeaBullet</Filter>
     </ClInclude>
+    <ClInclude Include="CoreFunction\IntervalTimer\IntervalTimer.h">
+      <Filter>소스 파일\CoreFunction\IntiervalTimer</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreFunction\Size\Size.h">
+      <Filter>소스 파일\CoreFunction\Size</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreFunction\Singleton\SingletonT.h">
+      <Filter>소스 파일\CoreFunction\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreFunction\Point\Point.h">
+      <Filter>소스 파일\CoreFunction\Point</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreFunction\PictureBox\PictureBox.h">
+      <Filter>소스 파일\CoreFunction\PictureBox</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="PlantsVsZombies.rc">
@@ -219,21 +219,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CoreFunction\IntervalTimer\IntervalTimer.cpp">
-      <Filter>소스 파일\CoreFunction\IntervalTimer</Filter>
-    </ClCompile>
-    <ClCompile Include="CoreFunction\Size\Size.cpp">
-      <Filter>소스 파일\CoreFunction\Size</Filter>
-    </ClCompile>
-    <ClCompile Include="CoreFunction\Singleton\SingletonT.cpp">
-      <Filter>소스 파일\CoreFunction\Singleton</Filter>
-    </ClCompile>
-    <ClCompile Include="CoreFunction\Point\Point.cpp">
-      <Filter>소스 파일\CoreFunction\Point</Filter>
-    </ClCompile>
-    <ClCompile Include="CoreFunction\PictureBox\PictureBox.cpp">
-      <Filter>소스 파일\CoreFunction\PictureBox</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject\Bullet\Bullet.cpp">
       <Filter>소스 파일\GameObject\Bullet</Filter>
     </ClCompile>
@@ -302,6 +287,21 @@
     </ClCompile>
     <ClCompile Include="GameObject\Bullet\PeaBullet\PeaBullet.cpp">
       <Filter>소스 파일\GameObject\Bullet\PeaBullet</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreFunction\IntervalTimer\IntervalTimer.cpp">
+      <Filter>소스 파일\CoreFunction\IntiervalTimer</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreFunction\Size\Size.cpp">
+      <Filter>소스 파일\CoreFunction\Size</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreFunction\Singleton\SingletonT.cpp">
+      <Filter>소스 파일\CoreFunction\Singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreFunction\Point\Point.cpp">
+      <Filter>소스 파일\CoreFunction\Point</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreFunction\PictureBox\PictureBox.cpp">
+      <Filter>소스 파일\CoreFunction\PictureBox</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

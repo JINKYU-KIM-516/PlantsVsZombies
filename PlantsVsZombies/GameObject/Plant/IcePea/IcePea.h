@@ -10,8 +10,8 @@ protected:
 	BulletManager* m_bulletManager;
 
 	IntervalTimer m_attackTimer;
-	float m_attackPower;
-	float m_attackSpeed;
+	int m_attackPower;
+	int m_attackSpeed;
 
 	void SpawnBullet();
 	void SpawnBulletPeriodically();

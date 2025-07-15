@@ -14,7 +14,12 @@ Bullet::Bullet(Point p_pos, Size p_size, const wstring& p_imagePath)
 	m_moveSpeed = 0;
 }
 
-void Bullet::Init(int p_ap, int p_ms)
+Bullet::~Bullet()
+{
+
+}
+
+void Bullet::Init(float p_ap, float p_ms)
 {
 	m_attackPower = p_ap;
 	m_moveSpeed = p_ms;
@@ -25,7 +30,12 @@ void Bullet::Update()
 	Move();
 }
 
-int Bullet::GetAttackPower()
+void Bullet::Active(Zombie* p_zombie)
+{
+
+}
+
+float Bullet::GetAttackPower()
 {
 	return m_attackPower;
 }

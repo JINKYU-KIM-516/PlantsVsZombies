@@ -1,10 +1,10 @@
 #pragma once
 #include "../Plant.h"
 #include "../../../CoreFunction/IntervalTimer/IntervalTimer.h"
-#include "../../Bullet/PeaBullet/PeaBullet.h"
+#include "../../Bullet/IcePeaBullet/IcePeaBullet.h"
 #include "../../../Manager/Managers/BulletManager/BulletManager.h"
 
-class Pea : public Plant
+class IcePea : public Plant
 {
 protected:
 	BulletManager* m_bulletManager;
@@ -16,8 +16,8 @@ protected:
 	void SpawnBullet();
 	void SpawnBulletPeriodically();
 public:
-	Pea();
-	~Pea();
+	IcePea();
+	~IcePea();
 	void Init(Point p_pos, BulletManager* p_bulletManager);
 	void Update() override;
 };

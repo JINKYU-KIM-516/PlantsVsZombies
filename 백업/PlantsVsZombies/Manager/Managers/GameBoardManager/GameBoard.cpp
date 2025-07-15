@@ -7,7 +7,7 @@ void GameBoard::CreateTiles()
 	{
 		for (int x = 0; x < GAMEBOARD_WIDTH; x++)
 		{
-			Tile* tile = new Tile(Point(GAMEBOARD_START_X + x * TILE_WIDTH, GAMEBOARD_START_Y + y * TILE_HEIGHT), IMAGEPATH_GAMEBOARD_GRASS);
+			Tile* tile = new Tile(Point(GAMEBOARD_START_X + x * TILE_WIDTH, GAMEBOARD_START_Y + y * TILE_HEIGHT), IMAGEPATH_GAMEBOARD_GROUND_BRIGHTER);
 			m_tiles.push_back(tile);
 		}
 	}

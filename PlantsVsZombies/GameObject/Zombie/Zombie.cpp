@@ -82,7 +82,7 @@ void Zombie::Attack()
 	}
 }
 
-float Zombie::GetAttackPower()
+int Zombie::GetAttackPower()
 {
 	return m_attackPower;
 }
@@ -111,7 +111,7 @@ void Zombie::Target(Plant* p_plant)
 	m_isAttacking = true;
 }
 
-void Zombie::TakeDamage(float p_damage)
+void Zombie::TakeDamage(int p_damage)
 {
 	m_hp -= p_damage;
 }

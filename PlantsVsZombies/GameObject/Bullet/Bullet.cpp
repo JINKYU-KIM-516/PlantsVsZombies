@@ -19,7 +19,7 @@ Bullet::~Bullet()
 
 }
 
-void Bullet::Init(float p_ap, float p_ms)
+void Bullet::Init(int p_ap, int p_ms)
 {
 	m_attackPower = p_ap;
 	m_moveSpeed = p_ms;
@@ -35,7 +35,7 @@ void Bullet::Active(Zombie* p_zombie)
 
 }
 
-float Bullet::GetAttackPower()
+int Bullet::GetAttackPower()
 {
 	return m_attackPower;
 }
