@@ -53,6 +53,7 @@ Zombie::Zombie()
 	m_attackTimer.Init(m_attackSpeed);
 	m_frozenDuration.Init(DURATION_FROZEN_BY_ICEPEA);
 }
+
 void Zombie::Init(Point p_pos)
 {
 	m_positon = p_pos;

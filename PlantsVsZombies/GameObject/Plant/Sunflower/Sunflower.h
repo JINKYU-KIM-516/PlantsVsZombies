@@ -1,7 +1,6 @@
 #pragma once
 #include "../Plant.h"
 #include "../../../CoreFunction/IntervalTimer/IntervalTimer.h"
-//#include "../../../Manager/Managers/SunlightManager/SunlightManager.h"
 
 class SunlightManager;
 

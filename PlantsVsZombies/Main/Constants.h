@@ -7,9 +7,10 @@ enum PlayerState
 
 enum PlantCode
 {
-	CODE_SUNFLOWER = 1,
-	CODE_PEA = 2,
-	CODE_ICEPEA = 3
+	SUNFLOWER_CODE = 1,
+	PEA_CODE = 2,
+	ICEPEA_CODE = 3,
+	NUT_CODE = 4
 };
 
 enum ManagerIndex
@@ -28,17 +29,14 @@ enum StorePlantIndex
 {
 	SUNFLOWER_INDEX,
 	PEA_INDEX,
-	ICEPEA_INDEX
+	ICEPEA_INDEX,
+	NUT_INDEX
 };
 
 enum ZombieState
 {
 	ZOMBIE_STATE_NORMAL, ZOMBIE_STATE_FROZEN
 };
-
-#define COST_SUNFLOWER 50
-#define COST_PEA 100
-#define COST_ICEPEA 150
 
 #define TILE_WIDTH 64
 #define TILE_HEIGHT 64
@@ -125,3 +123,9 @@ enum ZombieState
 
 //****상태이상****
 #define DURATION_FROZEN_BY_ICEPEA 5
+
+//식물 비용
+#define SUNFLOWER_COST 50
+#define PEA_COST 100
+#define ICEPEA_COST 150
+#define NUT_COST 75

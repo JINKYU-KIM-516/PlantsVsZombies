@@ -17,6 +17,7 @@ protected:
 	void PaintImage_Sunflower();
 	void PaintImage_Pea();
 	void PaintImage_IcePea();
+	void PaintImage_Nut();
 
 	Point GetCurrentStoreImagePosition(int p_index);
 	void ClickStorePlantImage();

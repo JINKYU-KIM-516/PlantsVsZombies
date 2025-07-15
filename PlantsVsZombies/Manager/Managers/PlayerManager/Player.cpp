@@ -9,17 +9,17 @@ void Player::SpawnPlant(Point p_pos)
 	{
 		switch (m_selectedCode)
 		{
-		case CODE_SUNFLOWER:
+		case SUNFLOWER_CODE:
 			m_mainGame->GetPlantManager()->SpawnSunflower(m_currentTilePos);
-			m_sunlight -= COST_SUNFLOWER;
+			m_sunlight -= SUNFLOWER_COST;
 			break;
-		case CODE_PEA:
+		case PEA_CODE:
 			m_mainGame->GetPlantManager()->SpawnPea(m_currentTilePos);
-			m_sunlight -= COST_PEA;
+			m_sunlight -= PEA_COST;
 			break;
-		case CODE_ICEPEA:
+		case ICEPEA_CODE:
 			m_mainGame->GetPlantManager()->SpawnIcePea(m_currentTilePos);
-			m_sunlight -= COST_ICEPEA;
+			m_sunlight -= ICEPEA_COST;
 			break;
 		default:
 			break;
@@ -33,17 +33,21 @@ void Player::SpawnPlant(Point p_pos, Tile* p_tile)
 	{
 		switch (m_selectedCode)
 		{
-		case CODE_SUNFLOWER:
+		case SUNFLOWER_CODE:
 			m_mainGame->GetPlantManager()->SpawnSunflower(m_currentTilePos, p_tile);
-			m_sunlight -= COST_SUNFLOWER;
+			m_sunlight -= SUNFLOWER_COST;
 			break;
-		case CODE_PEA:
+		case PEA_CODE:
 			m_mainGame->GetPlantManager()->SpawnPea(m_currentTilePos, p_tile);
-			m_sunlight -= COST_PEA;
+			m_sunlight -= PEA_COST;
 			break;
-		case CODE_ICEPEA:
+		case ICEPEA_CODE:
 			m_mainGame->GetPlantManager()->SpawnIcePea(m_currentTilePos, p_tile);
-			m_sunlight -= COST_ICEPEA;
+			m_sunlight -= ICEPEA_COST;
+			break;
+		case NUT_CODE:
+			m_mainGame->GetPlantManager()->SpawnNut(m_currentTilePos, p_tile);
+			m_sunlight -= NUT_COST;
 			break;
 		default:
 			break;
@@ -124,14 +128,17 @@ void Player::SelectPlant(int p_code)
 	Size size = PLANT_SIZE;
 	switch (m_selectedCode)
 	{
-	case CODE_SUNFLOWER:
+	case SUNFLOWER_CODE:
 		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_SUNFLOWER);
 		break;
-	case CODE_PEA:
+	case PEA_CODE:
 		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_PEA);
 		break;
-	case CODE_ICEPEA:
+	case ICEPEA_CODE:
 		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_ICEPEA);
+		break;
+	case NUT_CODE:
+		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_NUT);
 		break;
 	default:
 		break;

@@ -106,6 +106,9 @@
     <Filter Include="소스 파일\CoreFunction\Size">
       <UniqueIdentifier>{c1b08e74-b291-45ee-8390-f67e6b998f4d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\GameObject\Plant\Nut">
+      <UniqueIdentifier>{1a863f7d-ec30-4608-9514-d3cef18be47f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -203,6 +206,9 @@
     </ClInclude>
     <ClInclude Include="CoreFunction\PictureBox\PictureBox.h">
       <Filter>소스 파일\CoreFunction\PictureBox</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Plant\Nut\Nut.h">
+      <Filter>소스 파일\GameObject\Plant\Nut</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +308,9 @@
     </ClCompile>
     <ClCompile Include="CoreFunction\PictureBox\PictureBox.cpp">
       <Filter>소스 파일\CoreFunction\PictureBox</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Plant\Nut\Nut.cpp">
+      <Filter>소스 파일\GameObject\Plant\Nut</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

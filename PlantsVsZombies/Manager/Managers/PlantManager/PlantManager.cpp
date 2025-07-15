@@ -92,6 +92,13 @@ void PlantManager::SpawnIcePea(Point p_pos, Tile* p_tile)
 	AddPlant(icePea);
 }
 
+void PlantManager::SpawnNut(Point p_pos, Tile* p_tile)
+{
+	Nut* nut = new Nut();
+	nut->Init(p_pos);
+	nut->LinkTile(p_tile);
+	AddPlant(nut);
+}
 
 void PlantManager::AddPlant(Plant* p_plant)
 {

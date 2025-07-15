@@ -13,7 +13,7 @@ void Store::PaintImage_Sunflower()
 	StorePlantImage* sunflowerImage = new StorePlantImage(
 		GetCurrentStoreImagePosition(m_index),
 		IMAGEPATH_SUNFLOWER, IMAGEPATH_SUNFLOWER_GRAYSCALE,
-		CODE_SUNFLOWER, COST_SUNFLOWER);
+		SUNFLOWER_CODE, SUNFLOWER_COST);
 	AddImage(sunflowerImage);
 }
 
@@ -23,7 +23,7 @@ void Store::PaintImage_Pea()
 	StorePlantImage* peaImage = new StorePlantImage(
 		GetCurrentStoreImagePosition(m_index),
 		IMAGEPATH_PEA, IMAGEPATH_PEA_GRAYSCALE,
-		CODE_PEA, COST_PEA);
+		PEA_CODE, PEA_COST);
 	AddImage(peaImage);
 }
 
@@ -33,8 +33,18 @@ void Store::PaintImage_IcePea()
 	StorePlantImage* icePeaImage = new StorePlantImage(
 		GetCurrentStoreImagePosition(m_index),
 		IMAGEPATH_ICEPEA, IMAGEPATH_ICEPEA_GRAYSCALE,
-		CODE_ICEPEA, COST_ICEPEA);
+		ICEPEA_CODE, ICEPEA_COST);
 	AddImage(icePeaImage);
+}
+
+void Store::PaintImage_Nut()
+{
+	m_index++;
+	StorePlantImage* nutImage = new StorePlantImage(
+		GetCurrentStoreImagePosition(m_index),
+		IMAGEPATH_NUT, IMAGEPATH_NUT_GRAYSCALE,
+		NUT_CODE, NUT_COST);
+	AddImage(nutImage);
 }
 
 Point Store::GetCurrentStoreImagePosition(int p_index)
@@ -83,6 +93,7 @@ void Store::Init()
 	PaintImage_Sunflower();
 	PaintImage_Pea();
 	PaintImage_IcePea();
+	PaintImage_Nut();
 }
 
 void Store::Link(MainGame* p_mainGame)
