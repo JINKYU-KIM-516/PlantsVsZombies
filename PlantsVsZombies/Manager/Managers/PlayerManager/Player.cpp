@@ -129,16 +129,16 @@ void Player::SelectPlant(int p_code)
 	switch (m_selectedCode)
 	{
 	case SUNFLOWER_CODE:
-		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_SUNFLOWER);
+		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, SUNFLOWER_IMAGEPATH);
 		break;
 	case PEA_CODE:
-		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_PEA);
+		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, PEA_IMAGEPATH);
 		break;
 	case ICEPEA_CODE:
-		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_ICEPEA);
+		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, ICEPEA_IMAGEPATH);
 		break;
 	case NUT_CODE:
-		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_NUT);
+		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, NUT_IMAGEPATH);
 		break;
 	default:
 		break;

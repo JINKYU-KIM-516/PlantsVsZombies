@@ -13,7 +13,7 @@ protected:
 
 	void CheckAlive();
 public:
-	Plant(Point p_pos, Size p_size, const wstring& p_imagePath);
+	Plant(Point p_pos, Size p_size, const wstring p_imagePath);
 	virtual ~Plant();
 	virtual void Init(int p_hp);
 	void LinkTile(Tile* p_tile);

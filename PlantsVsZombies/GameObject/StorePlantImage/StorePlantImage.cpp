@@ -5,7 +5,7 @@ void StorePlantImage::CheckCost(int p_sunlight)
 {
 	if (m_cost <= p_sunlight)
 	{
-		SetImage(m_basicImagePath);
+		SetImage(m_imagePath);
 		m_canCost = true;
 	}		
 	else
@@ -16,16 +16,17 @@ void StorePlantImage::CheckCost(int p_sunlight)
 }
 
 //public
-StorePlantImage::StorePlantImage(Point p_pos, const wstring& p_basicIP, const wstring& p_grayscaleIP, int p_code, int p_cost)
+StorePlantImage::StorePlantImage(Point p_pos, const wstring p_basicIP, int p_code, int p_cost)
 	: PictureBox(p_pos, PLANT_SIZE, p_basicIP)
 {
-	Init(p_basicIP, p_grayscaleIP, p_code, p_cost);
+	Init(p_basicIP, p_code, p_cost);
 }
 
-void StorePlantImage::Init(const wstring& p_basicIP, const wstring& p_grayscaleIP, int p_code, int p_cost)
+void StorePlantImage::Init(const wstring p_basicIP, int p_code, int p_cost)
 {
-	m_basicImagePath = p_basicIP;
-	m_grayscaleImagePath = p_grayscaleIP;
+	wstring tempStr = m_imagePath;
+	tempStr.replace(tempStr.length() - 4, 4, L"_Grayscale.bmp");
+	m_grayscaleImagePath = tempStr;
 	m_code = p_code;
 	m_cost = p_cost;
 	m_canCost = false;

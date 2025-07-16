@@ -18,7 +18,7 @@ void Sunflower::SpawnSunlight()
 
 //public
 Sunflower::Sunflower()
-    :Plant(DEFAULT_POSITION, PLANT_SIZE, IMAGEPATH_SUNFLOWER)
+    :Plant(DEFAULT_POSITION, PLANT_SIZE, SUNFLOWER_IMAGEPATH)
 {
     m_sunlightManager = nullptr;
     m_hp = 100;

@@ -142,7 +142,9 @@
     <ClInclude Include="GameObject\StorePlantImage\StorePlantImage.h" />
     <ClInclude Include="GameObject\Sunlight\Sunlight.h" />
     <ClInclude Include="GameObject\Tile\Tile.h" />
-    <ClInclude Include="GameObject\Zombie\Zombie.h" />
+    <ClInclude Include="GameObject\Zombie\FunnelZombie\FunnelZombie.h" />
+    <ClInclude Include="GameObject\Zombie\BaseZombie.h" />
+    <ClInclude Include="GameObject\Zombie\Zombie\Zombie.h" />
     <ClInclude Include="Main\Constants.h" />
     <ClInclude Include="Main\MainGame.h" />
     <ClInclude Include="Manager\BaseManager\BaseManager.h" />
@@ -183,7 +185,9 @@
     <ClCompile Include="GameObject\StorePlantImage\StorePlantImage.cpp" />
     <ClCompile Include="GameObject\Sunlight\Sunlight.cpp" />
     <ClCompile Include="GameObject\Tile\Tile.cpp" />
-    <ClCompile Include="GameObject\Zombie\Zombie.cpp" />
+    <ClCompile Include="GameObject\Zombie\FunnelZombie\FunnelZombie.cpp" />
+    <ClCompile Include="GameObject\Zombie\BaseZombie.cpp" />
+    <ClCompile Include="GameObject\Zombie\Zombie\Zombie.cpp" />
     <ClCompile Include="Main\MainGame.cpp" />
     <ClCompile Include="Manager\BaseManager\BaseManager.cpp" />
     <ClCompile Include="Manager\ManagerManager\ManagerManager.cpp" />

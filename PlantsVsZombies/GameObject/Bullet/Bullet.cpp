@@ -7,7 +7,7 @@ void Bullet::Move()
 }
 
 //public
-Bullet::Bullet(Point p_pos, Size p_size, const wstring& p_imagePath)
+Bullet::Bullet(Point p_pos, Size p_size, const wstring p_imagePath)
 	:PictureBox(p_pos, p_size, p_imagePath)
 {
 	m_attackPower = 0;
@@ -30,7 +30,7 @@ void Bullet::Update()
 	Move();
 }
 
-void Bullet::Active(Zombie* p_zombie)
+void Bullet::Active(BaseZombie* p_zombie)
 {
 
 }

@@ -1,8 +1,10 @@
 #pragma once
 #include <vector>
 #include "../../BaseManager/BaseManager.h"
-#include "../../../GameObject/Zombie/Zombie.h"
 #include "../../../CoreFunction/IntervalTimer/IntervalTimer.h"
+#include "../../../GameObject/Zombie/BaseZombie.h"
+#include "../../../GameObject/Zombie/Zombie/Zombie.h"
+#include "../../../GameObject/Zombie/FunnelZombie/FunnelZombie.h"
 
 class ZombieManager : public BaseManager
 {
@@ -10,7 +12,7 @@ protected:
     MainGame* m_mainGame;
 
     IntervalTimer m_spawnTimer;
-    vector<Zombie*> m_zombies;
+    vector<BaseZombie*> m_zombies;
 
     void SpawnZombieRandom();
     void CheckZombiesAlive();
@@ -24,7 +26,7 @@ public:
     void Draw(HDC p_hdc) override;
 
     void SpawnZombie(Point p_pos);
-    void AddZombie(Zombie* p_zombie);
-    void DeleteZombie(Zombie* p_zombie);
-    const vector<Zombie*>& GetZombies() const;
+    void AddZombie(BaseZombie* p_zombie);
+    void DeleteZombie(BaseZombie* p_zombie);
+    const vector<BaseZombie*>& GetZombies() const;
 };

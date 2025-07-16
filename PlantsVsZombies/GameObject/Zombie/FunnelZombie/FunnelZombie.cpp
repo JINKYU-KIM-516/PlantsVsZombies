@@ -1,0 +1,7 @@
+#include "FunnelZombie.h"
+
+FunnelZombie::FunnelZombie()
+	:BaseZombie(ZOMBIE_HEALTHPOINT, ZOMBIE_ATTACKPOWER, ZOMBIE_ATTACKSPEED, ZOMBIE_MOVESPEED, FUNNEL_ZOMBIE_IMAGEPATH)
+{
+
+}

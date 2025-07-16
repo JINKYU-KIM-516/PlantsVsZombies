@@ -77,18 +77,18 @@ void ZombieManager::Draw(HDC p_hdc)
         zombie->Draw(p_hdc);
 }
 
-void ZombieManager::AddZombie(Zombie* p_zombie)
+void ZombieManager::AddZombie(BaseZombie* p_zombie)
 {
     m_zombies.push_back(p_zombie);
 }
 
-void ZombieManager::DeleteZombie(Zombie* p_zombie)
+void ZombieManager::DeleteZombie(BaseZombie* p_zombie)
 {
     m_zombies.erase(remove(m_zombies.begin(), m_zombies.end(), p_zombie), m_zombies.end());
     delete p_zombie;
 }
 
-const vector<Zombie*>& ZombieManager::GetZombies() const
+const vector<BaseZombie*>& ZombieManager::GetZombies() const
 {
     return m_zombies;
 }

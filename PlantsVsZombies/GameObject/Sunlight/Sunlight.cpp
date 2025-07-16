@@ -8,9 +8,9 @@ void Sunlight::Move()
 
 //public
 Sunlight::Sunlight()
-	:PictureBox(DEFAULT_POSITION, SUNLIGHT_SIZE, IMAGEPATH_SUNLIGHT)
+	:PictureBox(DEFAULT_POSITION, SUNLIGHT_SIZE, SUNLIGHT_IMAGEPATH)
 {
-	m_moveSpeed = MOVESPEED_SUNLIGHT;
+	m_moveSpeed = SUNLIGHT_MOVESPEED;
 	m_limitY = 0;
 }
 

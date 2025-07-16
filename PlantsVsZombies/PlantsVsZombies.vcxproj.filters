@@ -109,6 +109,12 @@
     <Filter Include="소스 파일\GameObject\Plant\Nut">
       <UniqueIdentifier>{1a863f7d-ec30-4608-9514-d3cef18be47f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\GameObject\Zombie\FunnelZombie">
+      <UniqueIdentifier>{1c93c16a-7c6f-4a9f-9ba7-5d6c9b244f5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GameObject\Zombie\Zombie">
+      <UniqueIdentifier>{91e6f158-b252-4ea7-b1a7-fbf480ad0cc5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -123,7 +129,7 @@
     <ClInclude Include="GameObject\Bullet\Bullet.h">
       <Filter>소스 파일\GameObject\Bullet</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject\Zombie\Zombie.h">
+    <ClInclude Include="GameObject\Zombie\BaseZombie.h">
       <Filter>소스 파일\GameObject\Zombie</Filter>
     </ClInclude>
     <ClInclude Include="GameObject\Tile\Tile.h">
@@ -210,6 +216,12 @@
     <ClInclude Include="GameObject\Plant\Nut\Nut.h">
       <Filter>소스 파일\GameObject\Plant\Nut</Filter>
     </ClInclude>
+    <ClInclude Include="GameObject\Zombie\FunnelZombie\FunnelZombie.h">
+      <Filter>소스 파일\GameObject\Zombie\FunnelZombie</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\Zombie\Zombie\Zombie.h">
+      <Filter>소스 파일\GameObject\Zombie\Zombie</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="PlantsVsZombies.rc">
@@ -228,7 +240,7 @@
     <ClCompile Include="GameObject\Bullet\Bullet.cpp">
       <Filter>소스 파일\GameObject\Bullet</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject\Zombie\Zombie.cpp">
+    <ClCompile Include="GameObject\Zombie\BaseZombie.cpp">
       <Filter>소스 파일\GameObject\Zombie</Filter>
     </ClCompile>
     <ClCompile Include="GameObject\Tile\Tile.cpp">
@@ -311,6 +323,12 @@
     </ClCompile>
     <ClCompile Include="GameObject\Plant\Nut\Nut.cpp">
       <Filter>소스 파일\GameObject\Plant\Nut</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Zombie\FunnelZombie\FunnelZombie.cpp">
+      <Filter>소스 파일\GameObject\Zombie\FunnelZombie</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\Zombie\Zombie\Zombie.cpp">
+      <Filter>소스 파일\GameObject\Zombie\Zombie</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

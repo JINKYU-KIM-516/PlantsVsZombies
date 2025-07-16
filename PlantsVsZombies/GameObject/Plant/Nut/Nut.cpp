@@ -4,14 +4,14 @@
 void Nut::CheckHp()
 {
     if (100 < m_hp && m_hp <= 200)
-        SetImage(IMAGEPATH_NUT_DAMAGED);
+        SetImage(NUT_DAMAGED_IMAGEPATH);
     else if (m_hp <= 100)
-        SetImage(IMAGEPATH_NUT_EMERGENCY);
+        SetImage(NUT_EMERGENCY_IMAGEPATH);
 }
 
 //public
 Nut::Nut()
-    :Plant(DEFAULT_POSITION, PLANT_SIZE, IMAGEPATH_NUT)
+    :Plant(DEFAULT_POSITION, PLANT_SIZE, NUT_IMAGEPATH)
 {
     m_hp = 300;
 }

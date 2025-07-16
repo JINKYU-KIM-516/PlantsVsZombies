@@ -15,7 +15,7 @@ protected:
 	HBITMAP m_hBmp;
 	wstring m_imagePath;
 public:
-	PictureBox(Point p_pos, Size p_size, const wstring& p_imagePath);
+	PictureBox(Point p_pos, Size p_size, const wstring p_imagePath);
 	~PictureBox();
 	void Draw(HDC hdc);
 
@@ -27,5 +27,5 @@ public:
 	bool Contains(Point p_pos) const;
 
 	void SetPos(Point p_pos);
-	void SetImage(const wstring& p_imagePath);
+	void SetImage(const wstring p_imagePath);
 };

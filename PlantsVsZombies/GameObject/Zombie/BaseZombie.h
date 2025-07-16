@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Zombie : public PictureBox
+class BaseZombie : public PictureBox
 {
 protected:
 	IntervalTimer m_attackTimer;
@@ -29,7 +29,7 @@ protected:
 	void CheckAlive();
 	void CheckState();
 public:
-	Zombie();
+	BaseZombie(int p_hp, int p_ap, int p_as, int p_ms, wstring p_imagePath);
 	void Init(Point p_pos);
 	void Update();
 
