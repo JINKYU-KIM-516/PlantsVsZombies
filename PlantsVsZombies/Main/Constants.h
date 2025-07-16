@@ -119,7 +119,8 @@ enum ZombieState
 #define ZOMBIE_MOVESPEED 1
 
 //°í±ò Á»ºñ
-#define FUNNEL_ZOMBIE_IMAGEPATH L"../Bmp_Resources_ver2/Zombie/FunnelZombie.bmp"
+#define FUNNEL_ZOMBIE_IMAGEPATH L"../Bmp_Resources_ver2/Zombie/FunnelZombie/FunnelZombie.bmp"
+#define FUNNEL_ZOMBIE_Frozen_IMAGEPATH L"../Bmp_Resources_ver2/Zombie/FunnelZombie/FunnelZombie_Frozen.bmp"
 
 #define FUNNEL_ZOMBIE_HEALTHPOINT 150
 #define FUNNEL_ZOMBIE_ATTACKPOWER 15

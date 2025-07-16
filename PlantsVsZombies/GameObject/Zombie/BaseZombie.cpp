@@ -19,7 +19,7 @@ void BaseZombie::ResetState()
 	m_attackSpeed = ZOMBIE_ATTACKSPEED;
 	m_attackTimer.Init(m_attackSpeed);
 	m_moveInterval = 1;
-	SetImage(m_imagePath);
+	SetImage(m_basicImagePath);
 }
 
 void BaseZombie::CheckAlive()
@@ -40,6 +40,10 @@ void BaseZombie::CheckState()
 BaseZombie::BaseZombie(int p_hp, int p_ap, int p_as, int p_ms, wstring p_imagePath)
 	:PictureBox(DEFAULT_POSITION, ZOMBIE_SIZE, p_imagePath)
 {
+	m_basicImagePath = p_imagePath;
+	wstring tempStr = m_basicImagePath;
+	tempStr.replace(tempStr.length() - 4, 4, L"_Frozen.bmp");
+	m_frozenImagePath = tempStr;
 	m_hp = p_hp;
 	m_attackPower = p_ap;
 	m_attackSpeed = p_as;
@@ -105,9 +109,7 @@ void BaseZombie::SetStateFrozen()
 	m_attackSpeed = ZOMBIE_ATTACKSPEED * 2;
 	m_attackTimer.Init(m_attackSpeed);
 	m_moveInterval = 2;
-	wstring tempStr = m_imagePath;
-	tempStr.replace(tempStr.length() - 4, 4, L"_Frozen.bmp");
-	SetImage(tempStr);
+	SetImage(m_frozenImagePath);
 	m_frozenDuration.Tick();
 }
 

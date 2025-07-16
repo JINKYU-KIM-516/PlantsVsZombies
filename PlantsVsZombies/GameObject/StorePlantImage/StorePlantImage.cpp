@@ -5,7 +5,7 @@ void StorePlantImage::CheckCost(int p_sunlight)
 {
 	if (m_cost <= p_sunlight)
 	{
-		SetImage(m_imagePath);
+		SetImage(m_basicImagePath);
 		m_canCost = true;
 	}		
 	else
@@ -24,7 +24,8 @@ StorePlantImage::StorePlantImage(Point p_pos, const wstring p_basicIP, int p_cod
 
 void StorePlantImage::Init(const wstring p_basicIP, int p_code, int p_cost)
 {
-	wstring tempStr = m_imagePath;
+	m_basicImagePath = p_basicIP;
+	wstring tempStr = m_basicImagePath;
 	tempStr.replace(tempStr.length() - 4, 4, L"_Grayscale.bmp");
 	m_grayscaleImagePath = tempStr;
 	m_code = p_code;

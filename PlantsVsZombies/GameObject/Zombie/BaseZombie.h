@@ -12,6 +12,8 @@ protected:
 	IntervalTimer m_frozenDuration;
 	Plant* m_plant;
 
+	wstring m_basicImagePath;
+	wstring m_frozenImagePath;
 	int m_hp;
 	int m_attackSpeed;
 	int m_attackPower;

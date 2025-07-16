@@ -6,6 +6,7 @@ protected:
 	int m_code;
 	int m_cost;
 
+	wstring m_basicImagePath;
 	wstring m_grayscaleImagePath;
 
 	bool m_canCost;
