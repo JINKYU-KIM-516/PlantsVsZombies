@@ -2,13 +2,6 @@
 #include "../../../Main/MainGame.h"
 
 //protected
-void ZombieManager::SpawnZombie(Point p_pos)
-{
-    Zombie* zombie = new Zombie();
-    zombie->Init(p_pos);
-    AddZombie(zombie);
-}
-
 void ZombieManager::SpawnZombieRandom()
 {
     if (m_spawnTimer.HasElapsed())
@@ -76,6 +69,21 @@ void ZombieManager::Draw(HDC p_hdc)
     for (auto* zombie : m_zombies)
         zombie->Draw(p_hdc);
 }
+
+void ZombieManager::SpawnZombie(Point p_pos)
+{
+    Zombie* zombie = new Zombie();
+    zombie->Init(p_pos);
+    AddZombie(zombie);
+}
+
+void ZombieManager::SpawnFunnelZombie(Point p_pos)
+{
+    FunnelZombie* zombie = new FunnelZombie();
+    zombie->Init(p_pos);
+    AddZombie(zombie);
+}
+
 
 void ZombieManager::AddZombie(BaseZombie* p_zombie)
 {

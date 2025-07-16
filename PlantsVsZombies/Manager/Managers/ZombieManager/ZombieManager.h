@@ -26,6 +26,8 @@ public:
     void Draw(HDC p_hdc) override;
 
     void SpawnZombie(Point p_pos);
+    void SpawnFunnelZombie(Point p_pos);
+
     void AddZombie(BaseZombie* p_zombie);
     void DeleteZombie(BaseZombie* p_zombie);
     const vector<BaseZombie*>& GetZombies() const;

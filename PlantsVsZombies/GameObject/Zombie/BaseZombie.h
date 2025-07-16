@@ -29,7 +29,7 @@ protected:
 	void ResetState();
 
 	void CheckAlive();
-	void CheckState();
+	virtual void CheckState();
 public:
 	BaseZombie(int p_hp, int p_ap, int p_as, int p_ms, wstring p_imagePath);
 	void Init(Point p_pos);
