@@ -11,7 +11,7 @@ void Sunflower::SpawnSunlight()
         int limitY = m_positon.GetY() + (PLANT_HEIGHT - SUNLIGHT_HEIGHT);
         Sunlight* sunlight = new Sunlight();
         sunlight->Init(Point(x, y), limitY);
-        m_sunlightManager->AddSunlight(sunlight);
+        SunlightManager::GetI()->AddSunlight(sunlight);
         m_spawnSunlightTimer.Tick();
     }
 }
@@ -21,8 +21,13 @@ Sunflower::Sunflower()
     :Plant(DEFAULT_POSITION, PLANT_SIZE, SUNFLOWER_IMAGEPATH)
 {
     m_sunlightManager = nullptr;
-    m_hp = 100;
+    m_hp = SUNFLOWER_HEALTHPOINT;
     m_spawnSunlightTimer.Init(INTERVAL_SPAWN_SUNLIGHT_BY_SUNFLOWER);
+}
+
+void Sunflower::Init(Point p_pos)
+{
+    m_positon = p_pos;
 }
 
 void Sunflower::Init(Point p_pos, SunlightManager* p_sunlightManager)

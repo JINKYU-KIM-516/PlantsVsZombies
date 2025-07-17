@@ -18,6 +18,7 @@ protected:
 public:
 	IcePea();
 	~IcePea();
+	void Init(Point p_pos);
 	void Init(Point p_pos, BulletManager* p_bulletManager);
 	void Update() override;
 };

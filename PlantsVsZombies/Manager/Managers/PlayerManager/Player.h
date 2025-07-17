@@ -1,13 +1,14 @@
 #pragma once
 #include <vector>
 #include "../../BaseManager/BaseManager.h"
+#include "../../../CoreFunction/Singleton/SingletonT.h"
 #include "../StoreManager/Store.h"
 
 using namespace std;
 
 class Tile;
 
-class Player : public BaseManager
+class Player : public BaseManager, public SingletonT<Player>
 {
 protected:
 	MainGame* m_mainGame;
@@ -19,8 +20,6 @@ protected:
 
 	Point m_currentTilePos;
 
-	//protected
-	void SpawnPlant(Point p_pos);
 	void SpawnPlant(Point p_pos, Tile* p_tile);
 	void ClickTile();
 	void PreviewPlant();

@@ -4,15 +4,15 @@
 void CollisionManager::CheckColliding_BulletAndZombie()
 {
     // Bullet vs Zombie
-    for (auto* bullet : m_bulletManager->GetBullets())
+    for (auto* bullet : BulletManager::GetI()->GetBullets())
     {
-        for (auto* zombie : m_zombieManager->GetZombies())
+        for (auto* zombie : ZombieManager::GetI()->GetZombies())
         {
             if (bullet->IsCollided(zombie))
             {
                 zombie->TakeDamage(bullet->GetAttackPower());
                 bullet->Active(zombie);
-                m_bulletManager->DeleteBullet(bullet);
+                BulletManager::GetI()->DeleteBullet(bullet);
             }
         }
     }
@@ -21,9 +21,9 @@ void CollisionManager::CheckColliding_BulletAndZombie()
 void CollisionManager::CheckColliding_ZombieAndPlant()
 {
     // Zombie vs Plant
-    for (auto* zombie : m_zombieManager->GetZombies())
+    for (auto* zombie : ZombieManager::GetI()->GetZombies())
     {
-        for (auto* plant : m_plantManager->GetPlants())
+        for (auto* plant : PlantManager::GetI()->GetPlants())
         {
             if (zombie->IsCollided(plant))
             {

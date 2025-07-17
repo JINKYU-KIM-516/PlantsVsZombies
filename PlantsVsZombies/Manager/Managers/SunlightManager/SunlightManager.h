@@ -1,12 +1,13 @@
 #pragma once
 #include <vector>
 #include "../../BaseManager/BaseManager.h"
+#include "../../../CoreFunction/Singleton/SingletonT.h"
 #include "../../../CoreFunction/IntervalTimer/IntervalTimer.h"
 #include "../../../GameObject/Sunlight/Sunlight.h"
 
 class MainGame;
 
-class SunlightManager : public BaseManager
+class SunlightManager : public BaseManager, public SingletonT<SunlightManager>
 {
 protected:
 	MainGame* m_mainGame;

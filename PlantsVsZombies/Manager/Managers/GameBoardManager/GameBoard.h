@@ -1,11 +1,12 @@
 #pragma once
 #include <vector>
 #include "../../BaseManager/BaseManager.h"
+#include "../../../CoreFunction/Singleton/SingletonT.h"
 #include "../../../GameObject/Tile/Tile.h"
 
 class MainGame;
 
-class GameBoard : public BaseManager
+class GameBoard : public BaseManager, public SingletonT<GameBoard>
 {
 protected:
 	MainGame* m_mainGame;

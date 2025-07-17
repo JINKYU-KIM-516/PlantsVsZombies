@@ -62,12 +62,12 @@ void Store::ClickStorePlantImage()
 		{
 			if (!image->CanCost())
 				return;
-			if (m_mainGame->GetPlayer()->GetSelectedCode() == image->GetCode())
+			if (Player::GetI()->GetSelectedCode() == image->GetCode())
 			{
-				m_mainGame->GetPlayer()->ResetState();
+				Player::GetI()->ResetState();
 				return;
 			}
-			m_mainGame->GetPlayer()->SelectPlant(image->GetCode());
+			Player::GetI()->SelectPlant(image->GetCode());
 			return;
 		}
 	}
@@ -104,7 +104,7 @@ void Store::Link(MainGame* p_mainGame)
 void Store::Update()
 {
 	for (auto* image : m_plantImages)
-		image->Update(m_mainGame->GetPlayer()->GetSunlight());
+		image->Update(Player::GetI()->GetSunlight());
 }
 
 void Store::ClickHandle()

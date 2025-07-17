@@ -14,6 +14,7 @@ protected:
 	void SpawnSunlight();
 public:
 	Sunflower();
+	void Init(Point p_pos);
 	void Init(Point p_pos, SunlightManager* p_sunlightManager);
 	void Update();
 };

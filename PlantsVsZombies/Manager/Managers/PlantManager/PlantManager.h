@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "../../BaseManager/BaseManager.h"
+#include "../../../CoreFunction/Singleton/SingletonT.h"
 #include "../BulletManager/BulletManager.h"
 #include "../../../GameObject/Plant/Sunflower/Sunflower.h"
 #include "../../../GameObject/Plant/Pea/Pea.h"
@@ -8,8 +9,9 @@
 #include "../../../GameObject/Plant/Nut/Nut.h"
 
 using namespace std;
+class MainGame;
 
-class PlantManager : public BaseManager
+class PlantManager :  public BaseManager, public SingletonT<PlantManager>
 {
 protected:
 	MainGame* m_mainGame;

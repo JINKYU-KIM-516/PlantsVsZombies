@@ -1,12 +1,15 @@
 #pragma once
 #include <vector>
 #include "../../BaseManager/BaseManager.h"
+#include "../../../CoreFunction/Singleton/SingletonT.h"
 #include "../../../CoreFunction/IntervalTimer/IntervalTimer.h"
 #include "../../../GameObject/Zombie/BaseZombie.h"
 #include "../../../GameObject/Zombie/Zombie/Zombie.h"
 #include "../../../GameObject/Zombie/FunnelZombie/FunnelZombie.h"
 
-class ZombieManager : public BaseManager
+class MainGame;
+
+class ZombieManager : public BaseManager, public SingletonT<ZombieManager>
 {
 protected:
     MainGame* m_mainGame;

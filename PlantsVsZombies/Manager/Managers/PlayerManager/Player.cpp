@@ -1,32 +1,8 @@
 #include "Player.h"
 #include "../../../Main/MainGame.h"
-
+#include "../PlantManager/PlantManager.h"
 
 //protected
-void Player::SpawnPlant(Point p_pos)
-{
-	if (m_state == PLAYER_STATE_SELECTING)
-	{
-		switch (m_selectedCode)
-		{
-		case SUNFLOWER_CODE:
-			m_mainGame->GetPlantManager()->SpawnSunflower(m_currentTilePos);
-			m_sunlight -= SUNFLOWER_COST;
-			break;
-		case PEA_CODE:
-			m_mainGame->GetPlantManager()->SpawnPea(m_currentTilePos);
-			m_sunlight -= PEA_COST;
-			break;
-		case ICEPEA_CODE:
-			m_mainGame->GetPlantManager()->SpawnIcePea(m_currentTilePos);
-			m_sunlight -= ICEPEA_COST;
-			break;
-		default:
-			break;
-		}
-	}
-}
-
 void Player::SpawnPlant(Point p_pos, Tile* p_tile)
 {
 	if (m_state == PLAYER_STATE_SELECTING)
@@ -34,19 +10,19 @@ void Player::SpawnPlant(Point p_pos, Tile* p_tile)
 		switch (m_selectedCode)
 		{
 		case SUNFLOWER_CODE:
-			m_mainGame->GetPlantManager()->SpawnSunflower(m_currentTilePos, p_tile);
+			PlantManager::GetI()->SpawnSunflower(m_currentTilePos, p_tile);
 			m_sunlight -= SUNFLOWER_COST;
 			break;
 		case PEA_CODE:
-			m_mainGame->GetPlantManager()->SpawnPea(m_currentTilePos, p_tile);
+			PlantManager::GetI()->SpawnPea(m_currentTilePos, p_tile);
 			m_sunlight -= PEA_COST;
 			break;
 		case ICEPEA_CODE:
-			m_mainGame->GetPlantManager()->SpawnIcePea(m_currentTilePos, p_tile);
+			PlantManager::GetI()->SpawnIcePea(m_currentTilePos, p_tile);
 			m_sunlight -= ICEPEA_COST;
 			break;
 		case NUT_CODE:
-			m_mainGame->GetPlantManager()->SpawnNut(m_currentTilePos, p_tile);
+			PlantManager::GetI()->SpawnNut(m_currentTilePos, p_tile);
 			m_sunlight -= NUT_COST;
 			break;
 		default:
@@ -59,7 +35,7 @@ void Player::ClickTile()
 {
 	if (m_state != PLAYER_STATE_SELECTING)
 		return;
-	Tile* currentTile = m_mainGame->GetGameBoard()->GetMouseOverTile();
+	Tile* currentTile = GameBoard::GetI()->GetMouseOverTile();
 	if (!currentTile || currentTile->IsPlantExist())
 		return;
 	SetCurrentTilePos(currentTile->GetPos());
@@ -71,7 +47,7 @@ void Player::PreviewPlant()
 {
 	if (!m_currentSelectedPlant)
 		return;
-	Tile* currentTile = m_mainGame->GetGameBoard()->GetMouseOverTile();
+	Tile* currentTile = GameBoard::GetI()->GetMouseOverTile();
 
 	if (m_state == PLAYER_STATE_SELECTING && currentTile && !currentTile->IsPlantExist())
 	{
@@ -93,7 +69,7 @@ Player::Player()
 void Player::Init()
 {
 	m_mainGame = nullptr;
-	m_sunlight = 0;
+	m_sunlight = 10000;
 	m_state = PLAYER_STATE_NORMAL;
 	m_selectedCode = -1;
 	m_currentSelectedPlant = nullptr;

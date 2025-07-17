@@ -29,7 +29,7 @@ void SunlightManager::ClickSunlight()
         Sunlight* sunlight = *itr;
         if (sunlight->Contains(pos))
         {
-            m_mainGame->GetPlayer()->SetSunlight(m_mainGame->GetPlayer()->GetSunlight() + 50);
+            Player::GetI()->SetSunlight(Player::GetI()->GetSunlight() + 50);
             DeleteSunlight(sunlight);
             return;
         }

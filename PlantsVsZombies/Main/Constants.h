@@ -1,4 +1,17 @@
 #pragma once
+/*
+#include <windows.h>
+// C 런타임 헤더 파일입니다.
+
+//------ 추가 헤더 파일은 여기에서 참조합니다.
+#include <objidl.h>
+#include <gdiplus.h>  // gdiplus  앞에 objidl.h 있어야지됨
+// 파일형태로 lib 가지고 오는 방법
+#pragma comment (lib,"Gdiplus.lib")
+//------
+include 순서 중요!!!!
+*/
+//#include <objidl.h> gdi plus 쓰려면 필요, windos
 
 enum PlayerState
 {

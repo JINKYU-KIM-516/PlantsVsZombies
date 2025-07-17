@@ -7,6 +7,11 @@ PictureBox::PictureBox(Point p_pos, Size p_size, const wstring p_imagePath)
     m_imagePath = p_imagePath;
 
     m_hBmp = (HBITMAP)LoadImage(NULL, m_imagePath.c_str(), IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+
+    if (m_hBmp == nullptr)
+    {
+        MessageBox(NULL, L"Init 비트맵 실패", L"오류", MB_OK);
+    }
 }
 
 PictureBox::~PictureBox()
@@ -85,4 +90,8 @@ void PictureBox::SetImage(const wstring p_imagePath)
 {
     m_imagePath = p_imagePath;
     m_hBmp = (HBITMAP)LoadImage(NULL, m_imagePath.c_str(), IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+    if (m_hBmp == nullptr)
+    {
+        MessageBox(NULL, L"비트맵 실패", L"오류", MB_OK);
+    }
 }
