@@ -11,6 +11,8 @@ class ZombieManager : public BaseManager
 protected:
     MainGame* m_mainGame;
 
+    int m_spawnCount;
+
     IntervalTimer m_spawnTimer;
     vector<BaseZombie*> m_zombies;
 

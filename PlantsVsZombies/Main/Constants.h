@@ -58,6 +58,8 @@ enum ZombieState
 
 #define SUNFLOWER_HEALTHPOINT 100
 
+#define INTERVAL_SPAWN_SUNLIGHT_BY_SUNFLOWER 3
+
 //식물 - 완두콩 (Pea)
 #define PEA_IMAGEPATH L"../Bmp_Resources_ver2/Plant/Pea/Pea.bmp"
 #define PEA_GRAYSCALE_IMAGEPATH L"../Bmp_Resources_ver2/Plant/Pea/Pea_Grayscale.bmp"
@@ -120,7 +122,7 @@ enum ZombieState
 
 //고깔 좀비
 #define FUNNEL_ZOMBIE_IMAGEPATH L"../Bmp_Resources_ver2/Zombie/FunnelZombie/FunnelZombie.bmp"
-#define FUNNEL_ZOMBIE_Frozen_IMAGEPATH L"../Bmp_Resources_ver2/Zombie/FunnelZombie/FunnelZombie_Frozen.bmp"
+#define FUNNEL_ZOMBIE_FROZEN_IMAGEPATH L"../Bmp_Resources_ver2/Zombie/FunnelZombie/FunnelZombie_Frozen.bmp"
 
 #define FUNNEL_ZOMBIE_HEALTHPOINT 150
 #define FUNNEL_ZOMBIE_ATTACKPOWER 15
@@ -142,10 +144,10 @@ enum ZombieState
 
 //****주기 시간****
 //햇빛 소환 주기
-#define INTERVAL_SEC_SPAWN_SUNLIGHT 4
+#define INTERVAL_SPAWN_SUNLIGHT_BY_NATURAL 4
 
 //좀비 소환 주기
-#define INTERVAL_SEC_SPAWN_ZOMBIE 5
+#define INTERVAL_SPAWN_ZOMBIE 5
 
 //****상태이상****
 #define DURATION_FROZEN_BY_ICEPEA 5

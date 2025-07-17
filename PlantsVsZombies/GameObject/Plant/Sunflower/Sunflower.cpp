@@ -22,7 +22,7 @@ Sunflower::Sunflower()
 {
     m_sunlightManager = nullptr;
     m_hp = 100;
-    m_spawnSunlightTimer.Init(INTERVAL_SEC_SPAWN_SUNLIGHT);
+    m_spawnSunlightTimer.Init(INTERVAL_SPAWN_SUNLIGHT_BY_SUNFLOWER);
 }
 
 void Sunflower::Init(Point p_pos, SunlightManager* p_sunlightManager)

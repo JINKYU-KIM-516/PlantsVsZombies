@@ -60,6 +60,28 @@ BaseZombie::BaseZombie(int p_hp, int p_ap, int p_as, int p_ms, wstring p_imagePa
 	m_frozenDuration.Init(DURATION_FROZEN_BY_ICEPEA);
 }
 
+BaseZombie::BaseZombie(int p_hp, int p_ap, int p_as, int p_ms, wstring p_imagePath, wstring p_frozenIP)
+	:PictureBox(DEFAULT_POSITION, ZOMBIE_SIZE, p_imagePath)
+{
+	m_basicImagePath = p_imagePath;
+	m_frozenImagePath = p_frozenIP;
+
+	m_hp = p_hp;
+	m_attackPower = p_ap;
+	m_attackSpeed = p_as;
+	m_moveSpeed = p_ms;
+	m_moveInterval = 1;
+	m_moveIntervalCount = 0;
+	m_state = ZOMBIE_STATE_NORMAL;
+
+	m_isAlive = true;
+	m_isAttacking = false;
+
+	m_plant = nullptr;
+	m_attackTimer.Init(m_attackSpeed);
+	m_frozenDuration.Init(DURATION_FROZEN_BY_ICEPEA);
+}
+
 void BaseZombie::Init(Point p_pos)
 {
 	m_positon = p_pos;

@@ -9,7 +9,23 @@ void ZombieManager::SpawnZombieRandom()
         int row = rand() % GAMEBOARD_HEIGHT;
         int x = GAMEBOARD_START_X + (TILE_WIDTH * GAMEBOARD_WIDTH);
         int y = GAMEBOARD_START_Y + (TILE_HEIGHT * row);
-        SpawnZombie(Point(x, y));
+        if (m_spawnCount == 1)
+        {
+            SpawnZombie(Point(x, y));
+            m_spawnCount--;
+        }
+        else if (m_spawnCount == 0)
+        {
+            SpawnFunnelZombie(Point(x, y));
+            m_spawnCount++;
+        }
+        else
+        {
+            SpawnZombie(Point(x, y));
+            m_spawnCount = 1;
+        }
+            
+        
         m_spawnTimer.Tick();
     }
 }
@@ -45,6 +61,12 @@ ZombieManager::~ZombieManager()
         delete zombie;
 }
 
+void ZombieManager::Init()
+{
+    m_spawnCount = 1;
+    m_spawnTimer.Init(INTERVAL_SPAWN_ZOMBIE);
+}
+
 void ZombieManager::Update()
 {
     for (auto* zombie : m_zombies)
@@ -54,10 +76,6 @@ void ZombieManager::Update()
     CheckZombiesInHome();
 }
 
-void ZombieManager::Init()
-{
-    m_spawnTimer.Init(INTERVAL_SEC_SPAWN_ZOMBIE);
-}
 
 void ZombieManager::Link(MainGame* p_mainGame)
 {

@@ -51,7 +51,7 @@ SunlightManager::~SunlightManager()
 void SunlightManager::Init()
 {
     m_mainGame = nullptr;
-    m_spawnSunlightTimer.Init(INTERVAL_SEC_SPAWN_SUNLIGHT);
+    m_spawnSunlightTimer.Init(INTERVAL_SPAWN_SUNLIGHT_BY_NATURAL);
 }
 
 void SunlightManager::Link(MainGame* p_mainGame)
