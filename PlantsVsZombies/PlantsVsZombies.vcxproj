@@ -125,6 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CoreFunction\HitBox\HitBox.h" />
     <ClInclude Include="CoreFunction\IntervalTimer\IntervalTimer.h" />
     <ClInclude Include="CoreFunction\PictureBox\PictureBox.h" />
     <ClInclude Include="CoreFunction\Point\Point.h" />
@@ -169,6 +170,7 @@
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CoreFunction\HitBox\HitBox.cpp" />
     <ClCompile Include="CoreFunction\IntervalTimer\IntervalTimer.cpp" />
     <ClCompile Include="CoreFunction\PictureBox\PictureBox.cpp" />
     <ClCompile Include="CoreFunction\Point\Point.cpp" />

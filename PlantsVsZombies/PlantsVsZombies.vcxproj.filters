@@ -115,6 +115,12 @@
     <Filter Include="소스 파일\GameObject\Zombie\Zombie">
       <UniqueIdentifier>{91e6f158-b252-4ea7-b1a7-fbf480ad0cc5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\CoreFunction\HitBox">
+      <UniqueIdentifier>{eedf424d-55ce-468f-b516-488409b13e48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GameObject\Zombie\PoleZombie">
+      <UniqueIdentifier>{7b9d1c7d-93a5-499a-9e80-525b2b7792ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -221,6 +227,9 @@
     </ClInclude>
     <ClInclude Include="GameObject\Zombie\Zombie\Zombie.h">
       <Filter>소스 파일\GameObject\Zombie\Zombie</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreFunction\HitBox\HitBox.h">
+      <Filter>소스 파일\CoreFunction\HitBox</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -329,6 +338,9 @@
     </ClCompile>
     <ClCompile Include="GameObject\Zombie\Zombie\Zombie.cpp">
       <Filter>소스 파일\GameObject\Zombie\Zombie</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreFunction\HitBox\HitBox.cpp">
+      <Filter>소스 파일\CoreFunction\HitBox</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

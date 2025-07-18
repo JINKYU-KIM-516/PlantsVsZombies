@@ -4,6 +4,7 @@
 #include <string>
 #include "../Point/Point.h"
 #include "../Size/Size.h"
+#include "../HitBox/HitBox.h"
 #include "../../Main/Constants.h"
 
 class PictureBox
@@ -21,6 +22,7 @@ public:
 
 	Point GetPos() const;
 	Size GetSize() const;
+	HitBox GetHitBox() const;
 
 	RECT GetRect() const;
 	bool IsCollided(const PictureBox *p_pictureBox);

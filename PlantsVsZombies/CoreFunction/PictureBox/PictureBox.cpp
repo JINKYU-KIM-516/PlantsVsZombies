@@ -4,6 +4,7 @@ PictureBox::PictureBox(Point p_pos, Size p_size, const wstring p_imagePath)
 {
     m_size = p_size;
     m_positon = p_pos;
+
     m_imagePath = p_imagePath;
 
     m_hBmp = (HBITMAP)LoadImage(NULL, m_imagePath.c_str(), IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
@@ -56,6 +57,19 @@ Size PictureBox::GetSize() const
     return m_size;
 }
 
+HitBox PictureBox::GetHitBox() const
+{
+    HitBox hitbox;
+    hitbox.Init(
+        m_positon.GetX(),
+        m_positon.GetY(),
+        m_positon.GetX() + m_size.GetWidth(),
+        m_positon.GetY() + m_size.GetHeight()
+    );
+
+    return hitbox;
+}
+
 RECT PictureBox::GetRect() const
 {
     RECT rc;
@@ -68,17 +82,15 @@ RECT PictureBox::GetRect() const
 
 bool PictureBox::IsCollided(const PictureBox* p_pictureBox)
 {
-    RECT src = this->GetRect();
-    RECT dest = p_pictureBox->GetRect();
-    RECT result;
-    return IntersectRect(&result, &src, &dest);
+    HitBox hitBox = this->GetHitBox();
+    return hitBox.IntersectHitBox(p_pictureBox->GetHitBox());
 }
 
 bool PictureBox::Contains(Point p_pos) const
 {
-    RECT rc = GetRect();
-    return (p_pos.GetX() >= rc.left && p_pos.GetX() <= rc.right &&
-        p_pos.GetY() >= rc.top && p_pos.GetY() <= rc.bottom);
+    HitBox hitBox = this->GetHitBox();
+    return (p_pos.GetX() >= hitBox.GetLeft() && p_pos.GetX() <= hitBox.GetRight() &&
+        p_pos.GetY() >= hitBox.GetTop() && p_pos.GetY() <= hitBox.GetBottom());
 }
 
 void PictureBox::SetPos(Point p_pos)
