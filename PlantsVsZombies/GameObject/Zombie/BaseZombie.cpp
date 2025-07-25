@@ -8,7 +8,7 @@ void BaseZombie::Move()
 	m_moveIntervalCount++;
 	if (m_moveInterval <= m_moveIntervalCount)
 	{
-		m_positon.SetX(m_positon.GetX() - m_moveSpeed);
+		m_position.SetX(m_position.GetX() - m_moveSpeed);
 		m_moveIntervalCount = 0;
 	}
 }
@@ -84,7 +84,7 @@ BaseZombie::BaseZombie(int p_hp, int p_ap, int p_as, int p_ms, wstring p_imagePa
 
 void BaseZombie::Init(Point p_pos)
 {
-	m_positon = p_pos;
+	m_position = p_pos;
 }
 
 void BaseZombie::Update()

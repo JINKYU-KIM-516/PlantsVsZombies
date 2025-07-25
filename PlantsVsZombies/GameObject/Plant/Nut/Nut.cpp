@@ -18,7 +18,7 @@ Nut::Nut()
 
 void Nut::Init(Point p_pos)
 {
-    m_positon = p_pos;
+    m_position = p_pos;
 }
 
 void Nut::Update()

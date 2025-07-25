@@ -2,8 +2,8 @@
 //protected
 void Sunlight::Move()
 {
-	if(m_positon.GetY() < m_limitY)
-		m_positon.SetY(m_positon.GetY() + m_moveSpeed);
+	if(m_position.GetY() < m_limitY)
+		m_position.SetY(m_position.GetY() + m_moveSpeed);
 }
 
 //public
@@ -16,7 +16,7 @@ Sunlight::Sunlight()
 
 void Sunlight::Init(Point p_pos, int p_limitY)
 {
-	m_positon = p_pos;
+	m_position = p_pos;
 	m_limitY = p_limitY;
 }
 

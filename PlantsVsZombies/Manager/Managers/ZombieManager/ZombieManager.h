@@ -6,6 +6,7 @@
 #include "../../../GameObject/Zombie/BaseZombie.h"
 #include "../../../GameObject/Zombie/Zombie/Zombie.h"
 #include "../../../GameObject/Zombie/FunnelZombie/FunnelZombie.h"
+#include "../../../GameObject/Zombie/PoleZombie/PoleZombie.h"
 
 class MainGame;
 
@@ -32,6 +33,7 @@ public:
 
     void SpawnZombie(Point p_pos);
     void SpawnFunnelZombie(Point p_pos);
+    void SpawnPoleZombie(Point p_pos);
 
     void AddZombie(BaseZombie* p_zombie);
     void DeleteZombie(BaseZombie* p_zombie);

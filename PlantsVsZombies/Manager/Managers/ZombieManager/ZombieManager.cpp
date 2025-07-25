@@ -102,6 +102,12 @@ void ZombieManager::SpawnFunnelZombie(Point p_pos)
     AddZombie(zombie);
 }
 
+void ZombieManager::SpawnPoleZombie(Point p_pos)
+{
+    PoleZombie* zombie = new PoleZombie();
+    zombie->Init(p_pos);
+    AddZombie(zombie);
+}
 
 void ZombieManager::AddZombie(BaseZombie* p_zombie)
 {

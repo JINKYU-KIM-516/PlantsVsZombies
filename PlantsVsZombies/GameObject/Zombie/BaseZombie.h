@@ -34,7 +34,7 @@ public:
 	BaseZombie(int p_hp, int p_ap, int p_as, int p_ms, wstring p_imagePath);
 	BaseZombie(int p_hp, int p_ap, int p_as, int p_ms, wstring p_imagePath, wstring p_frozenIP);
 	void Init(Point p_pos);
-	void Update();
+	virtual void Update();
 
 	void Attack();
 

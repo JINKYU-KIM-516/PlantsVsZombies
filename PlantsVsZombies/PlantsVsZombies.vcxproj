@@ -145,6 +145,8 @@
     <ClInclude Include="GameObject\Tile\Tile.h" />
     <ClInclude Include="GameObject\Zombie\FunnelZombie\FunnelZombie.h" />
     <ClInclude Include="GameObject\Zombie\BaseZombie.h" />
+    <ClInclude Include="GameObject\Zombie\PoleZombie\PoleZombie.h" />
+    <ClInclude Include="GameObject\Zombie\PoleZombie\Pole\Pole.h" />
     <ClInclude Include="GameObject\Zombie\Zombie\Zombie.h" />
     <ClInclude Include="Main\Constants.h" />
     <ClInclude Include="Main\MainGame.h" />
@@ -189,6 +191,8 @@
     <ClCompile Include="GameObject\Tile\Tile.cpp" />
     <ClCompile Include="GameObject\Zombie\FunnelZombie\FunnelZombie.cpp" />
     <ClCompile Include="GameObject\Zombie\BaseZombie.cpp" />
+    <ClCompile Include="GameObject\Zombie\PoleZombie\PoleZombie.cpp" />
+    <ClCompile Include="GameObject\Zombie\PoleZombie\Pole\Pole.cpp" />
     <ClCompile Include="GameObject\Zombie\Zombie\Zombie.cpp" />
     <ClCompile Include="Main\MainGame.cpp" />
     <ClCompile Include="Manager\BaseManager\BaseManager.cpp" />

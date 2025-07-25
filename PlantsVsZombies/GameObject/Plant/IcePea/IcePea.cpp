@@ -3,7 +3,7 @@
 //protected
 void IcePea::SpawnBullet()
 {
-	IcePeaBullet* bullet = new IcePeaBullet(m_positon + Point(PLANT_WIDTH / 2 + BULLET_WIDTH, PLANT_HEIGHT / 2 - BULLET_HEIGHT));
+	IcePeaBullet* bullet = new IcePeaBullet(m_position + Point(PLANT_WIDTH / 2 + BULLET_WIDTH, PLANT_HEIGHT / 2 - BULLET_HEIGHT));
 	bullet->Init(m_attackPower, PEA_BULLET_MOVESPEED);
 	BulletManager::GetI()->AddBullets(bullet);
 }
@@ -35,12 +35,12 @@ IcePea::~IcePea()
 
 void IcePea::Init(Point p_pos)
 {
-	m_positon = p_pos;
+	m_position = p_pos;
 }
 
 void IcePea::Init(Point p_pos, BulletManager* p_bulletManager)
 {
-	m_positon = p_pos;
+	m_position = p_pos;
 	m_bulletManager = p_bulletManager;
 }
 

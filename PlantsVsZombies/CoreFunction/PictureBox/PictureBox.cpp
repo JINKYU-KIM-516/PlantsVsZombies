@@ -3,7 +3,7 @@
 PictureBox::PictureBox(Point p_pos, Size p_size, const wstring p_imagePath)
 {
     m_size = p_size;
-    m_positon = p_pos;
+    m_position = p_pos;
 
     m_imagePath = p_imagePath;
 
@@ -38,7 +38,7 @@ void PictureBox::Draw(HDC hdc)
     HGDIOBJ oldBmp = SelectObject(hdcMem, m_hBmp);
 
     TransparentBlt(hdc,
-        m_positon.GetX(), m_positon.GetY(),
+        m_position.GetX(), m_position.GetY(),
         m_size.GetWidth(), m_size.GetHeight(),
         hdcMem, 0, 0, bmp.bmWidth, bmp.bmHeight,
         TRANSPARENT_COLOR);
@@ -49,7 +49,7 @@ void PictureBox::Draw(HDC hdc)
 
 Point PictureBox::GetPos() const
 {
-    return m_positon;
+    return m_position;
 }
 
 Size PictureBox::GetSize() const
@@ -61,10 +61,10 @@ HitBox PictureBox::GetHitBox() const
 {
     HitBox hitbox;
     hitbox.Init(
-        m_positon.GetX(),
-        m_positon.GetY(),
-        m_positon.GetX() + m_size.GetWidth(),
-        m_positon.GetY() + m_size.GetHeight()
+        m_position.GetX(),
+        m_position.GetY(),
+        m_position.GetX() + m_size.GetWidth(),
+        m_position.GetY() + m_size.GetHeight()
     );
 
     return hitbox;
@@ -73,8 +73,8 @@ HitBox PictureBox::GetHitBox() const
 RECT PictureBox::GetRect() const
 {
     RECT rc;
-    rc.left = m_positon.GetX();
-    rc.top = m_positon.GetY();
+    rc.left = m_position.GetX();
+    rc.top = m_position.GetY();
     rc.right = rc.left + m_size.GetWidth();
     rc.bottom = rc.top + m_size.GetHeight();
     return rc;
@@ -95,7 +95,7 @@ bool PictureBox::Contains(Point p_pos) const
 
 void PictureBox::SetPos(Point p_pos)
 {
-    m_positon = p_pos;
+    m_position = p_pos;
 }
 
 void PictureBox::SetImage(const wstring p_imagePath)

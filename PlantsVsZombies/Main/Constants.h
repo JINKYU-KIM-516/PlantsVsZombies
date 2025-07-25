@@ -142,6 +142,21 @@ enum ZombieState
 #define FUNNEL_ZOMBIE_ATTACKSPEED 1
 #define FUNNEL_ZOMBIE_MOVESPEED 1
 
+//장대 좀비
+#define POLE_ZOMBIE_IMAGEPATH L"../Bmp_Resources_ver2/Zombie/PoleZombie/PoleZombie.bmp"
+#define POLE_ZOMBIE_FROZEN_IMAGEPATH L"../Bmp_Resources_ver2/Zombie/PoleZombie/PoleZombie_Frozen.bmp"
+
+#define POLE_ZOMBIE_HEALTHPOINT 125
+#define POLE_ZOMBIE_ATTACKPOWER 15
+#define POLE_ZOMBIE_ATTACKSPEED 1
+#define POLE_ZOMBIE_MOVESPEED 3
+
+#define POLE_WIDTH 45 * 3
+#define POLE_HEIGHT 8
+#define POLE_SIZE Size(POLE_WIDTH, POLE_HEIGHT)
+#define POLE_IMAGEPATH L"../Bmp_Resources_ver2/Zombie/PoleZombie/Pole.bmp"
+
+
 //게임보드
 #define GAMEBOARD_START_X 64
 #define GAMEBOARD_START_Y 90

@@ -10,7 +10,7 @@
 class PictureBox
 {
 protected:
-	Point m_positon;
+	Point m_position;
 	Size m_size;
 
 	HBITMAP m_hBmp;
@@ -18,7 +18,7 @@ protected:
 public:
 	PictureBox(Point p_pos, Size p_size, const wstring p_imagePath);
 	~PictureBox();
-	void Draw(HDC hdc);
+	virtual void Draw(HDC hdc);
 
 	Point GetPos() const;
 	Size GetSize() const;
