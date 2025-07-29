@@ -1,9 +1,10 @@
 #pragma once
 #include <Windows.h>
+//#include "../../CoreFunction/Singleton/SingletonT.h"
 
-class MainGame;
+//template <typename T>
 
-class BaseManager
+class BaseManager// : public SingletonT<T>
 {
 public:
 	virtual void Init() {};

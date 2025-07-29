@@ -5,17 +5,21 @@
 
 using namespace std;
 
-class Zombie : public PictureBox
+class BaseZombie : public PictureBox
 {
 protected:
 	IntervalTimer m_attackTimer;
 	IntervalTimer m_frozenDuration;
 	Plant* m_plant;
 
-	float m_hp;
-	float m_attackSpeed;
-	float m_attackPower;
-	float m_moveSpeed;
+	wstring m_basicImagePath;
+	wstring m_frozenImagePath;
+	int m_hp;
+	int m_attackSpeed;
+	int m_attackPower;
+	int m_moveSpeed;
+	int m_moveInterval;
+	int m_moveIntervalCount;
 	ZombieState m_state;
 
 	bool m_isAlive;
@@ -25,21 +29,22 @@ protected:
 	void ResetState();
 
 	void CheckAlive();
-	void CheckState();
+	virtual void CheckState();
 public:
-	Zombie();
+	BaseZombie(int p_hp, int p_ap, int p_as, int p_ms, wstring p_imagePath);
+	BaseZombie(int p_hp, int p_ap, int p_as, int p_ms, wstring p_imagePath, wstring p_frozenIP);
 	void Init(Point p_pos);
-	void Update();
+	virtual void Update();
 
 	void Attack();
 
-	float GetAttackPower();
+	int GetAttackPower();
 	bool IsAlive();	
 	bool IsAttacking();
 
 	void SetStateFrozen();
 
 	void Target(Plant* p_plant);
-	void TakeDamage(float p_damage);
+	void TakeDamage(int p_damage);
 	void StopAttacking();
 };

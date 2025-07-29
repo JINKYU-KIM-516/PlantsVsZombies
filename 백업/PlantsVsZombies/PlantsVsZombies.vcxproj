@@ -125,6 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CoreFunction\HitBox\HitBox.h" />
     <ClInclude Include="CoreFunction\IntervalTimer\IntervalTimer.h" />
     <ClInclude Include="CoreFunction\PictureBox\PictureBox.h" />
     <ClInclude Include="CoreFunction\Point\Point.h" />
@@ -135,13 +136,18 @@
     <ClInclude Include="GameObject\Bullet\IcePeaBullet\IcePeaBullet.h" />
     <ClInclude Include="GameObject\Bullet\PeaBullet\PeaBullet.h" />
     <ClInclude Include="GameObject\Plant\IcePea\IcePea.h" />
+    <ClInclude Include="GameObject\Plant\Nut\Nut.h" />
     <ClInclude Include="GameObject\Plant\Pea\Pea.h" />
     <ClInclude Include="GameObject\Plant\Plant.h" />
     <ClInclude Include="GameObject\Plant\Sunflower\Sunflower.h" />
     <ClInclude Include="GameObject\StorePlantImage\StorePlantImage.h" />
     <ClInclude Include="GameObject\Sunlight\Sunlight.h" />
     <ClInclude Include="GameObject\Tile\Tile.h" />
-    <ClInclude Include="GameObject\Zombie\Zombie.h" />
+    <ClInclude Include="GameObject\Zombie\FunnelZombie\FunnelZombie.h" />
+    <ClInclude Include="GameObject\Zombie\BaseZombie.h" />
+    <ClInclude Include="GameObject\Zombie\PoleZombie\PoleZombie.h" />
+    <ClInclude Include="GameObject\Zombie\PoleZombie\Pole\Pole.h" />
+    <ClInclude Include="GameObject\Zombie\Zombie\Zombie.h" />
     <ClInclude Include="Main\Constants.h" />
     <ClInclude Include="Main\MainGame.h" />
     <ClInclude Include="Manager\BaseManager\BaseManager.h" />
@@ -166,6 +172,7 @@
     <Image Include="small.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CoreFunction\HitBox\HitBox.cpp" />
     <ClCompile Include="CoreFunction\IntervalTimer\IntervalTimer.cpp" />
     <ClCompile Include="CoreFunction\PictureBox\PictureBox.cpp" />
     <ClCompile Include="CoreFunction\Point\Point.cpp" />
@@ -175,13 +182,18 @@
     <ClCompile Include="GameObject\Bullet\IcePeaBullet\IcePeaBullet.cpp" />
     <ClCompile Include="GameObject\Bullet\PeaBullet\PeaBullet.cpp" />
     <ClCompile Include="GameObject\Plant\IcePea\IcePea.cpp" />
+    <ClCompile Include="GameObject\Plant\Nut\Nut.cpp" />
     <ClCompile Include="GameObject\Plant\Pea\Pea.cpp" />
     <ClCompile Include="GameObject\Plant\Plant.cpp" />
     <ClCompile Include="GameObject\Plant\Sunflower\Sunflower.cpp" />
     <ClCompile Include="GameObject\StorePlantImage\StorePlantImage.cpp" />
     <ClCompile Include="GameObject\Sunlight\Sunlight.cpp" />
     <ClCompile Include="GameObject\Tile\Tile.cpp" />
-    <ClCompile Include="GameObject\Zombie\Zombie.cpp" />
+    <ClCompile Include="GameObject\Zombie\FunnelZombie\FunnelZombie.cpp" />
+    <ClCompile Include="GameObject\Zombie\BaseZombie.cpp" />
+    <ClCompile Include="GameObject\Zombie\PoleZombie\PoleZombie.cpp" />
+    <ClCompile Include="GameObject\Zombie\PoleZombie\Pole\Pole.cpp" />
+    <ClCompile Include="GameObject\Zombie\Zombie\Zombie.cpp" />
     <ClCompile Include="Main\MainGame.cpp" />
     <ClCompile Include="Manager\BaseManager\BaseManager.cpp" />
     <ClCompile Include="Manager\ManagerManager\ManagerManager.cpp" />

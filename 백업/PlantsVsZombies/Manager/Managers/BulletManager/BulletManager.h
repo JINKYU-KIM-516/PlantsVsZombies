@@ -1,12 +1,13 @@
 #pragma once
 #include "../../BaseManager/BaseManager.h"
+#include "../../../CoreFunction/Singleton/SingletonT.h"
 #include <vector>
 #include <algorithm>
 #include "../../../GameObject/Bullet/Bullet.h"
 
 using namespace std;
 
-class BulletManager : public BaseManager
+class BulletManager : public BaseManager, public SingletonT<BulletManager>
 {
 protected:
     vector<Bullet*> m_bullets;

@@ -17,11 +17,12 @@ MainGame::~MainGame()
 
 void MainGame::test()
 {
+
 	//m_plantManager->SpawnSunflower(Point(GAMEBOARD_START_X + (8 * TILE_WIDTH), GAMEBOARD_START_Y + (2 * TILE_HEIGHT)));
 	//m_plantManager->SpawnPea(Point(GAMEBOARD_START_X + TILE_WIDTH, GAMEBOARD_START_Y + TILE_HEIGHT));
 	//m_zombieManager->SpawnZombie(Point(GAMEBOARD_START_X + (10 * TILE_WIDTH), GAMEBOARD_START_Y + (2 * TILE_HEIGHT)));
 	//m_zombieManager->SpawnZombie(Point(GAMEBOARD_START_X + (11 * TILE_WIDTH), GAMEBOARD_START_Y + (2 * TILE_HEIGHT)));
-	//dynamic_cast<ZombieManager*>(m_managerManager->GetManagers()[ZOMBIE_MANAGER_INDEX])->SpawnZombie(Point(GAMEBOARD_START_X, GAMEBOARD_START_Y));
+	dynamic_cast<ZombieManager*>(m_managerManager->GetManagers()[ZOMBIE_MANAGER_INDEX])->SpawnPoleZombie(Point(GAMEBOARD_START_X + (10 * TILE_WIDTH), GAMEBOARD_START_Y));
 }
 
 void MainGame::DebugTextOut(HDC hdc)

@@ -19,6 +19,11 @@ public:
 	Point operator-=(const Point& ref);
 	Point operator-(const Point& ref);
 
+	void IncreaseX(int p_x);
+	void IncreaseY(int p_y);
+	void DecreaseX(int p_x);
+	void DecreaseY(int p_y);
+
 	int GetX() const;
 	int GetY() const;
 

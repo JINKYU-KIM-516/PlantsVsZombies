@@ -4,28 +4,30 @@
 #include <string>
 #include "../Point/Point.h"
 #include "../Size/Size.h"
+#include "../HitBox/HitBox.h"
 #include "../../Main/Constants.h"
 
 class PictureBox
 {
 protected:
-	Point m_positon;
+	Point m_position;
 	Size m_size;
 
 	HBITMAP m_hBmp;
 	wstring m_imagePath;
 public:
-	PictureBox(Point p_pos, Size p_size, const wstring& p_imagePath);
+	PictureBox(Point p_pos, Size p_size, const wstring p_imagePath);
 	~PictureBox();
-	void Draw(HDC hdc);
+	virtual void Draw(HDC hdc);
 
 	Point GetPos() const;
 	Size GetSize() const;
+	HitBox GetHitBox() const;
 
 	RECT GetRect() const;
 	bool IsCollided(const PictureBox *p_pictureBox);
 	bool Contains(Point p_pos) const;
 
 	void SetPos(Point p_pos);
-	void SetImage(const wstring& p_imagePath);
+	void SetImage(const wstring p_imagePath);
 };

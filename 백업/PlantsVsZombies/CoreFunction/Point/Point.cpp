@@ -57,6 +57,29 @@ Point Point::operator-(const Point& ref)
     return Point(m_x - ref.m_x, m_y - ref.m_y);
 }
 
+void Point::IncreaseX(int p_x)
+{
+    m_x += p_x;
+}
+
+void Point::IncreaseY(int p_y)
+{
+    m_y += p_y;
+
+}
+
+void Point::DecreaseX(int p_x)
+{
+    m_x -= p_x;
+
+}
+
+void Point::DecreaseY(int p_y)
+{
+    m_y -= p_y;
+
+}
+
 int Point::GetX() const
 {
     return m_x;
@@ -79,5 +102,5 @@ void Point::SetY(int p_y)
 
 void Point::printPoint() //디버그용
 {
-    printf("x: %d, y : %d\n", m_x, m_y);
+    printf("x: %f, y : %f\n", m_x, m_y);
 }

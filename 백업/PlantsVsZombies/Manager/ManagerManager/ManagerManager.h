@@ -1,5 +1,5 @@
 #pragma once
-//#include "../../CoreFunction/Singleton/SingletonT.h"
+#include "../../CoreFunction/Singleton/SingletonT.h"
 #include "../Managers/GameBoardManager/GameBoard.h"
 #include "../Managers/PlantManager/PlantManager.h"
 #include "../Managers/SunlightManager/SunlightManager.h"
@@ -11,7 +11,7 @@
 
 class MainGame;
 
-class ManagerManager : public BaseManager//, public SingletonT<ManagerManager>
+class ManagerManager : public BaseManager, public SingletonT<ManagerManager>
 {
 protected:
 	MainGame* m_mainGame;

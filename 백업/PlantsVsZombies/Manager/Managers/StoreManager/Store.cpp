@@ -12,8 +12,8 @@ void Store::PaintImage_Sunflower()
 	m_index++;
 	StorePlantImage* sunflowerImage = new StorePlantImage(
 		GetCurrentStoreImagePosition(m_index),
-		IMAGEPATH_SUNFLOWER, IMAGEPATH_SUNFLOWER_GRAYSCALE,
-		CODE_SUNFLOWER, COST_SUNFLOWER);
+		SUNFLOWER_IMAGEPATH,
+		SUNFLOWER_CODE, SUNFLOWER_COST);
 	AddImage(sunflowerImage);
 }
 
@@ -22,8 +22,8 @@ void Store::PaintImage_Pea()
 	m_index++;
 	StorePlantImage* peaImage = new StorePlantImage(
 		GetCurrentStoreImagePosition(m_index),
-		IMAGEPATH_PEA, IMAGEPATH_PEA_GRAYSCALE,
-		CODE_PEA, COST_PEA);
+		PEA_IMAGEPATH,
+		PEA_CODE, PEA_COST);
 	AddImage(peaImage);
 }
 
@@ -32,9 +32,19 @@ void Store::PaintImage_IcePea()
 	m_index++;
 	StorePlantImage* icePeaImage = new StorePlantImage(
 		GetCurrentStoreImagePosition(m_index),
-		IMAGEPATH_ICEPEA, IMAGEPATH_ICEPEA_GRAYSCALE,
-		CODE_ICEPEA, COST_ICEPEA);
+		ICEPEA_IMAGEPATH,
+		ICEPEA_CODE, ICEPEA_COST);
 	AddImage(icePeaImage);
+}
+
+void Store::PaintImage_Nut()
+{
+	m_index++;
+	StorePlantImage* nutImage = new StorePlantImage(
+		GetCurrentStoreImagePosition(m_index),
+		NUT_IMAGEPATH,
+		NUT_CODE, NUT_COST);
+	AddImage(nutImage);
 }
 
 Point Store::GetCurrentStoreImagePosition(int p_index)
@@ -52,12 +62,12 @@ void Store::ClickStorePlantImage()
 		{
 			if (!image->CanCost())
 				return;
-			if (m_mainGame->GetPlayer()->GetSelectedCode() == image->GetCode())
+			if (Player::GetI()->GetSelectedCode() == image->GetCode())
 			{
-				m_mainGame->GetPlayer()->ResetState();
+				Player::GetI()->ResetState();
 				return;
 			}
-			m_mainGame->GetPlayer()->SelectPlant(image->GetCode());
+			Player::GetI()->SelectPlant(image->GetCode());
 			return;
 		}
 	}
@@ -83,6 +93,7 @@ void Store::Init()
 	PaintImage_Sunflower();
 	PaintImage_Pea();
 	PaintImage_IcePea();
+	PaintImage_Nut();
 }
 
 void Store::Link(MainGame* p_mainGame)
@@ -93,7 +104,7 @@ void Store::Link(MainGame* p_mainGame)
 void Store::Update()
 {
 	for (auto* image : m_plantImages)
-		image->Update(m_mainGame->GetPlayer()->GetSunlight());
+		image->Update(Player::GetI()->GetSunlight());
 }
 
 void Store::ClickHandle()

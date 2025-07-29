@@ -1,7 +1,6 @@
 #pragma once
 #include "../Plant.h"
 #include "../../../CoreFunction/IntervalTimer/IntervalTimer.h"
-//#include "../../../Manager/Managers/SunlightManager/SunlightManager.h"
 
 class SunlightManager;
 
@@ -15,6 +14,7 @@ protected:
 	void SpawnSunlight();
 public:
 	Sunflower();
+	void Init(Point p_pos);
 	void Init(Point p_pos, SunlightManager* p_sunlightManager);
 	void Update();
 };

@@ -1,21 +1,23 @@
 #pragma once
 #include "../../CoreFunction/PictureBox/PictureBox.h"
-#include "../Zombie/Zombie.h"
+//#include "../Zombie/Zombie.h"
+
+class BaseZombie;
 
 class Bullet : public PictureBox
 {
 protected:
-	float m_attackPower;
-	float m_moveSpeed;
+	int m_attackPower;
+	int m_moveSpeed;
 
 	void Move();
 public:
-	Bullet(Point p_pos, Size p_size, const wstring& p_imagePath);
+	Bullet(Point p_pos, Size p_size, const wstring p_imagePath);
 	virtual ~Bullet();
-	void Init(float p_ap, float p_ms);
+	void Init(int p_ap, int p_ms);
 	void Update();
 
-	virtual void Active(Zombie* p_zombie);
+	virtual void Active(BaseZombie* p_zombie);
 
-	float GetAttackPower();
+	int GetAttackPower();
 };

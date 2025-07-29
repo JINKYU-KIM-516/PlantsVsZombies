@@ -1,24 +1,29 @@
 #include "Player.h"
 #include "../../../Main/MainGame.h"
+#include "../PlantManager/PlantManager.h"
 
 //protected
-void Player::SpawnPlant(Point p_pos)
+void Player::SpawnPlant(Point p_pos, Tile* p_tile)
 {
 	if (m_state == PLAYER_STATE_SELECTING)
 	{
 		switch (m_selectedCode)
 		{
-		case CODE_SUNFLOWER:
-			m_mainGame->GetPlantManager()->SpawnSunflower(m_currentTilePos);
-			m_sunlight -= COST_SUNFLOWER;
+		case SUNFLOWER_CODE:
+			PlantManager::GetI()->SpawnSunflower(m_currentTilePos, p_tile);
+			m_sunlight -= SUNFLOWER_COST;
 			break;
-		case CODE_PEA:
-			m_mainGame->GetPlantManager()->SpawnPea(m_currentTilePos);
-			m_sunlight -= COST_PEA;
+		case PEA_CODE:
+			PlantManager::GetI()->SpawnPea(m_currentTilePos, p_tile);
+			m_sunlight -= PEA_COST;
 			break;
-		case CODE_ICEPEA:
-			m_mainGame->GetPlantManager()->SpawnIcePea(m_currentTilePos);
-			m_sunlight -= COST_ICEPEA;
+		case ICEPEA_CODE:
+			PlantManager::GetI()->SpawnIcePea(m_currentTilePos, p_tile);
+			m_sunlight -= ICEPEA_COST;
+			break;
+		case NUT_CODE:
+			PlantManager::GetI()->SpawnNut(m_currentTilePos, p_tile);
+			m_sunlight -= NUT_COST;
 			break;
 		default:
 			break;
@@ -30,12 +35,11 @@ void Player::ClickTile()
 {
 	if (m_state != PLAYER_STATE_SELECTING)
 		return;
-	Tile* currentTile = m_mainGame->GetGameBoard()->GetMouseOverTile();
+	Tile* currentTile = GameBoard::GetI()->GetMouseOverTile();
 	if (!currentTile || currentTile->IsPlantExist())
 		return;
 	SetCurrentTilePos(currentTile->GetPos());
-	currentTile->SetPlantExist(true);
-	SpawnPlant(m_currentTilePos);
+	SpawnPlant(m_currentTilePos, currentTile);
 	ResetState();
 }
 
@@ -43,7 +47,7 @@ void Player::PreviewPlant()
 {
 	if (!m_currentSelectedPlant)
 		return;
-	Tile* currentTile = m_mainGame->GetGameBoard()->GetMouseOverTile();
+	Tile* currentTile = GameBoard::GetI()->GetMouseOverTile();
 
 	if (m_state == PLAYER_STATE_SELECTING && currentTile && !currentTile->IsPlantExist())
 	{
@@ -65,7 +69,7 @@ Player::Player()
 void Player::Init()
 {
 	m_mainGame = nullptr;
-	m_sunlight = 0;
+	m_sunlight = 10000;
 	m_state = PLAYER_STATE_NORMAL;
 	m_selectedCode = -1;
 	m_currentSelectedPlant = nullptr;
@@ -100,14 +104,17 @@ void Player::SelectPlant(int p_code)
 	Size size = PLANT_SIZE;
 	switch (m_selectedCode)
 	{
-	case CODE_SUNFLOWER:
-		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_SUNFLOWER);
+	case SUNFLOWER_CODE:
+		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, SUNFLOWER_IMAGEPATH);
 		break;
-	case CODE_PEA:
-		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_PEA);
+	case PEA_CODE:
+		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, PEA_IMAGEPATH);
 		break;
-	case CODE_ICEPEA:
-		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, IMAGEPATH_ICEPEA);
+	case ICEPEA_CODE:
+		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, ICEPEA_IMAGEPATH);
+		break;
+	case NUT_CODE:
+		m_currentSelectedPlant = new PictureBox(INVISIBLE_POS, PLANT_SIZE, NUT_IMAGEPATH);
 		break;
 	default:
 		break;

@@ -29,7 +29,7 @@ void SunlightManager::ClickSunlight()
         Sunlight* sunlight = *itr;
         if (sunlight->Contains(pos))
         {
-            m_mainGame->GetPlayer()->SetSunlight(m_mainGame->GetPlayer()->GetSunlight() + 50);
+            Player::GetI()->SetSunlight(Player::GetI()->GetSunlight() + 50);
             DeleteSunlight(sunlight);
             return;
         }
@@ -51,7 +51,7 @@ SunlightManager::~SunlightManager()
 void SunlightManager::Init()
 {
     m_mainGame = nullptr;
-    m_spawnSunlightTimer.Init(INTERVAL_SEC_SPAWN_SUNLIGHT);
+    m_spawnSunlightTimer.Init(INTERVAL_SPAWN_SUNLIGHT_BY_NATURAL);
 }
 
 void SunlightManager::Link(MainGame* p_mainGame)

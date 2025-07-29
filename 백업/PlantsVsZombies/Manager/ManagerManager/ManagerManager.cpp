@@ -1,5 +1,6 @@
 #include "ManagerManager.h"
 #include "../../Main/MainGame.h"
+//#include "../Managers/PlantManager/PlantManager.h"
 
 ManagerManager::ManagerManager(MainGame* p_mainGame)
 {
@@ -17,14 +18,14 @@ ManagerManager::~ManagerManager()
 
 void ManagerManager::Init()
 {
-	GameBoard* gameBoard = new GameBoard();
-	PlantManager* plantManager = new PlantManager();
-	SunlightManager* sunlightManager = new SunlightManager();
-	BulletManager* bulletManager = new BulletManager();
-	ZombieManager* zombieManager = new ZombieManager();
-	CollisionManager* collisionManager = new CollisionManager();
-	Store* store = new Store();
-	Player* player = new Player();
+	GameBoard* gameBoard = GameBoard::GetI();
+	PlantManager* plantManager = PlantManager::GetI();
+	SunlightManager* sunlightManager = SunlightManager::GetI();
+	BulletManager* bulletManager = BulletManager::GetI();
+	ZombieManager* zombieManager = ZombieManager::GetI();
+	CollisionManager* collisionManager = CollisionManager::GetI();
+	Store* store = Store::GetI();
+	Player* player = Player::GetI();
 
 	AddManager(gameBoard);
 	AddManager(plantManager);
@@ -41,24 +42,24 @@ void ManagerManager::Init()
 void ManagerManager::Link(MainGame* p_mainGame)
 {
 	dynamic_cast<GameBoard*>(m_managers[GAMEBOARD_INDEX])->Link(m_mainGame);
-
+	/*
 	dynamic_cast<PlantManager*>(m_managers[PLANT_MANAGER_INDEX])->Link(
 		dynamic_cast<SunlightManager*>(m_managers[SUNLIGHT_MANAGER_INDEX]),
 		dynamic_cast<BulletManager*>(m_managers[BULLET_MANAGER_INDEX])
 	);
-
+	*/
 	dynamic_cast<SunlightManager*>(m_managers[SUNLIGHT_MANAGER_INDEX])->Link(m_mainGame);
 
 	dynamic_cast<ZombieManager*>(m_managers[ZOMBIE_MANAGER_INDEX])->Link(m_mainGame);
-
+	/*
 	dynamic_cast<CollisionManager*>(m_managers[COLLISION_MANAGER_INDEX])->Link(
 		dynamic_cast<PlantManager*>(m_managers[PLANT_MANAGER_INDEX]),
 		dynamic_cast<ZombieManager*>(m_managers[ZOMBIE_MANAGER_INDEX]),
 		dynamic_cast<BulletManager*>(m_managers[BULLET_MANAGER_INDEX])
 	);
-
+	*/
 	dynamic_cast<Store*>(m_managers[STORE_INDEX])->Link(m_mainGame);
-	dynamic_cast<Player*>(m_managers[PLAYER_INDEX])->Link(m_mainGame);
+	//dynamic_cast<Player*>(m_managers[PLAYER_INDEX])->Link(m_mainGame);
 }
 
 void ManagerManager::Update()

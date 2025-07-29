@@ -1,11 +1,12 @@
 #pragma once
 #include <vector>
 #include "../../BaseManager/BaseManager.h"
+#include "../../../CoreFunction/Singleton/SingletonT.h"
 #include "../../../GameObject/StorePlantImage/StorePlantImage.h"
 
 class MainGame;
 
-class Store : public BaseManager
+class Store : public BaseManager, public SingletonT<Store>
 {
 protected:
 	MainGame* m_mainGame;
@@ -17,6 +18,7 @@ protected:
 	void PaintImage_Sunflower();
 	void PaintImage_Pea();
 	void PaintImage_IcePea();
+	void PaintImage_Nut();
 
 	Point GetCurrentStoreImagePosition(int p_index);
 	void ClickStorePlantImage();

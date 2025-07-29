@@ -13,8 +13,8 @@ protected:
 
 	void CheckCost(int p_sunlight);
 public:
-	StorePlantImage(Point p_pos, const wstring& p_basicIP, const wstring& p_grayscaleIP, int p_code, int p_cost);
-	void Init(const wstring& p_basicIP, const wstring& p_grayscaleIP, int p_code, int p_cost);
+	StorePlantImage(Point p_pos, const wstring p_basicIP, int p_code, int p_cost);
+	void Init(const wstring p_basicIP, int p_code, int p_cost);
 	void Update(int p_sunlight);
 
 	int GetCode() const;
