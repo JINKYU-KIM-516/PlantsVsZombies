@@ -124,6 +124,9 @@
     <Filter Include="소스 파일\GameObject\Zombie\PoleZombie\Pole">
       <UniqueIdentifier>{a7c6cacc-9426-4191-a69f-2ecac834196a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Manager\Managers\DrawManager">
+      <UniqueIdentifier>{773c787f-d8b4-42d4-a9e9-3b502cc043c1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -239,6 +242,9 @@
     </ClInclude>
     <ClInclude Include="GameObject\Zombie\PoleZombie\Pole\Pole.h">
       <Filter>소스 파일\GameObject\Zombie\PoleZombie\Pole</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager\Managers\DrawManager\DrawManager.h">
+      <Filter>소스 파일\Manager\Managers\DrawManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -356,6 +362,9 @@
     </ClCompile>
     <ClCompile Include="GameObject\Zombie\PoleZombie\Pole\Pole.cpp">
       <Filter>소스 파일\GameObject\Zombie\PoleZombie\Pole</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager\Managers\DrawManager\DrawManager.cpp">
+      <Filter>소스 파일\Manager\Managers\DrawManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
