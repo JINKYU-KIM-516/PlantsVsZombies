@@ -35,7 +35,7 @@ public:
 	void ResetState();
 
 	int GetSunlight();
-	int GetState();
+	PlayerState GetState();
 	int GetSelectedCode();
 
 	void SetSunlight(int p_sunlight);

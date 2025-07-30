@@ -5,7 +5,7 @@
 //protected
 void Player::SpawnPlant(Point p_pos, Tile* p_tile)
 {
-	if (m_state == PLAYER_STATE_SELECTING)
+	if (m_state == PlayerState::SELECTING)
 	{
 		switch (m_selectedCode)
 		{
@@ -33,7 +33,7 @@ void Player::SpawnPlant(Point p_pos, Tile* p_tile)
 
 void Player::ClickTile()
 {
-	if (m_state != PLAYER_STATE_SELECTING)
+	if (m_state != PlayerState::SELECTING)
 		return;
 	Tile* currentTile = GameBoard::GetI()->GetMouseOverTile();
 	if (!currentTile || currentTile->IsPlantExist())
@@ -49,7 +49,7 @@ void Player::PreviewPlant()
 		return;
 	Tile* currentTile = GameBoard::GetI()->GetMouseOverTile();
 
-	if (m_state == PLAYER_STATE_SELECTING && currentTile && !currentTile->IsPlantExist())
+	if (m_state == PlayerState::SELECTING && currentTile && !currentTile->IsPlantExist())
 	{
 		SetCurrentTilePos(currentTile->GetPos());
 		m_currentSelectedPlant->SetPos(m_currentTilePos);
@@ -70,7 +70,7 @@ void Player::Init()
 {
 	m_mainGame = nullptr;
 	m_sunlight = 10000;
-	m_state = PLAYER_STATE_NORMAL;
+	m_state = PlayerState::NORMAL;
 	m_selectedCode = -1;
 	m_currentSelectedPlant = nullptr;
 }
@@ -99,7 +99,7 @@ void Player::Draw(HDC p_hdc)
 void Player::SelectPlant(int p_code)
 {
 	m_selectedCode = p_code;
-	m_state = PLAYER_STATE_SELECTING;
+	m_state = PlayerState::SELECTING;
 	Point point = DEFAULT_POSITION;
 	Size size = PLANT_SIZE;
 	switch (m_selectedCode)
@@ -123,7 +123,7 @@ void Player::SelectPlant(int p_code)
 
 void Player::ResetState()
 {
-	m_state = PLAYER_STATE_NORMAL;
+	m_state = PlayerState::NORMAL;
 	m_selectedCode = -1;
 	if (m_currentSelectedPlant)
 	{
@@ -138,7 +138,7 @@ int Player::GetSunlight()
 	return m_sunlight;
 }
 
-int Player::GetState()
+PlayerState Player::GetState()
 {
 	return m_state;
 }

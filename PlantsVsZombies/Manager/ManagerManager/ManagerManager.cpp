@@ -10,10 +10,12 @@ ManagerManager::ManagerManager(MainGame* p_mainGame)
 
 ManagerManager::~ManagerManager()
 {
+	/*
 	for (auto* manager : m_managers)
 	{
 		delete manager;
 	}
+	*/
 }
 
 void ManagerManager::Init()

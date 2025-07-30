@@ -22,6 +22,8 @@ protected:
 	int m_moveIntervalCount;
 	ZombieState m_state;
 
+	//void* m_StateFN[(int)ZombieState::FROZEN + 1];
+
 	bool m_isAlive;
 	bool m_isAttacking;
 
@@ -43,6 +45,8 @@ public:
 	bool IsAttacking();
 
 	void SetStateFrozen();
+	//void SetStateNORMAL();
+	void SetState(ZombieState p_state);
 
 	void Target(Plant* p_plant);
 	void TakeDamage(int p_damage);

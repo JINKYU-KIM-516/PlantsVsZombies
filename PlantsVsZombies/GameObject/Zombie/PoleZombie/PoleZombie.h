@@ -16,4 +16,3 @@ public:
 	void Update() override;
 	void Draw(HDC p_hdc) override;
 };
-

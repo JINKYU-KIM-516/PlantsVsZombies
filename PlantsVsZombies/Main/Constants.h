@@ -1,21 +1,8 @@
 #pragma once
-/*
-#include <windows.h>
-// C 런타임 헤더 파일입니다.
 
-//------ 추가 헤더 파일은 여기에서 참조합니다.
-#include <objidl.h>
-#include <gdiplus.h>  // gdiplus  앞에 objidl.h 있어야지됨
-// 파일형태로 lib 가지고 오는 방법
-#pragma comment (lib,"Gdiplus.lib")
-//------
-include 순서 중요!!!!
-*/
-//#include <objidl.h> gdi plus 쓰려면 필요, windos
-
-enum PlayerState
+enum class PlayerState
 {
-	PLAYER_STATE_NORMAL, PLAYER_STATE_SELECTING
+	NORMAL, SELECTING
 };
 
 enum PlantCode
@@ -46,9 +33,10 @@ enum StorePlantIndex
 	NUT_INDEX
 };
 
-enum ZombieState
+enum class ZombieState
 {
-	ZOMBIE_STATE_NORMAL, ZOMBIE_STATE_FROZEN
+	NORMAL, FROZEN
+	, MAX
 };
 
 //타일
@@ -58,6 +46,14 @@ enum ZombieState
 
 #define TILE_GROUND_BRIGHTER_IMAGEPATH L"../Bmp_Resources_ver2/UI/Ground_Brighter.bmp"
 #define TILE_GROUND_DARKER_IMAGEPATH L"../Bmp_Resources_ver2/UI/Ground_Darker.bmp"
+
+//잔디깎기
+#define LAWNMOWER_WIDTH 60
+#define LAWNMOWER_HEIGHT 50
+#define LAWNMOWER_SIZE Size(LAWNMOWER_WIDTH, LAWNMOWER_HEIGHT)
+#define LAWNMOWER_IMAGEPATH L"../Bmp_Resources_ver2/UI/LawnMower.bmp"
+
+#define LAWNMOWER_MOVESPEED 8
 
 //식물
 #define PLANT_WIDTH 64

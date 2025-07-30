@@ -5,7 +5,7 @@ void BulletManager::CheckBulletsInScreen()
 {
 	for (auto* bullet : m_bullets)
 	{
-		if (bullet->GetPos().GetX() > (GAMEBOARD_WIDTH + 1) * TILE_WIDTH)
+		if (bullet->GetPos().GetX() > GAMEBOARD_START_X + ((GAMEBOARD_WIDTH + 1) * TILE_WIDTH))
 		{
 			DeleteBullet(bullet);
 		}

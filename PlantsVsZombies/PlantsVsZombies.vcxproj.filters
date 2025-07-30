@@ -127,6 +127,9 @@
     <Filter Include="소스 파일\Manager\Managers\DrawManager">
       <UniqueIdentifier>{773c787f-d8b4-42d4-a9e9-3b502cc043c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\GameObject\LawnMower">
+      <UniqueIdentifier>{cb393e4d-94ee-40cd-932c-59b8795b6631}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -245,6 +248,9 @@
     </ClInclude>
     <ClInclude Include="Manager\Managers\DrawManager\DrawManager.h">
       <Filter>소스 파일\Manager\Managers\DrawManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\LawnMower\LawnMower.h">
+      <Filter>소스 파일\GameObject\LawnMower</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -365,6 +371,9 @@
     </ClCompile>
     <ClCompile Include="Manager\Managers\DrawManager\DrawManager.cpp">
       <Filter>소스 파일\Manager\Managers\DrawManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\LawnMower\LawnMower.cpp">
+      <Filter>소스 파일\GameObject\LawnMower</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

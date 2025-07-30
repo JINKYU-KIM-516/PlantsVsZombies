@@ -13,7 +13,7 @@ void FunnelZombie::CheckState()
 		tempStr.replace(tempStr.length() - 4, 4, L"_Frozen.bmp");
 		m_frozenImagePath = tempStr;
 
-		if (m_state == ZOMBIE_STATE_FROZEN)
+		if (m_state == ZombieState::FROZEN)
 			SetImage(ZOMBIE_FROZEN_IMAGEPATH);
 		else
 			SetImage(ZOMBIE_IMAGEPATH);
@@ -33,7 +33,7 @@ void FunnelZombie::CheckFunnel()
 		tempStr.replace(tempStr.length() - 4, 4, L"_Frozen.bmp");
 		m_frozenImagePath = tempStr;
 
-		if (m_state == ZOMBIE_STATE_FROZEN)
+		if (m_state == ZombieState::FROZEN)
 			SetImage(ZOMBIE_FROZEN_IMAGEPATH);
 		else
 			SetImage(ZOMBIE_IMAGEPATH);

@@ -8,14 +8,14 @@ void BaseZombie::Move()
 	m_moveIntervalCount++;
 	if (m_moveInterval <= m_moveIntervalCount)
 	{
-		m_position.SetX(m_position.GetX() - m_moveSpeed);
+		m_position.DecreaseX(m_moveSpeed);
 		m_moveIntervalCount = 0;
 	}
 }
 
 void BaseZombie::ResetState()
 {
-	m_state = ZOMBIE_STATE_NORMAL;
+	m_state = ZombieState::NORMAL;
 	m_attackSpeed = ZOMBIE_ATTACKSPEED;
 	m_attackTimer.Init(m_attackSpeed);
 	m_moveInterval = 1;
@@ -50,7 +50,7 @@ BaseZombie::BaseZombie(int p_hp, int p_ap, int p_as, int p_ms, wstring p_imagePa
 	m_moveSpeed = p_ms;
 	m_moveInterval = 1;
 	m_moveIntervalCount = 0;
-	m_state = ZOMBIE_STATE_NORMAL;
+	m_state = ZombieState::NORMAL;
 
 	m_isAlive = true;
 	m_isAttacking = false;
@@ -72,7 +72,7 @@ BaseZombie::BaseZombie(int p_hp, int p_ap, int p_as, int p_ms, wstring p_imagePa
 	m_moveSpeed = p_ms;
 	m_moveInterval = 1;
 	m_moveIntervalCount = 0;
-	m_state = ZOMBIE_STATE_NORMAL;
+	m_state = ZombieState::NORMAL;
 
 	m_isAlive = true;
 	m_isAttacking = false;
@@ -85,6 +85,12 @@ BaseZombie::BaseZombie(int p_hp, int p_ap, int p_as, int p_ms, wstring p_imagePa
 void BaseZombie::Init(Point p_pos)
 {
 	m_position = p_pos;
+	/*
+	for (size_t i = 0; i < (int)ZombieState::MAX; i++)
+	{
+		//m_StateFN[(int)ZombieState::NORMAL] = "SetState"+"NORMAL";
+	}
+	*/
 }
 
 void BaseZombie::Update()
@@ -127,12 +133,26 @@ bool BaseZombie::IsAttacking()
 
 void BaseZombie::SetStateFrozen()
 {
-	m_state = ZOMBIE_STATE_FROZEN;
+	m_state = ZombieState::FROZEN;
 	m_attackSpeed = ZOMBIE_ATTACKSPEED * 2;
 	m_attackTimer.Init(m_attackSpeed);
 	m_moveInterval = 2;
 	SetImage(m_frozenImagePath);
 	m_frozenDuration.Tick();
+}
+
+void BaseZombie::SetState(ZombieState p_state)
+{
+	m_state = p_state;
+	/*
+	if(m_StateFN[(int)m_state] != nullptr)
+		m_StateFN[(int)m_state]()
+
+	if (m_state == ZombieState::FROZEN)
+	{
+		SetStateFrozen();
+	}
+	*/
 }
 
 void BaseZombie::Target(Plant* p_plant)
