@@ -23,6 +23,7 @@ protected:
 	void SpawnPlant(Point p_pos, Tile* p_tile);
 	void ClickTile();
 	void PreviewPlant();
+	void CheckState();
 public:
 	Player();
 	void Init() override;

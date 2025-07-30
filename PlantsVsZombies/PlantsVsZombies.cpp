@@ -62,8 +62,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
             DispatchMessage(&msg);
         }
     }
-
-    delete g_mainGame;
     return (int) msg.wParam;
 }
 

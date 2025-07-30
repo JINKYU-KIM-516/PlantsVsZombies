@@ -8,4 +8,3 @@ public:
 	void Init(Point p_pos);
 	void Update(Point p_pos);
 };
-

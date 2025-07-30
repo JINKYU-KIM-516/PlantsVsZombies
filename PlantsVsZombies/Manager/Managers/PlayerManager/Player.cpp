@@ -60,6 +60,15 @@ void Player::PreviewPlant()
 	}
 }
 
+void Player::CheckState()
+{
+	if ((m_state != PlayerState::DELETING) && m_shovel)
+	{
+		delete m_shovel;
+		m_shovel = nullptr;
+	}
+}
+
 //public
 Player::Player()
 {
@@ -77,10 +86,10 @@ void Player::Init()
 
 void Player::Update()
 {
+	CheckState();
 	PreviewPlant();
 	if (m_shovel)
-		return;
-		//m_shovel->Update(Getcurrentmousepos);
+		m_shovel->Update(MainGame::GetI()->GetMousePosition());
 }
 
 void Player::ClickHandle()
@@ -92,6 +101,8 @@ void Player::Draw(HDC p_hdc)
 {
 	if(m_currentSelectedPlant)
 		m_currentSelectedPlant->Draw(p_hdc);
+	if (m_shovel)
+		m_shovel->Draw(p_hdc);
 }
 
 void Player::SelectPlant(int p_code)
@@ -122,6 +133,7 @@ void Player::SelectPlant(int p_code)
 void Player::SelectShovel()
 {
 	m_state = PlayerState::DELETING;
+	m_shovel = new Shovel();
 }
 
 void Player::ResetState()
@@ -132,6 +144,11 @@ void Player::ResetState()
 	{
 		delete m_currentSelectedPlant;
 		m_currentSelectedPlant = nullptr;
+	}
+	if (m_shovel)
+	{
+		delete m_shovel;
+		m_shovel = nullptr;
 	}
 }
 

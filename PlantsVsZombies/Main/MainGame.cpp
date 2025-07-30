@@ -52,7 +52,7 @@ void MainGame::DebugTextOut(HDC hdc)
 void MainGame::Init(HWND p_hWnd)
 {
 	m_hWnd = p_hWnd;
-	m_managerManager = new ManagerManager(this);
+	m_managerManager = ManagerManager::GetI();
 	m_debugTextIndex = GAMEBOARD_START_Y + (TILE_HEIGHT * GAMEBOARD_HEIGHT);
 	m_isGameOver = false;
 }

@@ -50,8 +50,8 @@ void Store::PaintImage_Nut()
 void Store::PaintImage_Shovel()
 {
 	m_index++;
-	StoreShovelImage* shovelImage = new StoreShovelImage();
-	shovelImage->Init(GetCurrentStoreImagePosition(m_index));
+	m_shovelImage = new StoreShovelImage();
+	m_shovelImage->Init(GetCurrentStoreImagePosition(m_index));
 }
 
 Point Store::GetCurrentStoreImagePosition(int p_index)
@@ -82,12 +82,15 @@ void Store::ClickStorePlantImage()
 
 void Store::ClickStoreShovelImage()
 {
-	if (Player::GetI()->GetState() == PlayerState::DELETING)
+	if (m_shovelImage->Contains(MainGame::GetI()->GetMousePosition()))
 	{
-		Player::GetI()->ResetState();
-		return;
+		if (Player::GetI()->GetState() == PlayerState::DELETING)
+		{
+			Player::GetI()->ResetState();
+			return;
+		}
+		Player::GetI()->SelectShovel();
 	}
-	Player::GetI()->SetState(PlayerState::DELETING);
 }
 
 //public
@@ -123,12 +126,15 @@ void Store::Update()
 void Store::ClickHandle()
 {
 	ClickStorePlantImage();
+	ClickStoreShovelImage();
 }
 
 void Store::Draw(HDC p_hdc)
 {
 	for (auto* image : m_plantImages)
 		image->Draw(p_hdc);
+	if(m_shovelImage)
+		m_shovelImage->Draw(p_hdc);
 }
 
 const vector<StorePlantImage*>& Store::GetImages() const
