@@ -19,6 +19,7 @@ void LawnMower::Init(Point p_pos)
 {
 	m_activing = false;
 	m_moveSpeed = LAWNMOWER_MOVESPEED;
+	m_position = p_pos;
 }
 
 void LawnMower::Update()

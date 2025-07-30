@@ -42,16 +42,7 @@ CollisionManager::CollisionManager()
 
 void CollisionManager::Init()
 {
-    m_plantManager = nullptr;
-    m_zombieManager = nullptr;
-    m_bulletManager = nullptr;
-}
 
-void CollisionManager::Link(PlantManager* p_plantManager, ZombieManager* p_zombieManager, BulletManager* p_bulletManager)
-{
-    m_plantManager = p_plantManager;
-    m_zombieManager = p_zombieManager;
-    m_bulletManager = p_bulletManager;
 }
 
 void CollisionManager::Update()

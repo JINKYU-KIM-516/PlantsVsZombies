@@ -8,16 +8,11 @@
 class CollisionManager : public BaseManager, public SingletonT<CollisionManager>
 {
 protected:
-	PlantManager* m_plantManager;
-	ZombieManager* m_zombieManager;
-	BulletManager* m_bulletManager;
-
 	void CheckColliding_BulletAndZombie();
 	void CheckColliding_ZombieAndPlant();
 
 public:
 	CollisionManager();
 	void Init() override;
-	void Link(PlantManager* p_plantManager, ZombieManager* p_zombieManager, BulletManager* p_bulletManager);
 	void Update() override;
 };

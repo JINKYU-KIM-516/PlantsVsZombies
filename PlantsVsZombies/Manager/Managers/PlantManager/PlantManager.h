@@ -14,9 +14,6 @@ class MainGame;
 class PlantManager :  public BaseManager, public SingletonT<PlantManager>
 {
 protected:
-	MainGame* m_mainGame;
-	SunlightManager* m_sunlightManager;
-	BulletManager* m_bulletManager;
 	vector<Plant*> m_plants;
 
 	void CheckPlantsAlive();
@@ -25,13 +22,8 @@ public:
 	~PlantManager();
 
 	void Init() override;
-	void Link(SunlightManager* p_sunlightManager, BulletManager* p_bulletManager);
 	void Update() override;
 	void Draw(HDC p_hdc) override;
-
-	void SpawnSunflower(Point p_pos);
-	void SpawnPea(Point p_pos);
-	void SpawnIcePea(Point p_pos);
 
 	void SpawnSunflower(Point p_pos, Tile* p_tile);
 	void SpawnPea(Point p_pos, Tile* p_tile);

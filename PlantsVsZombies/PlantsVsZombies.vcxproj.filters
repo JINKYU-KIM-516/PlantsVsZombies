@@ -130,6 +130,9 @@
     <Filter Include="소스 파일\GameObject\LawnMower">
       <UniqueIdentifier>{cb393e4d-94ee-40cd-932c-59b8795b6631}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Manager\LawnMowerManager">
+      <UniqueIdentifier>{164eeb41-3919-4fe8-94f0-ee1f613d0910}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -251,6 +254,9 @@
     </ClInclude>
     <ClInclude Include="GameObject\LawnMower\LawnMower.h">
       <Filter>소스 파일\GameObject\LawnMower</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager\Managers\LawnMowerManager\LawnMowerManager.h">
+      <Filter>소스 파일\Manager\LawnMowerManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -374,6 +380,9 @@
     </ClCompile>
     <ClCompile Include="GameObject\LawnMower\LawnMower.cpp">
       <Filter>소스 파일\GameObject\LawnMower</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager\Managers\LawnMowerManager\LawnMowerManager.cpp">
+      <Filter>소스 파일\Manager\LawnMowerManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

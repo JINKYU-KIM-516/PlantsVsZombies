@@ -8,6 +8,7 @@
 #include "../Managers/CollisionManager/CollisionManager.h"
 #include "../Managers/StoreManager/Store.h"
 #include "../Managers/PlayerManager/Player.h"
+#include "../Managers/LawnMowerManager/LawnMowerManager.h"
 
 class MainGame;
 

@@ -23,15 +23,7 @@ PlantManager::~PlantManager()
 
 void PlantManager::Init()
 {
-	m_mainGame = nullptr;
-	m_sunlightManager = nullptr;
-	m_bulletManager = nullptr;
-}
 
-void PlantManager::Link(SunlightManager* p_sunlightManager, BulletManager* p_bulletManager)
-{
-	m_sunlightManager = p_sunlightManager;
-	m_bulletManager = p_bulletManager;
 }
 
 void PlantManager::Update()
@@ -45,27 +37,6 @@ void PlantManager::Draw(HDC p_hdc)
 {
 	for (auto* plant : m_plants)
 		plant->Draw(p_hdc);
-}
-
-void PlantManager::SpawnSunflower(Point p_pos)
-{
-	Sunflower* sunflower = new Sunflower();
-	sunflower->Init(p_pos, m_sunlightManager);
-	AddPlant(sunflower);
-}
-
-void PlantManager::SpawnPea(Point p_pos)
-{
-	Pea* pea = new Pea();
-	pea->Init(p_pos, m_bulletManager);
-	AddPlant(pea);
-}
-
-void PlantManager::SpawnIcePea(Point p_pos)
-{
-	IcePea* icePea = new IcePea();
-	icePea->Init(p_pos, m_bulletManager);
-	AddPlant(icePea);
 }
 
 void PlantManager::SpawnSunflower(Point p_pos, Tile* p_tile)

@@ -22,7 +22,8 @@ enum ManagerIndex
 	ZOMBIE_MANAGER_INDEX,
 	COLLISION_MANAGER_INDEX,
 	STORE_INDEX,
-	PLAYER_INDEX
+	PLAYER_INDEX,
+	LAWNMOWER_MANAGER_INDEX
 };
 
 enum StorePlantIndex
@@ -36,7 +37,7 @@ enum StorePlantIndex
 enum class ZombieState
 {
 	NORMAL, FROZEN
-	, MAX
+	//, MAX
 };
 
 //≈∏¿œ

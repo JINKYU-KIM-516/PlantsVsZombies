@@ -157,6 +157,7 @@
     <ClInclude Include="Manager\Managers\CollisionManager\CollisionManager.h" />
     <ClInclude Include="Manager\Managers\DrawManager\DrawManager.h" />
     <ClInclude Include="Manager\Managers\GameBoardManager\GameBoard.h" />
+    <ClInclude Include="Manager\Managers\LawnMowerManager\LawnMowerManager.h" />
     <ClInclude Include="Manager\Managers\PlantManager\PlantManager.h" />
     <ClInclude Include="Manager\Managers\PlayerManager\Player.h" />
     <ClInclude Include="Manager\Managers\StoreManager\Store.h" />
@@ -204,6 +205,7 @@
     <ClCompile Include="Manager\Managers\CollisionManager\CollisionManager.cpp" />
     <ClCompile Include="Manager\Managers\DrawManager\DrawManager.cpp" />
     <ClCompile Include="Manager\Managers\GameBoardManager\GameBoard.cpp" />
+    <ClCompile Include="Manager\Managers\LawnMowerManager\LawnMowerManager.cpp" />
     <ClCompile Include="Manager\Managers\PlantManager\PlantManager.cpp" />
     <ClCompile Include="Manager\Managers\PlayerManager\Player.cpp" />
     <ClCompile Include="Manager\Managers\StoreManager\Store.cpp" />
