@@ -23,7 +23,7 @@ void SunlightManager::SpawnSunlightRandom()
 
 void SunlightManager::ClickSunlight()
 {
-    auto pos = m_mainGame->GetMousePosition();
+    auto pos = MainGame::GetI()->GetMousePosition();
     for (auto itr = m_sunlights.rbegin(); itr != m_sunlights.rend(); ++itr)
     {
         Sunlight* sunlight = *itr;
@@ -50,13 +50,7 @@ SunlightManager::~SunlightManager()
 
 void SunlightManager::Init()
 {
-    m_mainGame = nullptr;
     m_spawnSunlightTimer.Init(INTERVAL_SPAWN_SUNLIGHT_BY_NATURAL);
-}
-
-void SunlightManager::Link(MainGame* p_mainGame)
-{
-    m_mainGame = p_mainGame;
 }
 
 void SunlightManager::Update()

@@ -9,8 +9,6 @@ class MainGame;
 class GameBoard : public BaseManager, public SingletonT<GameBoard>
 {
 protected:
-	MainGame* m_mainGame;
-
 	vector<Tile*> m_tiles;
 	wstring m_imagePath;
 
@@ -19,7 +17,6 @@ public:
 	GameBoard();
 	~GameBoard();
 	void Init() override;
-	void Link(MainGame* p_mainGame);
 	void Draw(HDC p_hdc) override;
 
 	Point GetMouseOverTilePos();

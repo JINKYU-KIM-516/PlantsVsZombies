@@ -39,12 +39,12 @@ void ZombieManager::CheckZombiesAlive()
 
 void ZombieManager::CheckZombiesInHome()
 {
-    if (m_mainGame->IsGameOver())
+    if (MainGame::GetI()->IsGameOver())
         return;
     for (auto* zombie : m_zombies)
         if (zombie->GetPos().GetX() <= GAMEBOARD_START_X - TILE_WIDTH)
         {
-            m_mainGame->GameOver(L"좀비가 집에 들어와버렸습니다..");
+            MainGame::GetI()->GameOver(L"좀비가 집에 들어와버렸습니다..");
             return;
         }
 }
@@ -74,12 +74,6 @@ void ZombieManager::Update()
     SpawnZombieRandom();
     CheckZombiesAlive();
     CheckZombiesInHome();
-}
-
-
-void ZombieManager::Link(MainGame* p_mainGame)
-{
-    m_mainGame = p_mainGame;
 }
 
 void ZombieManager::Draw(HDC p_hdc)

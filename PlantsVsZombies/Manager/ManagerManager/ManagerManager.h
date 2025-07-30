@@ -15,13 +15,11 @@ class MainGame;
 class ManagerManager : public BaseManager, public SingletonT<ManagerManager>
 {
 protected:
-	MainGame* m_mainGame;
 	vector<BaseManager*> m_managers;
 public:
-	ManagerManager(MainGame* p_mainGame);
+	ManagerManager();
 	~ManagerManager();
 	void Init() override;
-	void Link(MainGame* p_mainGame);
 	void Update() override;
 	void ClickHandle() override;
 	void Draw(HDC p_hdc) override;

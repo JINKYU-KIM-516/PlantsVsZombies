@@ -27,13 +27,9 @@ GameBoard::~GameBoard()
 
 void GameBoard::Init()
 {
-	m_mainGame = nullptr;
+
 }
 
-void GameBoard::Link(MainGame* p_mainGame)
-{
-	m_mainGame = p_mainGame;
-}
 
 void GameBoard::Draw(HDC p_hdc)
 {
@@ -47,7 +43,7 @@ Point GameBoard::GetMouseOverTilePos()
 {
 	for (auto* tile : m_tiles)
 	{
-		if (tile->Contains(m_mainGame->GetMousePosition()))
+		if (tile->Contains(MainGame::GetI()->GetMousePosition()))
 		{
 			return tile->GetPos();
 		}
@@ -59,7 +55,7 @@ Tile* GameBoard::GetMouseOverTile()
 {
 	for (auto* tile : m_tiles)
 	{
-		if (tile->Contains(m_mainGame->GetMousePosition()))
+		if (tile->Contains(MainGame::GetI()->GetMousePosition()))
 		{
 			return tile;
 		}

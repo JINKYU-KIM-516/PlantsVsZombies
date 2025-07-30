@@ -10,7 +10,6 @@ class MainGame;
 class SunlightManager : public BaseManager, public SingletonT<SunlightManager>
 {
 protected:
-	MainGame* m_mainGame;
 	IntervalTimer m_spawnSunlightTimer;
 
 	vector<Sunlight*> m_sunlights;
@@ -22,7 +21,6 @@ public:
 	SunlightManager();
 	~SunlightManager();
 	void Init() override;
-	void Link(MainGame* p_mainGame);
 	void Update() override;
 	void ClickHandle() override;
 	void Draw(HDC p_hdc) override;

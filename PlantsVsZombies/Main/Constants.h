@@ -2,7 +2,7 @@
 
 enum class PlayerState
 {
-	NORMAL, SELECTING
+	NORMAL, SELECTING, DELETING
 };
 
 enum PlantCode
@@ -55,6 +55,12 @@ enum class ZombieState
 #define LAWNMOWER_IMAGEPATH L"../Bmp_Resources_ver2/UI/LawnMower.bmp"
 
 #define LAWNMOWER_MOVESPEED 8
+
+//»ð
+#define SHOVEL_WIDTH 32
+#define SHOVEL_HEIGHT 32
+#define SHOVEL_SIZE Size(SHOVEL_WIDTH, SHOVEL_HEIGHT)
+#define SHOVEL_IMAGEPATH L"../Bmp_Resources_ver2/UI/Shovel.bmp"
 
 //½Ä¹°
 #define PLANT_WIDTH 64

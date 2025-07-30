@@ -13,8 +13,6 @@ class MainGame;
 class ZombieManager : public BaseManager, public SingletonT<ZombieManager>
 {
 protected:
-    MainGame* m_mainGame;
-
     int m_spawnCount;
 
     IntervalTimer m_spawnTimer;
@@ -28,7 +26,6 @@ public:
     ~ZombieManager();
     void Update() override;
     void Init() override;
-    void Link(MainGame* p_mainGame);
     void Draw(HDC p_hdc) override;
 
     void SpawnZombie(Point p_pos);

@@ -141,7 +141,9 @@
     <ClInclude Include="GameObject\Plant\Pea\Pea.h" />
     <ClInclude Include="GameObject\Plant\Plant.h" />
     <ClInclude Include="GameObject\Plant\Sunflower\Sunflower.h" />
+    <ClInclude Include="GameObject\Shovel\Shovel.h" />
     <ClInclude Include="GameObject\StorePlantImage\StorePlantImage.h" />
+    <ClInclude Include="GameObject\StoreShovelImage\StoreShovelImage.h" />
     <ClInclude Include="GameObject\Sunlight\Sunlight.h" />
     <ClInclude Include="GameObject\Tile\Tile.h" />
     <ClInclude Include="GameObject\Zombie\FunnelZombie\FunnelZombie.h" />
@@ -190,7 +192,9 @@
     <ClCompile Include="GameObject\Plant\Pea\Pea.cpp" />
     <ClCompile Include="GameObject\Plant\Plant.cpp" />
     <ClCompile Include="GameObject\Plant\Sunflower\Sunflower.cpp" />
+    <ClCompile Include="GameObject\Shovel\Shovel.cpp" />
     <ClCompile Include="GameObject\StorePlantImage\StorePlantImage.cpp" />
+    <ClCompile Include="GameObject\StoreShovelImage\StoreShovelImage.cpp" />
     <ClCompile Include="GameObject\Sunlight\Sunlight.cpp" />
     <ClCompile Include="GameObject\Tile\Tile.cpp" />
     <ClCompile Include="GameObject\Zombie\FunnelZombie\FunnelZombie.cpp" />

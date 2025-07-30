@@ -68,21 +68,19 @@ Player::Player()
 
 void Player::Init()
 {
-	m_mainGame = nullptr;
 	m_sunlight = 10000;
 	m_state = PlayerState::NORMAL;
 	m_selectedCode = -1;
 	m_currentSelectedPlant = nullptr;
-}
-
-void Player::Link(MainGame* p_mainGame)
-{
-	m_mainGame = p_mainGame;
+	m_shovel = nullptr;
 }
 
 void Player::Update()
 {
 	PreviewPlant();
+	if (m_shovel)
+		return;
+		//m_shovel->Update(Getcurrentmousepos);
 }
 
 void Player::ClickHandle()
@@ -119,6 +117,11 @@ void Player::SelectPlant(int p_code)
 	default:
 		break;
 	}
+}
+
+void Player::SelectShovel()
+{
+	m_state = PlayerState::DELETING;
 }
 
 void Player::ResetState()

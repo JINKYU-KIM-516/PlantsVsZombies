@@ -1,8 +1,9 @@
 #pragma once
 #include <windows.h>
 #include "../Manager/ManagerManager/ManagerManager.h"
+#include "../CoreFunction/Singleton/SingletonT.h"
 
-class MainGame
+class MainGame : public SingletonT<MainGame>
 {
 protected:
 	ManagerManager* m_managerManager;
@@ -15,12 +16,15 @@ protected:
 
 	HWND m_hWnd;
 public:
-	MainGame(HWND);
+	MainGame();
+	MainGame(HWND p_hWnd);
 	~MainGame();
 
 	void test();
 	void DebugTextOut(HDC hdc);
 
+	void Init(HWND p_hWnd);
+	void Link();
 	void Update();
 	void ClickHandle();
 	void Draw(HWND p_hWnd);

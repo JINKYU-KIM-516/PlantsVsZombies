@@ -45,7 +45,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     HWND hWnd = FindWindow(szWindowClass, szTitle);
 
-    g_mainGame = new MainGame(hWnd);
+    g_mainGame = MainGame::GetI();
+    g_mainGame->Init(hWnd);
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_PLANTSVSZOMBIES));
 

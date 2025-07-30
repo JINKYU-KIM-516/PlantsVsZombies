@@ -1,18 +1,20 @@
 #include "MainGame.h"
 #include <stdio.h>
 
+MainGame::MainGame()
+{
+	
+}
+
 MainGame::MainGame(HWND p_hWnd)
 {
-	m_hWnd = p_hWnd;
-	m_managerManager = new ManagerManager(this);
-	m_debugTextIndex = GAMEBOARD_START_Y + (TILE_HEIGHT * GAMEBOARD_HEIGHT);
-	m_isGameOver = false;
+	Init(p_hWnd);
 	test();
 }
 
 MainGame::~MainGame()
 {
-	delete m_managerManager;
+	//delete m_managerManager;
 }
 
 void MainGame::test()
@@ -45,6 +47,14 @@ void MainGame::DebugTextOut(HDC hdc)
 	wsprintf(str2, TEXT("고른 식물 : %d"), player->GetSelectedCode());
 	TextOut(hdc, 0, index, str2, lstrlen(str2));
 	index += interval;
+}
+
+void MainGame::Init(HWND p_hWnd)
+{
+	m_hWnd = p_hWnd;
+	m_managerManager = new ManagerManager(this);
+	m_debugTextIndex = GAMEBOARD_START_Y + (TILE_HEIGHT * GAMEBOARD_HEIGHT);
+	m_isGameOver = false;
 }
 
 void MainGame::Update()

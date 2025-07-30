@@ -47,6 +47,13 @@ void Store::PaintImage_Nut()
 	AddImage(nutImage);
 }
 
+void Store::PaintImage_Shovel()
+{
+	m_index++;
+	StoreShovelImage* shovelImage = new StoreShovelImage();
+	shovelImage->Init(GetCurrentStoreImagePosition(m_index));
+}
+
 Point Store::GetCurrentStoreImagePosition(int p_index)
 {
 	int x = GAMEBOARD_START_X + (p_index * PLANT_WIDTH);
@@ -58,7 +65,7 @@ void Store::ClickStorePlantImage()
 {
 	for (auto* image : m_plantImages)
 	{
-		if (image->Contains(m_mainGame->GetMousePosition()))
+		if (image->Contains(MainGame::GetI()->GetMousePosition()))
 		{
 			if (!image->CanCost())
 				return;
@@ -71,6 +78,16 @@ void Store::ClickStorePlantImage()
 			return;
 		}
 	}
+}
+
+void Store::ClickStoreShovelImage()
+{
+	if (Player::GetI()->GetState() == PlayerState::DELETING)
+	{
+		Player::GetI()->ResetState();
+		return;
+	}
+	Player::GetI()->SetState(PlayerState::DELETING);
 }
 
 //public
@@ -87,18 +104,14 @@ Store::~Store()
 
 void Store::Init()
 {
-	m_mainGame = nullptr;
 	m_index = -1;
 
 	PaintImage_Sunflower();
 	PaintImage_Pea();
 	PaintImage_IcePea();
 	PaintImage_Nut();
-}
 
-void Store::Link(MainGame* p_mainGame)
-{
-	m_mainGame = p_mainGame;
+	PaintImage_Shovel();
 }
 
 void Store::Update()

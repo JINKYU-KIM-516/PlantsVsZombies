@@ -1,10 +1,8 @@
 #include "ManagerManager.h"
 #include "../../Main/MainGame.h"
-//#include "../Managers/PlantManager/PlantManager.h"
 
-ManagerManager::ManagerManager(MainGame* p_mainGame)
+ManagerManager::ManagerManager()
 {
-	m_mainGame = p_mainGame;
 	Init();
 }
 
@@ -34,16 +32,6 @@ void ManagerManager::Init()
 	AddManager(store);
 	AddManager(player);
 	AddManager(mowerManager);
-
-	Link(m_mainGame);
-}
-
-void ManagerManager::Link(MainGame* p_mainGame)
-{
-	dynamic_cast<GameBoard*>(m_managers[GAMEBOARD_INDEX])->Link(m_mainGame);
-	dynamic_cast<SunlightManager*>(m_managers[SUNLIGHT_MANAGER_INDEX])->Link(m_mainGame);
-	dynamic_cast<ZombieManager*>(m_managers[ZOMBIE_MANAGER_INDEX])->Link(m_mainGame);
-	dynamic_cast<Store*>(m_managers[STORE_INDEX])->Link(m_mainGame);
 }
 
 void ManagerManager::Update()
