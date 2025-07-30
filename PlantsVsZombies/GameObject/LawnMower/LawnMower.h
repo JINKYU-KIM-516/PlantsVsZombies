@@ -11,5 +11,8 @@ public:
 	LawnMower();
 	void Init(Point p_pos);
 	void Update();
+
+	void StartActiving();
+	bool IsActiving();
 };
 

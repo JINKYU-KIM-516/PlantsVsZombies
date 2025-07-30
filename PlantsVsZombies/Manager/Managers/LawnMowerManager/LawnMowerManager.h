@@ -8,8 +8,9 @@ class LawnMowerManager : public BaseManager, public SingletonT<LawnMowerManager>
 {
 protected:
     vector<LawnMower*> m_lawnMowers;
-
+    
     void CreateLawnMower();
+    void CheckMowersInScreen();
 public:
     LawnMowerManager();
     ~LawnMowerManager();

@@ -10,6 +10,16 @@ void LawnMowerManager::CreateLawnMower()
 	
 }
 
+void LawnMowerManager::CheckMowersInScreen()
+{
+	for (auto* mower : m_lawnMowers)
+	{
+		if (mower->GetPos().GetX() >= GAMEBOARD_START_X + TILE_WIDTH * GAMEBOARD_WIDTH)
+			DeleteLawnMower(mower);
+	}
+
+}
+
 //public
 LawnMowerManager::LawnMowerManager()
 {
@@ -27,6 +37,7 @@ void LawnMowerManager::Update()
 {
 	for (auto* mower : m_lawnMowers)
 		mower->Update();
+	CheckMowersInScreen();
 }
 
 void LawnMowerManager::Init()

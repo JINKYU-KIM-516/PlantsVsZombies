@@ -3,10 +3,6 @@
 void LawnMower::Move()
 {
 	m_position.IncreaseX(m_moveSpeed);
-	if (m_position.GetX() >= GAMEBOARD_START_X + TILE_WIDTH * GAMEBOARD_WIDTH)
-	{
-		delete this;
-	}
 }
 
 LawnMower::LawnMower()
@@ -26,4 +22,14 @@ void LawnMower::Update()
 {
 	if (m_activing)
 		Move();
+}
+
+void LawnMower::StartActiving()
+{
+	m_activing = true;
+}
+
+bool LawnMower::IsActiving()
+{
+	return m_activing;
 }

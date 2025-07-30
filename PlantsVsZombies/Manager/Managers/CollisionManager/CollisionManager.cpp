@@ -34,6 +34,22 @@ void CollisionManager::CheckColliding_ZombieAndPlant()
     }
 }
 
+void CollisionManager::CheckColliding_LawnMowerAndZombie()
+{
+    // LawnMower vs Zombie
+    for (auto* mower : LawnMowerManager::GetI()->GetLawnMowers())
+    {
+        for (auto* zombie : ZombieManager::GetI()->GetZombies())
+        {
+            if (mower->IsCollided(zombie))
+            {
+                mower->StartActiving();
+                zombie->TakeDamage(99999);
+            }
+        }
+    }
+}
+
 //public
 CollisionManager::CollisionManager()
 {
@@ -49,4 +65,5 @@ void CollisionManager::Update()
 {
     CheckColliding_BulletAndZombie();
     CheckColliding_ZombieAndPlant();
+    CheckColliding_LawnMowerAndZombie();
 }
