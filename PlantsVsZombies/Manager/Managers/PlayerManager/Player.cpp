@@ -43,6 +43,19 @@ void Player::ClickTile()
 	ResetState();
 }
 
+void Player::ClickPlantWithShovel()
+{
+	if (m_state != PlayerState::DELETING)
+		return;
+	Plant* plant = PlantManager::GetI()->GetMouseOverPlant();
+	if (plant)
+	{
+		PlantManager::GetI()->DeletePlant(plant);
+		GameBoard::GetI()->GetMouseOverTile()->SetPlantExist(false);
+		ResetState();
+	}
+}
+
 void Player::PreviewPlant()
 {
 	if (!m_currentSelectedPlant)
@@ -95,6 +108,7 @@ void Player::Update()
 void Player::ClickHandle()
 {
 	ClickTile();
+	ClickPlantWithShovel();
 }
 
 void Player::Draw(HDC p_hdc)
@@ -134,6 +148,9 @@ void Player::SelectShovel()
 {
 	m_state = PlayerState::DELETING;
 	m_shovel = new Shovel();
+	Point pos = MainGame::GetI()->GetMousePosition();
+	pos.DecreaseY(SHOVEL_HEIGHT);
+	m_shovel->Init(pos);
 }
 
 void Player::ResetState()

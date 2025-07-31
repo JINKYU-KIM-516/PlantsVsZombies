@@ -86,3 +86,15 @@ const vector<Plant*>& PlantManager::GetPlants() const
 {
 	return m_plants;
 }
+
+Plant* PlantManager::GetMouseOverPlant()
+{
+	for (auto* plant : m_plants)
+	{
+		if (plant->Contains(MainGame::GetI()->GetMousePosition()))
+		{
+			return plant;
+		}
+	}
+	return nullptr;
+}

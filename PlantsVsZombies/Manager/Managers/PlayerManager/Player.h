@@ -22,6 +22,7 @@ protected:
 
 	void SpawnPlant(Point p_pos, Tile* p_tile);
 	void ClickTile();
+	void ClickPlantWithShovel();
 	void PreviewPlant();
 	void CheckState();
 public:

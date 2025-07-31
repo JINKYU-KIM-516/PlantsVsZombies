@@ -51,3 +51,12 @@ public:
 	void Init(Point p_pos);
 	void Update(Point p_pos);
 };
+
+
+## 클릭 아이디어
+if box contain pos
+{
+	함수 포인터
+}
+
+클릭되었을 때 실행될 함수를 함수 포인터에 넣는거

@@ -33,5 +33,6 @@ public:
 	void AddPlant(Plant* p_plant);
 	void DeletePlant(Plant* p_plant);
 	const vector<Plant*>& GetPlants() const;
+	Plant* GetMouseOverPlant();
 };
 
